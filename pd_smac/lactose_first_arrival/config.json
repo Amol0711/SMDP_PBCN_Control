@@ -1,0 +1,183 @@
+{
+  "spec_version": "1.0.0",
+  "study_id": "lactose_first_arrival",
+  "model": {
+    "state_dimension": 9,
+    "state_order": "X1,...,X9; index binary most-significant bit X1",
+    "full_states": 512,
+    "inputs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "durations": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "target_bits": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "transition": "same synchronous lactose rules and independent node5/node9 draws; no forced absorption until observed first hit",
+    "training_initial_distribution": "independent uniform binary vector on all512 states at every reset, including target",
+    "evaluation_initial_design": "exactly four independent trajectories per state, integer states0..511 in increasing order; uniform-start estimator uses weight1/512 per state",
+    "policy_state": "(physical state,remaining horizon), finite-horizon time augmentation",
+    "stopping": "check initial target before requesting action; thereafter check target after every plant step; stop immediately at hit or H=100, whichever first",
+    "terminal_hold": "execute only until first hit or horizon; count initiating update once; retain selected tau and realized ell; no remainder dynamics, reward, input cost or further update"
+  },
+  "training": {
+    "episodes": 5000,
+    "seed_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "episode_horizon_cap": 100,
+    "maximum_possible_plant_steps": 500000,
+    "exact_training_plant_steps": "policy-dependent; record actual, not capped maximum",
+    "checkpoint_episodes": [
+      1000,
+      2000,
+      3000,
+      4000,
+      5000
+    ],
+    "initial_target_training_episode": "count completed episode, zero decisions and zero plant transitions; no TD/actor/dual increment except advance episode schedule",
+    "tuning": "none"
+  },
+  "evaluation": {
+    "horizon_cap": 100,
+    "rollouts_per_seed": 2048,
+    "replicates_per_initial_state": 4,
+    "checkpoint_rollouts_per_seed": 2048,
+    "failure_hit_time_code": 101,
+    "raw_failure_hit_time": null,
+    "initial_target": "hit=true,first_hit_time=0,T_cap=0,K=0,input_exposure=0; per-episode rate/hold=null",
+    "metrics": [
+      "hit_probability_including_initial_target",
+      "mean_T_cap",
+      "failure_inclusive_coded_hit_time_mean",
+      "conditional_successful_hit_time_mean",
+      "mean_updates",
+      "ratio_of_total_updates_to_total_T_cap",
+      "pooled_scheduled_mean_hold",
+      "pooled_realized_mean_hold",
+      "expected_cost",
+      "expected_excess_numerator",
+      "seedwise_feasibility"
+    ],
+    "endpoint_record": "same terminal checkpoint evaluation as table endpoint",
+    "exact_reference": "deterministic DP and constrained finite-horizon occupation formulation evaluated by exact killed kernels; rollout descriptive statistics separately labelled",
+    "primary_comparison_modes": {
+      "PD_SMAC_FA": "stochastic",
+      "Macro_Q": "greedy",
+      "exact_references": "explicit_exact_policy_classes"
+    },
+    "secondary_comparison_modes": {
+      "PD_SMAC_FA": "greedy"
+    }
+  },
+  "objectives": {
+    "horizon": 100,
+    "control_cost": 0.01,
+    "failure_penalty": 100.0,
+    "minimize": "J=E[T_cap+0.01*sum_executed_steps L1(u)+100*failure]",
+    "budget": 0.4,
+    "constrained_rows_only": [
+      "FA_macro_constrained_exact",
+      "PD_SMAC_FA_stochastic"
+    ],
+    "constraint": "E[K]-0.40*E[T_cap]<=0",
+    "displayed_rate": "E[K]/E[T_cap], estimated ratio of totals, not E[K/T_cap]",
+    "Lagrangian": "J+lambda*(E[K]-0.40*E[T_cap]); lambda is numerator-constraint multiplier",
+    "not_equivalent": "not minimizing uncensored infinite-horizon hitting time; not maximizing continuing occupancy; not an objective-matched comparison to the lactose mean-field study"
+  },
+  "methods": [
+    "FA_TT_exact",
+    "FA_macro_exact",
+    "FA_macro_constrained_exact",
+    "Macro_Q",
+    "PD_SMAC_FA_stochastic",
+    "PD_SMAC_FA_greedy"
+  ],
+  "algorithms": {
+    "exact_model": {
+      "state": "(x,remaining)",
+      "terminal_value": 0,
+      "macro_cost": "E[ell]+0.01*L1(u)*E[ell]+100*Pr(failure at horizon during this macro)",
+      "macro_update_cost": 1,
+      "survival_kernel": "probability of surviving ell=min(tau,remaining) plant steps without hitting target and remaining>ell, with endpoint x_next; no continuation after hit/horizon",
+      "unconstrained_reference": "backward dynamic programming for tau1 and full action set separately; primary cost, then expected K, then lowest canonical action index",
+      "constrained_reference": "nonnegative finite-horizon expected decision occupation; initial non-target mass1/512 each, killed-kernel flow, minimize expected cost subject sum y*(1-Gamma*Eell)<=0; zero-time initial target contributes zero. Allows randomized time-augmented policy.",
+      "zero_mass_policy": "lowest canonical action index; initial-law objective and feasibility checked after recovery",
+      "save": [
+        "policy arrays",
+        "initial distribution",
+        "cost-to-go arrays",
+        "expected K/T/input/failure totals",
+        "killed-kernel signature",
+        "solver primal/dual residuals"
+      ],
+      "no_discounts": true,
+      "constrained_reference_tie_break": "after minimum cost Jstar, minimize expected updates with cost<=Jstar+1e-10 and the same flow/budget constraints; save chosen occupation and solver options; no unsupported uniqueness claim"
+    },
+    "Macro_Q": {
+      "table": "Q[x,remaining,action], initialized0",
+      "objective": "min stopping cost; terminal bootstrap0",
+      "target": "realized ell+0.01*L1(u)*ell+100*failure_if_terminal + min_a Q[next,remaining-ell,a] if nonterminal",
+      "discount": 1.0,
+      "learning_rate": "0.5/(1+prior_visit_count(x,remaining,a))^0.6",
+      "epsilon": "max(0.05,1-episode/(0.7*5000))",
+      "behavior": "epsilon uniform exploration over20 actions, otherwise lowest-index minimizing action",
+      "evaluation": "greedy Q-min, lowest action index on ties"
+    },
+    "PD_SMAC_FA": {
+      "label": "new episodic semi-Markov primal-dual actor-critic adaptation",
+      "actor": "softmax row W[x,remaining,:], temperature1; zero-sum-box bound12",
+      "critic": "tabular V[x,remaining], terminal value0; V initialized0",
+      "initialization": "W=0,V=0,lambda=0.1",
+      "interval_td": "-ell-0.01*L1(u)*ell-100*failure_if_terminal-lambda*(1-0.40*ell)+V(next,remaining-ell)-V(x,remaining), with terminal V=0",
+      "actor_timing": "freeze actor and lambda during episode; accumulate sum(delta*(onehot-p)) per visited row; apply one projected row update at episode end, without division by K",
+      "actor_gain": "0.02/(1+episode/1000)^0.6",
+      "critic_gain": "0.1/(1+episode/1000)^0.6; online TD updates during episode",
+      "dual_gain": "0.005/(1+episode/1000)^0.6",
+      "dual": "clip(lambda+dual_gain*(K-0.40*T_cap),0,50) once per completed episode",
+      "multiplier_bounds": [
+        0,
+        50
+      ],
+      "average_reward_eta": "not used in this explicitly stopping adaptation",
+      "scope": "finite empirical episodic learner; no continuing convergence theorem or KKT certificate claimed"
+    }
+  }
+}

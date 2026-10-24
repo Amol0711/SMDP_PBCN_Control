@@ -1,0 +1,273 @@
+{
+  "spec_version": "1.0.0",
+  "study_id": "melanoma28",
+  "model": {
+    "state_dimension": 28,
+    "input_values": [
+      0,
+      1
+    ],
+    "durations": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "action_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "intervention": "xor_pirin_each_plant_step",
+    "control_index": 0,
+    "target_index": 1,
+    "target_value": 0,
+    "reset": "uniform over observed sample rows with WNT5A=1, retaining duplicate sample multiplicity; set WNT5A=1; reset before each fixed-H rollout",
+    "reset_pool_sample_indices": [
+      2,
+      4,
+      5,
+      8,
+      11
+    ],
+    "inputs": [
+      {
+        "input_id": "melanoma28_binary_view",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_binarized_unique_gene_view.csv",
+        "sha256": "34ccf5101f2f7df6cd205a5e5d1f08b8e12b42275f00f02e28c618291f5470dc",
+        "bytes": 3054,
+        "role": "frozen_primary_evaluation_input"
+      },
+      {
+        "input_id": "melanoma28_gene_manifest",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_gene_manifest.csv",
+        "sha256": "5b6c65d1ec90bb8aa83f504b8ae66698c61b10eb666ba17ba74079130964f071",
+        "bytes": 1585,
+        "role": "gene_manifest"
+      },
+      {
+        "input_id": "melanoma28_protocol",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_controlled_pbcn_protocol.json",
+        "sha256": "76b9ec593f1cde179b82a0c0642d972d002cb124a8cfdb6afcc61c73d79d401b",
+        "bytes": 2430,
+        "role": "protocol"
+      }
+    ],
+    "transition_constructor_source_anchor": "CODE-28-BANK",
+    "synchronous_update": true,
+    "rule_draw": "independent across nodes and plant steps; normalized max(1e-3,accuracy) weights",
+    "held_input_redeclaration": "same held input is applied every plant step, not a one-time flip/force at macro-action start",
+    "feature_contract": "chi=[1,WNT5A,pirin,ordered W_PREDS[:3],mean(state),mean(responsive_state),population_std(responsive_state)]; save exact indices/order and feature signature; do not assume a nominal dimension",
+    "measurement_target": "WNT5A OFF on post-transition states; do not stop at target"
+  },
+  "training": {
+    "episodes": 240,
+    "episode_horizon": 28,
+    "plant_steps_per_run": 6720,
+    "seed_labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "budget_sweep": [
+      0.25,
+      0.4,
+      0.55
+    ],
+    "checkpoint_episodes": [
+      40,
+      80,
+      120,
+      160,
+      200,
+      240
+    ],
+    "checkpoint_timing": "after complete episode and all learning updates; final checkpoint is selected, never best validation score",
+    "duration_at_boundary": "truncate to min(scheduled,H-t); update cost is still one; keep scheduled and executed separately",
+    "tuning": "none"
+  },
+  "evaluation": {
+    "horizon": 28,
+    "rollouts_per_seed": 120,
+    "checkpoint_rollouts_per_seed": 120,
+    "failure_hit_time_code": 29,
+    "initially_targeted_states": "not possible under active reset pool; assert at reset",
+    "endpoint_policy_modes": [
+      "stochastic",
+      "greedy"
+    ],
+    "endpoint_record": "same terminal checkpoint record supplies both table and plotted endpoint",
+    "checkpoint_evaluation_changes_training_rng": false,
+    "continuing_scope": "finite-H occupancy/update measurement with resets; no stationarity or infinite-horizon feasibility claim",
+    "primary_comparison_modes": {
+      "DDQN_PER": "greedy",
+      "TT_AC": "greedy",
+      "PD_SMAC": "greedy",
+      "fixed_input_hold": "fixed"
+    },
+    "secondary_comparison_modes": {
+      "TT_AC": "stochastic",
+      "PD_SMAC": "stochastic"
+    },
+    "multiplier_scope": "stochastic actor only; never a certificate for primary greedy rows"
+  },
+  "objectives": {
+    "task_reward_per_step": "indicator(WNT5A_next=0)-0.06*u",
+    "control_cost": 0.06,
+    "update_expenditure_per_executed_hold": 1,
+    "main_budget": 0.4,
+    "primary_reported_metric": "post-transition target occupancy",
+    "optimized_reward_metric": "occupancy minus 0.06*input-on fraction; store separately",
+    "stopping_objective": false
+  },
+  "methods": [
+    "DDQN_PER",
+    "TT_AC_stochastic",
+    "TT_AC_greedy",
+    "PD_SMAC_stochastic",
+    "PD_SMAC_greedy",
+    "fixed_input_hold"
+  ],
+  "algorithms": {
+    "DDQN_PER": {
+      "network": {
+        "input": "ordered full binary state",
+        "hidden_widths": [
+          64,
+          64
+        ],
+        "activation": "ReLU",
+        "output_dim": 2,
+        "initialization": "torch.nn.Linear default reset_parameters, seeded by train_init stream"
+      },
+      "optimizer": {
+        "name": "Adam",
+        "learning_rate": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0,
+        "amsgrad": false
+      },
+      "discount_per_plant_step": 0.98,
+      "replay_capacity": 5000,
+      "batch_size": 32,
+      "priority_alpha": 0.6,
+      "priority_epsilon": 0.001,
+      "beta": "min(1,0.4+0.6*episode/episodes)",
+      "epsilon": "max(0.05,1-episode/(0.7*episodes))",
+      "sampling": "with_replacement_new_N14",
+      "duplicate_priority_update": "maximum absolute pre-update TD error across duplicate sampled indices + 0.001",
+      "new_priority": "current maximum priority or 1 for empty buffer",
+      "loss": "mean(normalized_importance_weight * squared_TD_error)",
+      "importance_weight": "(buffer_size*p_i)^(-beta), divided by maximum weight in sampled minibatch",
+      "target": "r + 0.98*(1-terminal)*Q_target(s_next,argmax Q_online(s_next))",
+      "terminal": "fixed reset horizon reached, not first target entry",
+      "updates": "one optimizer step per plant transition after buffer has >=32 items",
+      "target_sync_plant_steps": 100,
+      "gradient_clipping": null,
+      "initial_target": "copy online weights before learning",
+      "evaluation": "epsilon=0, eval mode, no gradient; exact argmax tie -> u=0"
+    },
+    "TT_AC": {
+      "actor": "sigmoid(theta dot chi), sigmoid argument clipped [-30,30] as source numerical map",
+      "critic": "v dot chi",
+      "initialization": "theta=v=0, eta=0",
+      "gains": {
+        "actor": 0.01,
+        "critic": 0.04,
+        "eta": 0.012
+      },
+      "td": "r-eta+v dot chi(s_next)-v dot chi(s)",
+      "score": "(u-p)*chi, as inherited; declared protocol must flag sigmoid saturation derivative mismatch rather than claiming exact policy gradient there",
+      "projection": "none_inherited_feature_implementation",
+      "reset": "reset plant each episode, retain all learning parameters; terminal TD bootstraps physical final state as inherited surrogate",
+      "greedy": "u=1 when p>=0.5, otherwise 0"
+    },
+    "PD_SMAC": {
+      "actor": "softmax(W dot chi) over declared ordered pairs, temperature 1",
+      "critic": "v dot chi",
+      "initialization": "W=v=0, eta=0, lambda=0.1",
+      "gains": {
+        "actor": 0.004,
+        "critic": 0.02,
+        "eta": 0.008,
+        "dual": 0.008
+      },
+      "td": "R-lambda-eta*executed_duration+v dot chi(s_next)-v dot chi(s)",
+      "score": "(onehot(action)-p) outer chi",
+      "dual": "lambda_next=max(0,lambda+0.008*(1-Gamma*executed_duration))",
+      "dual_scaling": "duration-scaled numerator per decision, not instantaneous ratio residual",
+      "eta_scope": "fixed-lambda rate of R-lambda per interval, i.e. eta_reward-lambda*kappa; the +lambda*Gamma constant is omitted consistently",
+      "projection": "no actor projection; multiplier lower projection only, no finite upper cap in source",
+      "reset": "reset plant each episode, retain learning parameters; terminal TD bootstraps physical final state as inherited finite-reset surrogate",
+      "policy_outputs": [
+        "stochastic",
+        "greedy"
+      ]
+    }
+  },
+  "fixed_policies": {
+    "input_values": [
+      1,
+      0
+    ],
+    "main_input_value": 1,
+    "durations": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "evaluation_seed_blocks": "same run-label blocks as learned comparators, but uncertainty remains conditional fixed-policy rollout uncertainty",
+    "constant_input_identity_test": "on the same reset and per-plant-step tape, trajectories/reward/occupancy identical across hold declarations of the same input; K may differ",
+    "rollouts_per_block": 120,
+    "evaluation_blocks": 4,
+    "total_rollouts_per_fixed_policy": 480
+  }
+}

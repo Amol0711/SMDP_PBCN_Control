@@ -1,0 +1,207 @@
+{
+  "spec_version": "1.0.0",
+  "study_id": "four_state",
+  "model": {
+    "state_order": [
+      "S",
+      "B",
+      "O",
+      "L"
+    ],
+    "state_bits": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "target_indicator": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "inputs": [
+      0,
+      1
+    ],
+    "durations": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "P0": [
+      [
+        0.98,
+        0.02,
+        0.0,
+        0.0
+      ],
+      [
+        0.02,
+        0.03,
+        0.95,
+        0.0
+      ],
+      [
+        0.0,
+        0.03,
+        0.87,
+        0.1
+      ],
+      [
+        0.0,
+        0.0,
+        0.1,
+        0.9
+      ]
+    ],
+    "P1": [
+      [
+        0.15,
+        0.1,
+        0.75,
+        0.0
+      ],
+      [
+        0.95,
+        0.05,
+        0.0,
+        0.0
+      ],
+      [
+        0.02,
+        0.78,
+        0.2,
+        0.0
+      ],
+      [
+        0.0,
+        0.2,
+        0.7,
+        0.1
+      ]
+    ],
+    "reset": "uniform over four states at start of each training episode; exact stationary evaluation has no resets",
+    "macro_transition": "P_u**tau",
+    "macro_occupancy": "sum_{ell=1}^tau P_u**ell *target",
+    "macro_reward": "macro_occupancy-0.02*u*tau",
+    "update_expenditure": 1
+  },
+  "training": {
+    "episodes": 1200,
+    "seed_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "nominal_horizon": 300,
+    "continue_while_elapsed_less_than": 295,
+    "complete_holds_only": true,
+    "actual_episode_plant_time_range": [
+      295,
+      299
+    ],
+    "checkpoint_episodes": [
+      300,
+      600,
+      900,
+      1200
+    ],
+    "decision_and_plant_counters": "record actual realized values; no synthetic episodes*300 interaction count",
+    "initialization": "W=0,h=0,eta=0,lambda=0.1",
+    "tuning": "none"
+  },
+  "evaluation": {
+    "mode": "exact stationary evaluation for saved stochastic and greedy policies separately",
+    "endpoint_temperature": 0.15,
+    "uncertainty_unit": "ten independently trained policies, exact evaluation within policy",
+    "endpoint": "final episode1200",
+    "primary_comparison_modes": [
+      "stochastic_actor_separate_row",
+      "greedy_extraction_separate_row"
+    ]
+  },
+  "objectives": {
+    "budget": 0.3,
+    "control_cost": 0.02,
+    "primary_deterministic_display_objective": "occupancy",
+    "learner_objective": "occupancy-minus-0.02*input_exposure_rate",
+    "LP_objectives": [
+      "occupancy",
+      "penalized_reward"
+    ],
+    "dual_comparison": "learner stochastic policy with penalized-reward LP only"
+  },
+  "methods": [
+    "PD_SMAC_stochastic",
+    "PD_SMAC_greedy",
+    "fixed_duration_state_input",
+    "deterministic_state_action",
+    "randomized_occupation_LP"
+  ],
+  "algorithms": {
+    "actor": {
+      "type": "state-tabular softmax(W[state]/temperature)",
+      "temperature": "max(0.15,1-0.85*episode/1200)",
+      "domain": "each logit row sums to zero and lies in [-12,12]",
+      "projection": "true Euclidean zero-sum-box projection after actor step",
+      "score": "(onehot-p)/temperature; deliberate correction to inherited update",
+      "gain": "0.12/(1+episode/1000)^0.6"
+    },
+    "critic": {
+      "gain": "0.16/(1+episode/1000)^0.6",
+      "eta_gain": "0.05/(1+episode/1000)^0.6",
+      "td": "R-lambda-eta*tau+h(next)-h(state)",
+      "normalization": "subtract h(S) after each update"
+    },
+    "dual": {
+      "gain": "0.08/(1+episode/1000)^0.6",
+      "bounds": [
+        0.0,
+        50.0
+      ],
+      "residual": "1-0.30*tau, duration-scaled numerator per decision"
+    },
+    "policy_saving": [
+      "W",
+      "h",
+      "eta",
+      "lambda",
+      "temperature",
+      "action_order",
+      "projection_contract_id",
+      "rng_state",
+      "full stochastic action probabilities",
+      "greedy action map"
+    ],
+    "exact_reference": {
+      "deterministic_maps": 10000,
+      "fixed_duration_input_maps_per_duration": 16,
+      "occupation_LP": "max sum_y y*g subject flow, sum_y y*tau=1, sum_y y<=0.30, y>=0",
+      "policy_recovery": "pi(a|s)=y(s,a)/sum_b y(s,b) for positive mass rows; zero-mass rows use fixed action (u=0,tau=5), verify recovered-chain feasibility and initial-class effect",
+      "tie_break": "primary objective within1e-10; then minimum update rate within1e-10; then lexicographically smallest canonical action-index tuple",
+      "checks": "flow, time normalization, expenditure, dual feasibility/gap, recovered policy and independent deterministic Bellman/dual checks; do not require historic audit values as acceptance thresholds"
+    }
+  }
+}

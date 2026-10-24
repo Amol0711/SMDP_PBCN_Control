@@ -1,0 +1,14 @@
+{
+  "original_continuing_protocol_sha256": "b5bd560861962dc9dc3568534854d30d30171420b50cb0dcae5e9cbb745859db",
+  "portable_files": {
+    "common.json": {
+      "bytes": 9017,
+      "sha256": "6b08e71013d8b589c964f08d353cb6f2469ac7089e859fddd0b6e46b8464c70b"
+    },
+    "four_state_continuing.json": {
+      "bytes": 11151,
+      "sha256": "8e18a3cb88c6a0e63f4888268682963dbf23e66344073da53b973b3a546a0f71"
+    }
+  },
+  "production_authorized": false
+}

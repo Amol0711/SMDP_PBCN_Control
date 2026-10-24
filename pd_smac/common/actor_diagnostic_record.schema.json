@@ -1,0 +1,556 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Coordinate-consistent actor diagnostic sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "context",
+    "identity",
+    "metrics",
+    "residuals",
+    "flags",
+    "scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "study_id",
+        "checkpoint_id",
+        "actor_contract_id",
+        "objective_id",
+        "protocol_sha256",
+        "objective_family",
+        "policy_mode",
+        "record_kind"
+      ],
+      "properties": {
+        "study_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkpoint_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor_contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "objective_family": {
+          "enum": [
+            "continuing_rate",
+            "stopping_total"
+          ]
+        },
+        "policy_mode": {
+          "const": "stochastic"
+        },
+        "record_kind": {
+          "enum": [
+            "scientific_diagnostic",
+            "synthetic_unit_test"
+          ]
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "parameters_sha256",
+        "projection_id",
+        "coordinates",
+        "bound",
+        "temperature",
+        "mapping_step",
+        "gradient_objective",
+        "gradient_source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "parameters_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "probabilities_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "model_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "projection_id": {
+          "const": "zero_sum_box_euclidean_v1"
+        },
+        "coordinates": {
+          "const": "ambient_rows_restricted_zero_sum_box"
+        },
+        "bound": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "temperature": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "mapping_step": {
+          "const": 1.0
+        },
+        "gradient_objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gradient_source": {
+          "enum": [
+            "exact_supplied_model",
+            "caller_supplied_exact_expectation",
+            "not_supplied"
+          ]
+        }
+      }
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "residuals": {
+      "type": "object"
+    },
+    "dual_recursion": {
+      "enum": [
+        "rate",
+        "duration_scaled_numerator"
+      ]
+    },
+    "domain_checks": {
+      "type": "object"
+    },
+    "exact_solve_checks": {
+      "type": "object"
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "multiplier_cap_active",
+        "complete_kkt_certificate",
+        "stochastic_convergence_certificate",
+        "global_optimality_certificate"
+      ],
+      "properties": {
+        "complete_kkt_certificate": {
+          "const": false
+        },
+        "stochastic_convergence_certificate": {
+          "const": false
+        },
+        "global_optimality_certificate": {
+          "const": false
+        }
+      },
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "diagnostic_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor_stationarity_rate",
+        "complementarity_rate",
+        "primal_feasibility_rate",
+        "multiplier_cap_distance"
+      ],
+      "properties": {
+        "actor_stationarity_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "complementarity_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "primal_feasibility_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "multiplier_cap_distance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "objective_family": {
+                "const": "continuing_rate"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "dual_recursion",
+          "domain_checks",
+          "exact_solve_checks",
+          "diagnostic_thresholds"
+        ],
+        "properties": {
+          "residuals": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "actor_stationarity_rate",
+              "actor_stationarity_numerator_field",
+              "unprojected_rate_gradient_norm",
+              "primal_feasibility_rate",
+              "primal_feasibility_numerator",
+              "complementarity_rate",
+              "complementarity_numerator",
+              "dual_mapping_rate",
+              "dual_mapping_numerator",
+              "rate_residual",
+              "numerator_residual"
+            ],
+            "properties": {
+              "actor_stationarity_rate": {
+                "type": "number",
+                "minimum": 0
+              },
+              "actor_stationarity_numerator_field": {
+                "type": "number",
+                "minimum": 0
+              },
+              "unprojected_rate_gradient_norm": {
+                "type": "number",
+                "minimum": 0
+              },
+              "primal_feasibility_rate": {
+                "type": "number",
+                "minimum": 0
+              },
+              "primal_feasibility_numerator": {
+                "type": "number",
+                "minimum": 0
+              },
+              "complementarity_rate": {
+                "type": "number",
+                "minimum": 0
+              },
+              "complementarity_numerator": {
+                "type": "number",
+                "minimum": 0
+              },
+              "dual_mapping_rate": {
+                "type": "number",
+                "minimum": 0
+              },
+              "dual_mapping_numerator": {
+                "type": "number",
+                "minimum": 0
+              },
+              "rate_residual": {
+                "type": "number"
+              },
+              "numerator_residual": {
+                "type": "number"
+              }
+            }
+          },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reward_rate",
+              "penalized_rate_eta_lambda",
+              "rate_lagrangian",
+              "mean_reward",
+              "update_rate",
+              "mean_expenditure",
+              "budget",
+              "multiplier",
+              "mean_duration",
+              "multiplier_upper"
+            ],
+            "properties": {
+              "reward_rate": {
+                "type": "number"
+              },
+              "penalized_rate_eta_lambda": {
+                "type": "number"
+              },
+              "rate_lagrangian": {
+                "type": "number"
+              },
+              "mean_reward": {
+                "type": "number"
+              },
+              "update_rate": {
+                "type": "number",
+                "minimum": 0
+              },
+              "mean_expenditure": {
+                "type": "number",
+                "minimum": 0
+              },
+              "budget": {
+                "type": "number",
+                "minimum": 0
+              },
+              "multiplier": {
+                "type": "number",
+                "minimum": 0
+              },
+              "mean_duration": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "multiplier_upper": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "identity": {
+            "required": [
+              "probabilities_sha256",
+              "model_sha256"
+            ],
+            "properties": {
+              "gradient_source": {
+                "const": "exact_supplied_model"
+              }
+            }
+          },
+          "domain_checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "row_sum_error",
+              "bound_violation"
+            ],
+            "properties": {
+              "row_sum_error": {
+                "type": "number",
+                "minimum": 0
+              },
+              "bound_violation": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "exact_solve_checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "stationary_equation_abs",
+              "stationary_sum_abs",
+              "value_equation_abs",
+              "conditional_advantage_mean_abs",
+              "gradient_row_sum_abs",
+              "min_stationary_mass"
+            ],
+            "properties": {
+              "stationary_equation_abs": {
+                "type": "number",
+                "minimum": 0
+              },
+              "stationary_sum_abs": {
+                "type": "number",
+                "minimum": 0
+              },
+              "value_equation_abs": {
+                "type": "number",
+                "minimum": 0
+              },
+              "conditional_advantage_mean_abs": {
+                "type": "number",
+                "minimum": 0
+              },
+              "gradient_row_sum_abs": {
+                "type": "number",
+                "minimum": 0
+              },
+              "min_stationary_mass": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "objective_family": {
+                "const": "stopping_total"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [],
+        "properties": {
+          "residuals": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "primal_total",
+              "complementarity_total",
+              "dual_mapping_total",
+              "actor_stationarity_episodic",
+              "episodic_constraint"
+            ],
+            "properties": {
+              "primal_total": {
+                "type": "number",
+                "minimum": 0
+              },
+              "complementarity_total": {
+                "type": "number",
+                "minimum": 0
+              },
+              "dual_mapping_total": {
+                "type": "number",
+                "minimum": 0
+              },
+              "actor_stationarity_episodic": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "episodic_constraint": {
+                "type": "number"
+              }
+            }
+          },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "expected_cost",
+              "expected_updates",
+              "expected_time",
+              "budget",
+              "multiplier",
+              "multiplier_upper",
+              "auxiliary_update_rate",
+              "undefined_rate_reason"
+            ],
+            "properties": {
+              "expected_cost": {
+                "type": "number",
+                "minimum": 0
+              },
+              "expected_updates": {
+                "type": "number",
+                "minimum": 0
+              },
+              "expected_time": {
+                "type": "number",
+                "minimum": 0
+              },
+              "budget": {
+                "type": "number",
+                "minimum": 0
+              },
+              "multiplier": {
+                "type": "number",
+                "minimum": 0
+              },
+              "multiplier_upper": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "auxiliary_update_rate": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "undefined_rate_reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "identity": {
+            "properties": {
+              "temperature": {
+                "const": 1.0
+              },
+              "gradient_source": {
+                "enum": [
+                  "caller_supplied_exact_expectation",
+                  "not_supplied"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "context": {
+            "properties": {
+              "objective_family": {
+                "const": "stopping_total"
+              }
+            }
+          },
+          "identity": {
+            "properties": {
+              "gradient_source": {
+                "const": "not_supplied"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "residuals": {
+            "properties": {
+              "actor_stationarity_episodic": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "spec_version": "1.0.0",
+  "action_order": "lexicographic inputs then increasing scheduled duration; indices zero-based",
+  "reward_observation": "post-transition state on every executed plant step; no x(0) occupancy credit",
+  "update_expenditure": "one at start of each executed hold, including the first; no update at/after termination",
+  "held_input": "hold the selected input unchanged at every executed plant step, redraw plant stochastic rules independently each step",
+  "float_policy": {
+    "models_exact_evaluation": "float64",
+    "tabular_actors": "float64",
+    "biological_actors_ddqn": "float32",
+    "published_aggregates": "float64",
+    "save_precision": "lossless arrays and full-precision JSON numbers"
+  },
+  "seeds": {
+    "master": 20260917,
+    "engine": "NumPy SeedSequence with PCG64; actual NumPy version and generator state recorded at execution",
+    "study_codes": {
+      "lactose_meanfield": 11,
+      "four_state": 12,
+      "melanoma28": 13,
+      "lactose_first_arrival": 14,
+      "melanoma70": 15
+    },
+    "purpose_codes": {
+      "debug": 10,
+      "train_init": 20,
+      "train_actor": 21,
+      "train_plant": 22,
+      "train_reset": 23,
+      "train_replay": 24,
+      "train_exploration": 25,
+      "checkpoint_plant": 30,
+      "checkpoint_actor": 31,
+      "checkpoint_reset": 32,
+      "endpoint_plant": 40,
+      "endpoint_actor": 41,
+      "endpoint_reset": 42,
+      "bootstrap": 50
+    },
+    "method_codes": {
+      "fixed": 0,
+      "DDQN_PER": 1,
+      "TT_AC": 2,
+      "PD_SMAC": 3,
+      "Macro_Q": 4,
+      "PD_SMAC_FA": 5,
+      "exact_model": 6
+    },
+    "key_fields": [
+      "master",
+      "study_code",
+      "purpose_code",
+      "method_code_or_zero_for_common_plant_reset",
+      "training_seed_label",
+      "budget_code_or_zero_for_common_eval",
+      "checkpoint_episode_or_zero_for_endpoint",
+      "rollout_index",
+      "stream_component"
+    ],
+    "budget_code": "round(1000*Gamma), use zero for evaluation plant/reset tapes and unconstrained references",
+    "common_random_numbers": "Plant/reset evaluation keys set method_code=0 and budget_code=0; per training-seed block and rollout they are shared across methods/budgets. Actor action draws use method-specific keys.",
+    "tape_rule": "At each plant time reserve one uniform per stochastic coordinate in a fixed node order, even when intervention bypasses a draw; lactose reserves draws for nodes 5 and 9; melanoma reserves one draw for every node. Reset has an independent key. Store seed key plus tape hash.",
+    "terminal_identity": "The final checkpoint uses endpoint purpose codes and endpoint key (checkpoint coordinate zero); do not generate a second endpoint record.",
+    "tuning": "No tuning in v1; debug purpose 10 and seed labels 900\u2013909 only. Debug results cannot enter active comparisons.",
+    "training_seed_label_note": "Labels 0\u20139 are not direct historical RNG streams. Full key determines the new stream.",
+    "integer_seed_mapping": "For an integer-seeded library, form int(SeedSequence(entropy_key).generate_state(1,dtype=np.uint64)[0]) % (2**63). Save the derived integer and full key. Torch initialization uses torch.manual_seed(integer); stdlib Random uses Random(integer). Neither uses an unrecorded global seed.",
+    "stream_components": {
+      "default_pcggenerator": 0,
+      "torch_initialization": 1,
+      "stdlib_random_if_required": 2,
+      "bootstrap_indices": 3
+    },
+    "categorical_draw_rule": "One U in [0,1) per declared plant/action draw. Select the first canonical ordered category whose cumulative probability is strictly greater than U; validate probabilities before sampling. Four-state plant tapes reserve one categorical draw per executed plant step."
+  },
+  "aggregation": {
+    "learned_primary_unit": "independently trained policy/run label; nested rollouts are not extra training replications",
+    "mean": "arithmetic mean of seedwise estimates",
+    "sd": "sample SD with ddof=1 across seedwise estimates",
+    "bootstrap_replicates": 20000,
+    "confidence_level": 0.95,
+    "bootstrap": "percentile bootstrap resampling whole training-seed blocks with replacement; use same indices for paired within-study contrasts",
+    "quantile": "linear interpolation h=(n-1)*q, between adjacent sorted values",
+    "finite_horizon_rate": "sum(K)/sum(T) within a seed; T=H in persistent-horizon studies",
+    "first_arrival_rate": "sum(K)/sum(T_cap), including zero/zero initially targeted episodes in totals, not as per-episode ratios",
+    "rate_across_seeds": "mean of seedwise ratios; separately retain pooled ratio of all totals, do not conflate",
+    "scheduled_hold": "sum(scheduled durations)/sum(K) within seed",
+    "realized_hold": "sum(executed durations)/sum(K) within seed",
+    "zero_denominator": "null with explicit reason, never 0/0=0 or NaN",
+    "fixed_policy_uncertainty": "rollout population SD ddof=0, plus separately labelled rollout-bootstrap mean interval; not a trained-seed SD",
+    "exact_reference_uncertainty": "none; numerical solver residuals, not sampling error",
+    "feasibility": "flag each seed and displayed aggregate against declared tolerance; separately report fraction of feasible training seeds; no confidence guarantee",
+    "fixed_first_arrival_bootstrap": "resample within each initial-state stratum, preserve equal state weights; do not randomize the stratified initial distribution"
+  },
+  "tolerances": {
+    "stochastic_row_sum_abs": 1e-12,
+    "negative_probability_abs": 1e-14,
+    "exact_flow_abs": 1e-09,
+    "duration_normalization_abs": 1e-09,
+    "stationary_equation_abs": 1e-10,
+    "exact_value_equation_abs": 1e-09,
+    "lp_primal_abs": 1e-08,
+    "lp_dual_abs": 1e-08,
+    "lp_gap_relative": 1e-08,
+    "exact_objective_agreement_abs": 1e-08,
+    "objective_tie_abs": 1e-10,
+    "tie_rate_abs": 1e-10,
+    "exact_budget_abs": 1e-10,
+    "empirical_accounting_abs": 1e-12,
+    "empirical_budget_abs": 1e-12,
+    "projection_feasibility_abs": 1e-10,
+    "projection_idempotence_abs": 1e-10,
+    "projection_optimality_abs": 1e-09,
+    "float32_policy_probability_sum_abs": 1e-06,
+    "float64_policy_probability_sum_abs": 1e-12,
+    "four_actor_stationarity_diagnostic": 1e-05,
+    "meanfield_actor_stationarity_diagnostic": 1e-05,
+    "complementarity_diagnostic": 1e-06
+  },
+  "acceptance": {
+    "required": "correct identities, legal actions, documented config, preserved input hashes, complete finite raw records, declared residual tests; no fabricated missing seeds",
+    "performance_threshold": null,
+    "budget_violation": "a scientific outcome to report, not reason to discard/reseed/retrain",
+    "diagnostic_residual_above_threshold": "report not near-stationary at recorded endpoint; retain the run. Do not extend/tune silently",
+    "runtime_nonfinite": "mark failed, retain logs/config/seed; changing algorithm requires versioned amendment",
+    "solver_failure": "block exact-optimum claim; retain failure and diagnostics; do not substitute historic optimum"
+  },
+  "timing": {
+    "runtime_comparisons_active": false,
+    "clock": "time.perf_counter_ns monotonic wall clock",
+    "profile": "CPU-only sequential workers; torch and BLAS threads=1; record all effective thread settings",
+    "fields": [
+      "initialization_ns",
+      "training_ns_excluding_eval_io",
+      "checkpoint_evaluation_ns",
+      "endpoint_evaluation_ns",
+      "aggregation_ns",
+      "serialization_ns",
+      "end_to_end_ns",
+      "process_peak_rss_bytes",
+      "rss_measurement_method"
+    ],
+    "include": "record hardware model, logical/physical cores, RAM, OS, Python/package versions, accelerator use, determinism flags, process isolation and source commit/hash",
+    "reruns": "Do not repeat timings and retain only favorable ones. Any timed repetition plan requires a versioned config."
+  },
+  "protocol_identity": {
+    "canonicalization": "UTF-8 bytes of json.dumps({\"study\": full_study_config, \"common\": full_common_config, \"comparator_definitions\": used_definition_map}, sort_keys=True, separators=(\",\", \":\"), ensure_ascii=False, allow_nan=False)",
+    "hash": "SHA-256",
+    "activation": "A later execution authorization/preflight record references the frozen declared protocol protocol hash; declared protocol execution_allowed=false is not rewritten. Material semantic changes require a new protocol version."
+  }
+}

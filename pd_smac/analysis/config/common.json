@@ -1,0 +1,179 @@
+{
+  "acceptance": {
+    "LP_convergence_required": false,
+    "all_seeds_retained": true,
+    "best_checkpoint_selection": false,
+    "budget_violation": "report per seed, never reject/reseed",
+    "desired_multiplier": null,
+    "diagnostic_failure": "retain and classify; not an execution failure",
+    "favorable_seed_selection": false,
+    "method_ordering_required": false,
+    "missing_seed": "retain failure; no silent replacement; complete-cohort summary unavailable; any available-case summary labelled descriptive",
+    "numerical_failure": "preserve partial record, stop without algorithmic repair; no clipping unprojected critic",
+    "performance_threshold": null,
+    "solver_failure": "retain policy/run; exact evaluation invalid pending numerical repair under unchanged tolerances; no substitution of reference values"
+  },
+  "date": "2026-09-19",
+  "diagnostics": {
+    "numerical_tolerances": {
+      "advantage_display_abs": 1e-10,
+      "normalization_abs": 1e-12,
+      "probability_sum_abs": 1e-12,
+      "stationary_abs": 1e-10,
+      "stationary_comparison_abs": 1e-10,
+      "value_abs": 1e-09
+    },
+    "R_adv_display_threshold": 1e-10,
+    "R_adv_threshold_role": "descriptor_only_not_compact_KKT_or_convergence_test",
+    "biological_exact_actor_gradient": null,
+    "biological_null_reason": "No exact finite-reset compact-feature gradient; continuing diagnostic not applicable",
+    "component_path": "pd_smac/analysis/diagnostics",
+    "exact_history_eligibility_tolerance": 0,
+    "finite_zeros_are_certificates": false,
+    "historical_float32_agreement_abs": {
+      "independent_evaluation": 2e-06,
+      "replay": 2e-06,
+      "source_update": 1e-06
+    },
+    "independent_float64_comparison_abs": 1e-08,
+    "tabular_actor_contract_preserved": true,
+    "schema_path": "pd_smac/analysis/diagnostics/diagnostic_record.schema.json",
+    "unavailable_values": "JSON null with explicit reason; no NaN or fabricated zero"
+  },
+  "execution_authorized": false,
+  "identity": {
+    "canonical_json": "json.dumps(payload,sort_keys=True,separators=(\",\",\":\"),ensure_ascii=False,allow_nan=False)",
+    "execution_receipt": "separate later authorization/preflight bound to protocol digest and actual implementation/source/input/environment hashes; do not edit locked configs",
+    "scientific_payload": "study + common + analysis + record_contract + full source SHA-256 index; ignore no keys"
+  },
+  "numerical_environment": {
+    "BLAS_threads": 1,
+    "bit_generator": "PCG64 with NumPy SeedSequence; full state and version stored",
+    "device": "CPU",
+    "dtype_policy": {
+      "biological_actors_ddqn": "float32",
+      "models_exact_evaluation": "float64",
+      "published_aggregates": "float64",
+      "save_precision": "lossless arrays and full-precision JSON numbers",
+      "tabular_actors": "float64"
+    },
+    "environment_variables": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "fastmath": false,
+    "parallel_reductions": false,
+    "torch_deterministic_algorithms": true,
+    "torch_interop_threads": 1,
+    "torch_threads": 1,
+    "versions": "record actual installed versions and compare with frozen versions before fixed_configuration/fixed_configuration; no cross-hardware bitwise guarantee",
+    "workers": "one sequential worker per cohort"
+  },
+  "operational": {
+    "interruption_not_failure": "external interruption resumes same scientific path after exact prefix/state verification; no duplicate update accounting",
+    "minimum_free_scratch_bytes_before_launch": 8589934592,
+    "nonfinite_guard": "fail immediately and preserve previous finite checkpoint plus offending input",
+    "pause_policy": "pause only after an atomic complete-hold or complete-episode checkpoint; preserve attempts and exact resume state; wall time cannot select an endpoint",
+    "pilot_scope_later": "isolated correctness/runtime probes only; never select gains, seeds or horizon from performance",
+    "pilot_seed_labels": [
+      900,
+      901,
+      902,
+      903,
+      904,
+      905,
+      906,
+      907,
+      908,
+      909
+    ],
+    "preexecution_pilot_count": 0,
+    "retry_policy": "same protocol/seed/state only for external interruption; implementation bug requires preserved failure and explicit amendment",
+    "safety_action": "save finite pre-failure state, mark numerical_safety_failure, stop; no automatic restart with changed gains or rescaling",
+    "safety_max_abs_unprojected_float": 1000000000000.0,
+    "scientific_wall_time_cutoff_seconds": null,
+    "single_process_RSS_ceiling_bytes": 4294967296
+  },
+  "release": {
+    "availability_edit": false,
+    "fresh_installation_claim": false,
+    "input_or_output_rights_cleared": false,
+    "public_release_authorized": false
+  },
+  "serialization": {
+    "arrays": "lossless NPY/NPZ with allow_pickle=False, explicit dtype/shape/order",
+    "event_identity": "unique cohort/run/attempt/decision or episode identifier; attempts are not seeds",
+    "hash": "SHA-256 raw files and logical contiguous arrays, name/dtype/shape also recorded",
+    "json": "UTF-8 sort_keys, full binary64 round-trip values, allow_nan=False",
+    "no_overwrite": true,
+    "snapshots": "record all RNG states, next unconsumed draw offsets, source/config digests and optimizer/counter state",
+    "transaction": "write temporary file, flush, atomically replace only new checkpoint name; manifest written last"
+  },
+  "spec_version": "1.0.0",
+  "statistics": {
+    "bootstrap": "percentile bootstrap resampling whole training-seed blocks with replacement; use same indices for paired within-study contrasts",
+    "bootstrap_replicates": 20000,
+    "confidence_level": 0.95,
+    "exact_reference_uncertainty": "none; numerical solver residuals, not sampling error",
+    "feasibility": "flag each seed and displayed aggregate against declared tolerance; separately report fraction of feasible training seeds; no confidence guarantee",
+    "finite_horizon_rate": "sum(K)/sum(T) within a seed; T=H in persistent-horizon studies",
+    "first_arrival_rate": "sum(K)/sum(T_cap), including zero/zero initially targeted episodes in totals, not as per-episode ratios",
+    "fixed_first_arrival_bootstrap": "resample within each initial-state stratum, preserve equal state weights; do not randomize the stratified initial distribution",
+    "fixed_policy_uncertainty": "rollout population SD ddof=0, plus separately labelled rollout-bootstrap mean interval; not a trained-seed SD",
+    "learned_primary_unit": "independently trained policy/run label; nested rollouts are not extra training replications",
+    "mean": "arithmetic mean of seedwise estimates",
+    "quantile": "linear interpolation h=(n-1)*q, between adjacent sorted values",
+    "rate_across_seeds": "mean of seedwise ratios; separately retain pooled ratio of all totals, do not conflate",
+    "realized_hold": "sum(executed durations)/sum(K) within seed",
+    "scheduled_hold": "sum(scheduled durations)/sum(K) within seed",
+    "sd": "sample SD with ddof=1 across seedwise estimates",
+    "zero_denominator": "null with explicit reason, never 0/0=0 or NaN"
+  },
+  "status": "locked_specification_not_executed",
+  "timing": {
+    "clock": "time.perf_counter_ns monotonic wall clock",
+    "fields": [
+      "initialization_ns",
+      "training_ns_excluding_eval_io",
+      "checkpoint_evaluation_ns",
+      "endpoint_evaluation_ns",
+      "aggregation_ns",
+      "serialization_ns",
+      "end_to_end_ns",
+      "process_peak_rss_bytes",
+      "rss_measurement_method"
+    ],
+    "include": "record hardware model, logical/physical cores, RAM, OS, Python/package versions, accelerator use, determinism flags, process isolation and source commit/hash",
+    "profile": "CPU-only sequential workers; torch and BLAS threads=1; record all effective thread settings",
+    "reruns": "Do not repeat timings and retain only favorable ones. Any timed repetition plan requires a versioned config.",
+    "runtime_comparisons_active": false
+  },
+  "tolerances": {
+    "complementarity_diagnostic": 1e-06,
+    "duration_normalization_abs": 1e-09,
+    "empirical_accounting_abs": 1e-12,
+    "empirical_budget_abs": 1e-12,
+    "exact_budget_abs": 1e-10,
+    "exact_flow_abs": 1e-09,
+    "exact_objective_agreement_abs": 1e-08,
+    "exact_value_equation_abs": 1e-09,
+    "float32_policy_probability_sum_abs": 1e-06,
+    "float64_policy_probability_sum_abs": 1e-12,
+    "four_actor_stationarity_diagnostic": 1e-05,
+    "lp_dual_abs": 1e-08,
+    "lp_gap_relative": 1e-08,
+    "lp_primal_abs": 1e-08,
+    "meanfield_actor_stationarity_diagnostic": 1e-05,
+    "negative_probability_abs": 1e-14,
+    "objective_tie_abs": 1e-10,
+    "projection_feasibility_abs": 1e-10,
+    "projection_idempotence_abs": 1e-10,
+    "projection_optimality_abs": 1e-09,
+    "stationary_equation_abs": 1e-10,
+    "stochastic_row_sum_abs": 1e-12,
+    "tie_rate_abs": 1e-10
+  }
+}

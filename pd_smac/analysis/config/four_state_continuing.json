@@ -1,0 +1,462 @@
+{
+  "actor": {
+    "action_order": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "bound": 12.0,
+    "initialization": {
+      "W": "all zeros float64",
+      "perturbation": null,
+      "policy": "exactly uniform over ten actions in each state"
+    },
+    "metric": "Euclidean norm in all 4x10 stored coordinates restricted to row-zero-sum subspace",
+    "projection": "true Euclidean row-zero-sum-box projection; exact interior centering allowed only with certified bounds; no center-then-clip fallback",
+    "score": "only current-state row; (onehot(a)-pi(row))/1.0 at pre-update W",
+    "shape": [
+      4,
+      10
+    ],
+    "temperature": 1.0,
+    "temperature_hex": "0x1.0000000000000p+0",
+    "type": "state-tabular softmax",
+    "zero_sum_rows": true
+  },
+  "critic": {
+    "dimension": 3,
+    "eta_initial": 0.0,
+    "feature_matrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "no_full_table_recenter": true,
+    "reference_index": 0,
+    "reference_state": "S",
+    "type": "normalized_reference_indicator",
+    "unprojected": true,
+    "v_initial": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "value": "h(S)=0, h(B)=v[0], h(O)=v[1], h(L)=v[2]"
+  },
+  "dual": {
+    "cap_hits": "record; scientific interpretation flag, not rejection",
+    "divide_by_duration": false,
+    "lambda_initial": 0.1,
+    "lower_bound": 0.0,
+    "sample_residual": "1-0.30*tau",
+    "upper_bound": 50.0
+  },
+  "evaluation": {
+    "critic_tracking": [
+      "abs(eta_hat - (eta_reward-lambda*kappa))",
+      "norm2(v-h_exact_nonreference)",
+      "norminf(v-h_exact_nonreference)",
+      "raw values and absolute differences; not convergence certificates"
+    ],
+    "diagnostic_context": {
+      "actor_contract_id": "four_state_reference_indicator_fixedT1_C12_v1",
+      "objective_family": "continuing_rate",
+      "objective_id": "occupancy_minus_0.02_exposure_rate",
+      "record_kind": "scientific_diagnostic",
+      "reference_state": 0,
+      "study_id": "four_state_continuing"
+    },
+    "diagnostics": [
+      "R_act_rate",
+      "R_act_duration_scaled",
+      "signed_rate_excess",
+      "signed_numerator_excess",
+      "R_pri",
+      "R_comp",
+      "R_adv",
+      "cap_distance",
+      "statewise_max_advantage",
+      "stationary_mass",
+      "Poisson_condition_estimate"
+    ],
+    "each_checkpoint": [
+      "stochastic actor with owned multiplier",
+      "greedy map evaluated separately with fixed zero multiplier; actor mapping null"
+    ],
+    "mode": "numerical exact supplied-model stationary/Poisson evaluation, no rollout",
+    "primary_endpoint": 1000000,
+    "reference_use": "read-only evaluator comparisons only; no reference parameters in training",
+    "references": [
+      "fixed_configuration feasible temperature-one witness",
+      "objective-matched unrestricted LP",
+      "best feasible fixed-duration state-dependent-input policy"
+    ],
+    "score_and_projection": "unchanged tabular_diagnostic and fixed_configuration components",
+    "stochastic_policy_vs_greedy": "separate IDs and records, never share multiplier certificate"
+  },
+  "execution_authorized": false,
+  "execution_gates": [
+    "explicit later fixed_configuration user authorization",
+    "fixed_configuration actual recursion/projection/score and independent step validation",
+    "unchanged fixed_configuration payload/source hashes",
+    "all ten seeds included",
+    "complete immutable run directories and hardware receipt"
+  ],
+  "gains": {
+    "alpha0": 0.12,
+    "alpha_formula": "0.12*(1+k)^(-0.9)",
+    "beta0": 0.16,
+    "beta_formula": "0.16*(1+k)^(-0.6)",
+    "counter": "global completed-decision count k, first update k=0",
+    "eta0": 0.05,
+    "eta_formula": "0.05*(1+k)^(-0.6)",
+    "gamma_eta_exact": "5/16",
+    "gamma_lambda_exact": "2/3",
+    "p_fast": 0.6,
+    "p_slow": 0.9,
+    "restart_counter": false,
+    "source_status": "new global schedule; source-compatible readoption of four old prefactors, not a recovered invocation",
+    "zeta0": 0.08,
+    "zeta_formula": "0.08*(1+k)^(-0.9)"
+  },
+  "model": {
+    "P0": [
+      [
+        0.98,
+        0.02,
+        0.0,
+        0.0
+      ],
+      [
+        0.02,
+        0.03,
+        0.95,
+        0.0
+      ],
+      [
+        0.0,
+        0.03,
+        0.87,
+        0.1
+      ],
+      [
+        0.0,
+        0.0,
+        0.1,
+        0.9
+      ]
+    ],
+    "P1": [
+      [
+        0.15,
+        0.1,
+        0.75,
+        0.0
+      ],
+      [
+        0.95,
+        0.05,
+        0.0,
+        0.0
+      ],
+      [
+        0.02,
+        0.78,
+        0.2,
+        0.0
+      ],
+      [
+        0.0,
+        0.2,
+        0.7,
+        0.1
+      ]
+    ],
+    "durations": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "inputs": [
+      0,
+      1
+    ],
+    "macro_occupancy": "sum_{ell=1}^tau P_u**ell *target",
+    "macro_reward": "macro_occupancy-0.02*u*tau",
+    "macro_transition": "P_u**tau",
+    "state_bits": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "state_order": [
+      "S",
+      "B",
+      "O",
+      "L"
+    ],
+    "target_indicator": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "update_expenditure": 1
+  },
+  "objective": {
+    "LP_multiplier_input_to_learner": false,
+    "budget": 0.3,
+    "penalty": 0.02,
+    "primary": "stationary penalized task-reward rate at final saved stochastic actor",
+    "reward_per_step": "target(next_state) - 0.02*u",
+    "secondary": [
+      "stationary occupancy",
+      "stationary update rate",
+      "mean complete duration",
+      "input exposure rate"
+    ],
+    "training_penalized_rate": "eta_lambda=eta_reward-lambda*kappa; omit lambda*Gamma constant in critic",
+    "update_cost_per_initiated_hold": 1
+  },
+  "protocol_id": "fixed_configuration-four-state-continuing-v1.0.0",
+  "randomness": {
+    "actor_consumption": "one float64 U per decision",
+    "budget_code": 300,
+    "categorical": "canonical inverse CDF first cumulative probability strictly greater than U; validate distribution before drawing; numerical tail within1e-12 may select last category as inherited; record fallback occurrence",
+    "initial_state_consumption": "one U before decision0 only",
+    "initialization_rng": "reserved but no draw because W,v,eta,lambda deterministic",
+    "key_fields": [
+      "master",
+      "study_code",
+      "purpose_code",
+      "method_code_or_zero_for_common_plant_reset",
+      "training_seed_label",
+      "budget_code_or_zero_for_common_eval",
+      "checkpoint_episode_or_zero_for_endpoint",
+      "rollout_index",
+      "stream_component"
+    ],
+    "master": 20260919,
+    "method_code": 3,
+    "plant_consumption": "one float64 U per executed plant step in absolute plant-time order",
+    "purposes": {
+      "actor": 21,
+      "bootstrap": 50,
+      "debug": 10,
+      "initial_state": 23,
+      "plant": 22,
+      "train_init_reserved_unused": 20
+    },
+    "stream_separation": "independent initial-state,actor,plant streams; exact evaluations consume none",
+    "study_code": 212,
+    "train_key_template": [
+      20260919,
+      212,
+      "purpose",
+      3,
+      "seed",
+      300,
+      0,
+      0,
+      0
+    ]
+  },
+  "recording": {
+    "diagnostic_values": "sidecar separate from train state",
+    "gain_values": "derivable from k and frozen formula; store at checkpoints and manifest exact prefactors/exponents",
+    "plant_arrays": [
+      "post_states:int8",
+      "uniforms:float64"
+    ],
+    "raw_decision_floats": [
+      "reward",
+      "delta",
+      "eta_before",
+      "eta_after",
+      "lambda_before",
+      "lambda_after",
+      "v_after_0",
+      "v_after_1",
+      "v_after_2",
+      "actor_uniform",
+      "chosen_probability"
+    ],
+    "raw_decision_ints": [
+      "k",
+      "state",
+      "action_index",
+      "next_state",
+      "plant_offset",
+      "duration",
+      "target_count",
+      "input_value"
+    ],
+    "restart_state": [
+      "W",
+      "v",
+      "eta",
+      "lambda",
+      "current_physical_state",
+      "k_next",
+      "plant_time",
+      "cumulative_counts",
+      "all_generators_states",
+      "all_next_uniform_offsets",
+      "manifest_of_completed_raw_chunks"
+    ]
+  },
+  "recursion": {
+    "W_update": "W_next=project_C12(W_k+alpha(k)*delta*score)",
+    "delta": "R-lambda_k-eta_k*tau+v_k dot xi(next)-v_k dot xi(current)",
+    "eta_update": "eta_next=eta_k+beta_eta(k)*delta",
+    "extra_normalization": "none; no rate scaling, clipping TD, entropy, warm start, reset or terminal mask",
+    "lambda_update": "lambda_next=clip(lambda_k+zeta(k)*(1-0.30*tau),0,50)",
+    "plant_rule": "sample every actual plant step using unchanged P_u; accumulate post-transition reward; same input over full hold",
+    "update_order": "compute delta and score from frozen pre-update state; all four updates use that delta and their old coordinates",
+    "v_update": "v_next=v_k+beta(k)*delta*xi(current)"
+  },
+  "scope": {
+    "isolation": "not established by gauge removal or finite trace",
+    "matches_equations_not_all_hypotheses": true,
+    "near_optimality_requirement": false,
+    "old_reset_comparison": "not a temperature-only ablation",
+    "sampled_boundedness": "Assumption9 retained, not proved by finite run"
+  },
+  "source_basis": {
+    "caps": "FOUR-OLD-CAP",
+    "model": "FOUR-CONFIG",
+    "new_choices": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05"
+    ],
+    "old_gain_prefactors": "FOUR-OLD-RECENTER",
+    "recursion": [
+      "EQ-TD",
+      "EQ-ACTOR-DUAL",
+      "EQ-GAINS"
+    ]
+  },
+  "spec_version": "1.0.0",
+  "status": "locked_specification_not_executed",
+  "study_id": "four_state_continuing",
+  "training": {
+    "K_max": 1000000,
+    "checkpoint_decisions": [
+      0,
+      100,
+      1000,
+      5000,
+      10000,
+      25000,
+      50000,
+      100000,
+      200000,
+      400000,
+      600000,
+      800000,
+      1000000
+    ],
+    "complete_holds_only": true,
+    "initial_state_draws": 1,
+    "initial_state_law": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "plant_resets_after_initialization": 0,
+    "plant_step_bounds_per_seed": [
+      1000000,
+      5000000
+    ],
+    "production_counter_budget": "decision-based, report actual plant time; not compared as equal interactions to old reset study",
+    "restart_snapshot_every_decisions": 10000,
+    "seed_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "stop": "after update K_max-1 and its entire hold; no truncated last hold and no extra update",
+    "terminal_mask": false,
+    "updates_per_seed": 1000000
+  }
+}
