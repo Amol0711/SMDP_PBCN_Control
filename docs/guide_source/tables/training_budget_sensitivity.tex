@@ -1,0 +1,32 @@
+\begin{table}[htbp]
+\caption{Paired training-budget 28-node control. Each learned entry is a mean $\pm$ sample standard deviation across four paths, with 120 paired evaluation rollouts per path. Primary comparisons use greedy policies. The lower block gives within-path occupancy changes from episode 240 to 1200 and unadjusted 95\% percentile intervals from 20,000 whole-path resamples. Secondary stochastic modes are not substituted for primary rows.}
+\label{comp:tab:training_budget_sensitivity}
+\centering\begingroup\footnotesize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Policy & \shortstack{Occupancy\\240 episodes} & \shortstack{Occupancy\\1200 episodes} & \shortstack{Task reward\\1200 episodes} & \shortstack{Update rate\\1200 episodes} \\
+\midrule
+DDQN+PER, greedy & $0.379911\pm0.176681$ & $0.616443\pm0.040297$ & $0.593546\pm0.032093$ & $1.000000\pm0.000000$ \\[2pt]
+TT-AC, greedy & $0.083333\pm0.028260$ & $0.518824\pm0.276882$ & $0.481833\pm0.252607$ & $1.000000\pm0.000000$ \\[2pt]
+TT-AC, stochastic & $0.416518\pm0.108934$ & $0.552827\pm0.200598$ & $0.513568\pm0.177669$ & $1.000000\pm0.000000$ \\[2pt]
+PD-SMAC, greedy & $0.662574\pm0.019172$ & $0.662054\pm0.018657$ & $0.632594\pm0.019108$ & $0.234747\pm0.014019$ \\[2pt]
+PD-SMAC, stochastic & $0.590476\pm0.041945$ & $0.653720\pm0.023528$ & $0.619381\pm0.024434$ & $0.263690\pm0.009919$ \\[2pt]
+\bottomrule
+\end{tabular*}
+\par\smallskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcc@{}}
+\toprule
+Policy & Mean paired occupancy change & 95\% percentile interval \\
+\midrule
+DDQN+PER, greedy & $0.236533$ & $[0.098958,0.374107]$ \\
+TT-AC, greedy & $0.435491$ & $[0.145387,0.589583]$ \\
+TT-AC, stochastic & $0.136310$ & $[-0.061458,0.332292]$ \\
+PD-SMAC, greedy & $-0.000521$ & $[-0.001562,0.000000]$ \\
+PD-SMAC, stochastic & $0.063244$ & $[0.045833,0.083333]$ \\
+\bottomrule
+\end{tabular*}
+\par\smallskip\raggedright The fixed $u=1$, nominal-hold-5 reference has occupancy $0.662574$ with population standard deviation $0.180545$ across 480 rollouts, rate $6/28$, and realized mean hold $28/6$. It has no training-seed uncertainty and is not resimulated for this control.
+\endgroup
+\end{table}

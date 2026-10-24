@@ -1,0 +1,13 @@
+# Numerical interpretation
+
+The four-state objectives are target occupancy and occupancy minus intervention penalty, each per plant time. Unrestricted occupation-measure LP references are not compact full-support actor optima. The deterministic tie member is selected using the declared objective and rate tolerances. Stochastic policies, their greedy extractions and their multipliers retain separate identities.
+
+Biological finite-horizon metrics count the post-transition target indicator and input expenditure. Within each seed the update rate is total initiated holds divided by total executed time. Nominal and realized holds differ when the horizon interrupts the last hold. Under a constant input and paired plant draws, re-declaration timing changes update expenditure rather than the plant trajectory. This is a within-model statement, not equivalence between the two melanoma models.
+
+First arrival uses the 512-state starting distribution, target state 507, horizon 100 and immediate stopping inside a hold. An initially targeted episode has zero time and zero updates. A hit at step 100 is a success. The cost is the expectation of capped elapsed time plus 0.01 times input exposure plus 100 times the failure indicator. The constrained numerator is expected updates minus 0.40 times expected capped time. Capped time, failure-coded time and successful-only time remain distinct.
+
+Learned deviations are sample standard deviations across independent training-seed estimates. Fixed biological-policy deviations are population standard deviations across rollouts. Nested rollouts do not become extra independent training seeds. The mean of seedwise ratios, a pooled ratio of totals and the mean of per-episode positive-time ratios are separate estimands. Bootstrap summaries resample whole stated units with the saved 20,000 index vectors and linear quantiles. Exact reference solver errors are not sampling uncertainty.
+
+The mean-field calculation is deterministic and constant-gain. Its final actor residual exceeds the stated threshold even though the endpoint is feasible and its multiplier is zero. Three four-state endpoints retain nonzero complementarity above threshold. One 28-node stochastic endpoint violates its empirical budget. All first-arrival greedy extractions violate their budget despite feasible stochastic endpoints. Three 70-node stochastic endpoints retain positive multipliers at slack empirical constraints. These outcomes remain in the saved evidence.
+
+No finite trace, small residual, zero multiplier, greedy extraction or successful reproduction is a convergence or complete optimality certificate. Actor stationarity remains unavailable where the matching exact objective gradient has not been supplied.

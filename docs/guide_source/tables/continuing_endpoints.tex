@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\caption{Continuing four-state endpoints after $10^6$ complete decisions per seed. Rates and deviations are computed from ten stationary saved-policy evaluations. Values are mean $\pm$ sample standard deviation. The stochastic row is primary. The greedy maps have no inherited actor or multiplier certificate; only the stochastic policies carry the diagnostics below.}
+\label{comp:tab:continuing_endpoints}
+\centering\begingroup\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Policy & Target occupancy & Task reward & Update rate & Feasible seeds \\
+\midrule
+Stochastic & $0.568701\pm0.005811$ & $0.558343\pm0.005969$ & $0.327455\pm0.001490$ & 0/10 \\
+Greedy & $0.929183\pm0.007752$ & $0.926353\pm0.008241$ & $0.215062\pm0.018074$ & 10/10 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc@{}}
+\toprule
+Stochastic diagnostic & Mean & Minimum & Maximum \\
+\midrule
+$\lambda$ & $0.299313$ & $0.196823$ & $0.379040$ \\
+$R_{\rm act}$ & $0.091731$ & $0.088950$ & $0.097163$ \\
+$R_{\rm adv}$ & $2.073806$ & $2.042679$ & $2.129584$ \\
+$R_{\rm pri}$ & $0.027455$ & $0.024146$ & $0.029215$ \\
+$R_{\rm comp}$ & $0.008273$ & $0.004752$ & $0.011006$ \\
+\bottomrule
+\end{tabular*}
+\endgroup
+\end{table}

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite this computational companion and the associated article when using the software or numerical records."
+type: software
+title: "PD-SMAC Computational Companion"
+authors:
+  - family-names: Yerudkar
+    given-names: Amol
+  - family-names: Liu
+    given-names: Yang
+  - family-names: Tang
+    given-names: Shaoting
+  - family-names: Jiang
+    given-names: Yunliang
+abstract: "Implementations, fixed numerical records, evaluation procedures and plotting workflows for constrained input–duration control of probabilistic Boolean control networks."
+preferred-citation:
+  type: article
+  title: "Update-Rate-Constrained Semi-Markov Actor–Critic Learning for Probabilistic Boolean Control Networks"
+  authors:
+    - family-names: Wu
+      given-names: Jiahao
+    - family-names: Yerudkar
+      given-names: Amol
+    - family-names: Del Vecchio
+      given-names: Carmen

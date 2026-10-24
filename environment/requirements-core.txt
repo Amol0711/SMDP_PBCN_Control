@@ -1,0 +1,11 @@
+# Versions in the installed validation environment; no clean-install success asserted.
+numpy==2.3.5
+scipy==1.17.0
+numba==0.65.1
+llvmlite==0.47.0
+psutil==7.2.2
+threadpoolctl==3.6.0
+jsonschema==4.26.0
+
+# Interval cross-check dependency for the added exact-model paths.
+mpmath==1.3.0
