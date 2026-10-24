@@ -1,6 +1,6 @@
 # PD-SMAC computational companion
 
-Implementations, fixed numerical records, evaluation procedures and native plotting workflows for **Update-Rate-Constrained Semi-Markov Actor–Critic Learning for Probabilistic Boolean Control Networks**, by Jiahao Wu, Amol Yerudkar and Carmen Del Vecchio.
+Implementations, fixed numerical records, evaluation procedures and native plotting workflows for **Update-Rate-Constrained Semi-Markov Actor–Critic Learning for Probabilistic Boolean Control Networks**.
 
 This package contains only computational implementations, data, numerical plots and supporting instructions. It excludes the manuscript, theoretical results and proofs, conceptual figures, reviewer correspondence and private execution records. It contains no Git history. Author permission, project licensing and rights to redistribute derived outputs must be resolved before public sharing. No license is granted by this package; read [access and licensing](ACCESS_AND_LICENSE.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
