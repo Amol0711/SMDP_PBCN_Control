@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+*.log
+*.fls
+*.fdb_latexmk
