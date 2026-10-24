@@ -1,0 +1,38 @@
+\providecommand{\FigureDataDir}{figures/data}
+\begin{tikzpicture}
+\begin{axis}[name=prten0,
+width=0.84\textwidth,height=0.165\textheight,xmin=850,xmax=6950,xtick={1120,2240,3360,4480,5600,6720},scaled x ticks=false,ymin=-0.08,ymax=1.02,
+ylabel={Target occupancy},grid=both,tick label style={font=\small},label style={font=\small},
+xticklabels=\empty,
+legend style={font=\small,at={(0.5,1.08)},anchor=south,legend columns=3,draw=none},
+]
+\addplot+[thick,black!65,densely dotted,mark=o,mark options={fill=white},mark size=3.2pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=occupancy,y error=occupancy_sd] {\FigureDataDir/f3_ttac.csv};
+\addlegendentry{TT-AC}
+\addplot+[thick,orange!85!black,dashed,mark=square*,mark size=1.7pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=occupancy,y error=occupancy_sd] {\FigureDataDir/f3_ddqn.csv};
+\addlegendentry{DDQN+PER}
+\addplot+[thick,green!50!black,mark=diamond*,mark options={fill=green!50!black,draw=green!50!black},mark size=2.1pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=occupancy,y error=occupancy_sd] {\FigureDataDir/f3_pdsmac.csv};
+\addlegendentry{PD-SMAC}
+\end{axis}
+\begin{axis}[name=prten1,
+at={(prten0.south west)},anchor=north west,yshift=-1.00cm,
+width=0.84\textwidth,height=0.165\textheight,xmin=850,xmax=6950,xtick={1120,2240,3360,4480,5600,6720},scaled x ticks=false,ymin=0.10,ymax=1.08,
+ylabel={Updates / plant step},grid=both,tick label style={font=\small},label style={font=\small},
+xticklabels=\empty,
+]
+\addplot[black!60,densely dashdotted,forget plot] coordinates {(850,0.4) (6950,0.4)};
+\addplot+[thick,black!65,densely dotted,mark=o,mark options={fill=white},mark size=3.2pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=rate,y error=rate_sd] {\FigureDataDir/f3_ttac.csv};
+\addplot+[thick,orange!85!black,dashed,mark=square*,mark size=1.7pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=rate,y error=rate_sd] {\FigureDataDir/f3_ddqn.csv};
+\addplot+[thick,green!50!black,mark=diamond*,mark options={fill=green!50!black,draw=green!50!black},mark size=2.1pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=rate,y error=rate_sd] {\FigureDataDir/f3_pdsmac.csv};
+\end{axis}
+\begin{axis}[name=prten2,
+at={(prten1.south west)},anchor=north west,yshift=-1.00cm,
+width=0.84\textwidth,height=0.165\textheight,xmin=850,xmax=6950,xtick={1120,2240,3360,4480,5600,6720},scaled x ticks=false,ymin=-0.30,ymax=0.68,
+ylabel={Rate minus $0.40$},grid=both,tick label style={font=\small},label style={font=\small},
+xlabel={Training plant steps per seed},
+]
+\addplot[black!60,densely dashdotted,forget plot] coordinates {(850,0) (6950,0)};
+\addplot+[thick,black!65,densely dotted,mark=o,mark options={fill=white},mark size=3.2pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=residual,y error=residual_sd] {\FigureDataDir/f3_ttac.csv};
+\addplot+[thick,orange!85!black,dashed,mark=square*,mark size=1.7pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=residual,y error=residual_sd] {\FigureDataDir/f3_ddqn.csv};
+\addplot+[thick,green!50!black,mark=diamond*,mark options={fill=green!50!black,draw=green!50!black},mark size=2.1pt,error bars/.cd,y dir=both,y explicit] table[col sep=comma,x=plant_steps,y=residual,y error=residual_sd] {\FigureDataDir/f3_pdsmac.csv};
+\end{axis}
+\end{tikzpicture}

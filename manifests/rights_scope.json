@@ -1,0 +1,46 @@
+{
+  "public_release_authorized": false,
+  "project_license_selected": false,
+  "copyright_ownership_asserted": false,
+  "categories": [
+    {
+      "category": "project_code_and_computational_explanations",
+      "included_for_private_review": true,
+      "public_redistribution": "author_license_and_permission_pending"
+    },
+    {
+      "category": "synthetic_results_and_model_specifications",
+      "included_for_private_review": true,
+      "public_redistribution": "author_license_and_attribution_review_pending"
+    },
+    {
+      "category": "learned_policies_and_biological_derived_scalar_outputs",
+      "included_for_private_review": true,
+      "public_redistribution": "derived_output_rights_review_pending"
+    },
+    {
+      "category": "external_melanoma_inputs",
+      "included_for_private_review": false,
+      "public_redistribution": "not_granted",
+      "access": "six exact external input files with SHA-256 checks"
+    },
+    {
+      "category": "biological_full_trajectories_and_restart_states",
+      "included_for_private_review": false,
+      "public_redistribution": "not_granted",
+      "access": "113 external authorization/schema/state files with original guard"
+    },
+    {
+      "category": "third_party_dependencies",
+      "binaries_or_sources_vendored": false,
+      "attribution_metadata_preserved": true
+    },
+    {
+      "category": "excluded_noncomputational_material",
+      "included_for_private_review": false,
+      "scope": "not computational companion content"
+    }
+  ],
+  "hash_identity_is_not_permission": true,
+  "acknowledgement_is_not_a_license": true
+}

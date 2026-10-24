@@ -1,0 +1,59 @@
+{
+  "local_use_authorization_required": true,
+  "bundled_inputs": false,
+  "studies": {
+    "melanoma28": [
+      {
+        "input_id": "melanoma28_binary_view",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_binarized_unique_gene_view.csv",
+        "sha256": "34ccf5101f2f7df6cd205a5e5d1f08b8e12b42275f00f02e28c618291f5470dc",
+        "bytes": 3054,
+        "role": "frozen_primary_evaluation_input"
+      },
+      {
+        "input_id": "melanoma28_gene_manifest",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_gene_manifest.csv",
+        "sha256": "5b6c65d1ec90bb8aa83f504b8ae66698c61b10eb666ba17ba74079130964f071",
+        "bytes": 1585,
+        "role": "gene_manifest"
+      },
+      {
+        "input_id": "melanoma28_protocol",
+        "study_id": "melanoma28",
+        "path": "melanoma28/bittner28_controlled_pbcn_protocol.json",
+        "sha256": "76b9ec593f1cde179b82a0c0642d972d002cb124a8cfdb6afcc61c73d79d401b",
+        "bytes": 2430,
+        "role": "protocol"
+      }
+    ],
+    "melanoma70": [
+      {
+        "input_id": "melanoma70_binary_view",
+        "study_id": "melanoma70",
+        "path": "melanoma70/bittner70_binarized_unique_gene_view.csv",
+        "sha256": "1690d0eed78176ed5ee64f42d9a6e8e23bbea4565bd15e57cb1603f2c5120828",
+        "bytes": 7683,
+        "role": "frozen_primary_evaluation_input"
+      },
+      {
+        "input_id": "melanoma70_gene_manifest",
+        "study_id": "melanoma70",
+        "path": "melanoma70/bittner70_gene_manifest.csv",
+        "sha256": "fe44befb461b12369f7c5036aef4f12c667365cb231756f3cf55bcd677c436da",
+        "bytes": 4072,
+        "role": "gene_manifest"
+      },
+      {
+        "input_id": "melanoma70_protocol",
+        "study_id": "melanoma70",
+        "path": "melanoma70/bittner70_controlled_pbcn_protocol.json",
+        "sha256": "df3133fff6251d9ffdf2341828c7daa3fd67ad0d0acc671ba7de4e21c1abdd87",
+        "bytes": 5083,
+        "role": "protocol"
+      }
+    ]
+  },
+  "primary_70_derivation": "Known 251-of-2170-cell mismatch with available-workbook reconstruction. Frozen primary identity is used; derivation remains unresolved."
+}

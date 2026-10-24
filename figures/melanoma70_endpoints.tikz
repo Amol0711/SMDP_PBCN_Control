@@ -1,0 +1,70 @@
+\providecommand{\FigureDataDir}{figures/data}
+\begin{minipage}{\textwidth}
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.265\textheight,xmin=0.15,xmax=1.08,xtick={0.2,0.4,0.6,0.8,1.0},ymin=0.64,ymax=1.04,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(a) Occupancy},xlabel={Updates / plant step},ylabel={Target occupancy},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,0.64) (1.08,0.64) (1.08,1.04) (0.4,1.04)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,0.64) (0.4,1.04)};
+\addplot+[only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_ddqn.csv};
+\addplot+[only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_ttac.csv};
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_fixed.csv};
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.8pt,mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_pdsmac.csv};
+\node[font=\small,anchor=south] at (axis cs:1.0,1.005) {$\tau=1$};
+\node[font=\small,anchor=south] at (axis cs:0.5,1.005) {$\tau=2$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.265\textheight,xmin=0.15,xmax=1.08,xtick={0.2,0.4,0.6,0.8,1.0},ymin=0.45,ymax=6.2,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(b) First target visit},xlabel={Updates / plant step},ylabel={Coded time (plant steps)},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,0.45) (1.08,0.45) (1.08,6.2) (0.4,6.2)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,0.45) (0.4,6.2)};
+\addplot+[only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p2_ddqn.csv};
+\addplot+[only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p2_ttac.csv};
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p2_fixed.csv};
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.8pt,mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p2_pdsmac.csv};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{1.0em}\centering
+\begin{minipage}{0.75\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.24\textheight,xmin=0.15,xmax=0.43,xtick={0.2,0.25,0.3,0.35,0.4},ymin=0.64,ymax=1.04,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+legend to name=prtenmel70legend,legend columns=2,
+legend style={font=\small,draw=none,fill=none,legend cell align=left,/tikz/every even column/.append style={column sep=1.6em}},
+title={(c) Expanded rate view of panel (a)},xlabel={Updates / plant step},ylabel={Target occupancy},restrict x to domain=0.15:0.43,
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,0.64) (0.43,0.64) (0.43,1.04) (0.4,1.04)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,0.64) (0.4,1.04)};
+\addlegendimage{only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black}}
+\addlegendentry{DDQN+PER, greedy}
+\addlegendimage{only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white}}
+\addlegendentry{TT-AC, greedy}
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_fixed.csv};
+\addlegendentry{Fixed $u\equiv1$}
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.8pt,mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f4_p1_pdsmac.csv};
+\addlegendentry{PD-SMAC, greedy}
+\node[font=\small,anchor=south] at (axis cs:0.25,1.005) {$\tau=4$};
+\node[font=\small,anchor=south] at (axis cs:0.2,1.005) {$\tau=6$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{0.8em}\noindent\makebox[\textwidth][c]{\pgfplotslegendfromname{prtenmel70legend}}
+\end{minipage}

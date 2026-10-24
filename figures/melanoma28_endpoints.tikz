@@ -1,0 +1,79 @@
+\providecommand{\FigureDataDir}{figures/data}
+\begin{minipage}{\textwidth}
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.265\textheight,xmin=0.15,xmax=1.08,xtick={0.2,0.4,0.6,0.8,1.0},ymin=-0.03,ymax=0.94,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(a) Occupancy},xlabel={Updates / plant step},ylabel={Target occupancy},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,-0.03) (1.08,-0.03) (1.08,0.94) (0.4,0.94)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,-0.03) (0.4,0.94)};
+\addplot+[only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_ddqn.csv};
+\addplot+[only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_ttac.csv};
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_fixed_u1.csv};
+\addplot+[only marks,green!40!black,mark=diamond,mark size=4pt,restrict expr to domain={\thisrow{Gamma}}{0.249:0.251},mark options={draw=green!40!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.399:0.401},mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\addplot+[only marks,magenta!70!black,mark=pentagon*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.549:0.551},mark options={draw=magenta!70!black,fill=magenta!70!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\node[font=\small,anchor=south] at (axis cs:1.0,0.86) {$\tau=1$};
+\node[font=\small,anchor=south] at (axis cs:0.5,0.86) {$\tau=2$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.265\textheight,xmin=0.15,xmax=1.08,xtick={0.2,0.4,0.6,0.8,1.0},ymin=0,ymax=29,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(b) First target visit},xlabel={Updates / plant step},ylabel={Coded time (plant steps)},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,0) (1.08,0) (1.08,29) (0.4,29)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,0) (0.4,29)};
+\addplot+[only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_ddqn.csv};
+\addplot+[only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_ttac.csv};
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_fixed_u1.csv};
+\addplot+[only marks,green!40!black,mark=diamond,mark size=4pt,restrict expr to domain={\thisrow{Gamma}}{0.249:0.251},mark options={draw=green!40!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_budget.csv};
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.399:0.401},mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_budget.csv};
+\addplot+[only marks,magenta!70!black,mark=pentagon*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.549:0.551},mark options={draw=magenta!70!black,fill=magenta!70!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_time_budget.csv};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{1.0em}\centering
+\begin{minipage}{0.75\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.24\textheight,xmin=0.15,xmax=0.43,xtick={0.2,0.25,0.3,0.35,0.4},ymin=0.44,ymax=0.94,
+grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+legend to name=prtenmel28legend,legend columns=2,
+legend style={font=\small,draw=none,fill=none,legend cell align=left,/tikz/every even column/.append style={column sep=1.6em}},
+title={(c) Expanded rate view of panel (a)},xlabel={Updates / plant step},ylabel={Target occupancy},restrict x to domain=0.15:0.43,
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.4,0.44) (0.43,0.44) (0.43,0.94) (0.4,0.94)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.4,0.44) (0.4,0.94)};
+\addlegendimage{only marks,orange!85!black,mark=square*,mark size=2.4pt,mark options={draw=orange!85!black,fill=orange!85!black}}
+\addlegendentry{DDQN+PER, greedy}
+\addlegendimage{only marks,black!70,mark=o,mark size=3.2pt,mark options={draw=black!70,fill=white}}
+\addlegendentry{TT-AC, greedy}
+\addplot+[only marks,blue!65!black,mark=triangle,mark size=4pt,mark options={draw=blue!65!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_fixed_u1.csv};
+\addlegendentry{Fixed $u\equiv1$}
+\addplot+[only marks,green!40!black,mark=diamond,mark size=4pt,restrict expr to domain={\thisrow{Gamma}}{0.249:0.251},mark options={draw=green!40!black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\addlegendentry{PD-SMAC, $\Gamma=0.25$}
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.399:0.401},mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\addlegendentry{PD-SMAC, $\Gamma=0.40$}
+\addplot+[only marks,magenta!70!black,mark=pentagon*,mark size=2.6pt,restrict expr to domain={\thisrow{Gamma}}{0.549:0.551},mark options={draw=magenta!70!black,fill=magenta!70!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f2_budget.csv};
+\addlegendentry{PD-SMAC, $\Gamma=0.55$}
+\node[font=\small,anchor=south] at (axis cs:0.35714285714285704,0.86) {$\tau=3$};
+\node[font=\small,anchor=south] at (axis cs:0.25,0.86) {$\tau=4$};
+\node[font=\small,anchor=south] at (axis cs:0.2142857142857143,0.86) {$\tau=5$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{0.8em}\noindent\makebox[\textwidth][c]{\pgfplotslegendfromname{prtenmel28legend}}
+\end{minipage}

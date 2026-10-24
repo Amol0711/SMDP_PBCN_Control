@@ -1,0 +1,38 @@
+\providecommand{\FigureDataDir}{../data}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 3,horizontal sep=1.35cm,vertical sep=1.05cm},width=7.15cm,height=4.05cm,xmin=0,xmax=1,xtick={0,0.5,1},grid=major,scaled y ticks=false,tick label style={font=\small},label style={font=\small},title style={font=\small},unbounded coords=jump]
+\nextgroupplot[title={(a) Task-reward rate},ylabel={$\eta$},ymin=0.47,ymax=0.58,ytick={0.48,0.52,0.56},xticklabels={,,}]
+\addplot[name path=upper0,draw=none,forget plot] table[col sep=comma,x=decision_million,y=reward_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower0,draw=none,forget plot] table[col sep=comma,x=decision_million,y=reward_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper0 and lower0];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=reward] {\FigureDataDir/continuing_stochastic.csv};
+\nextgroupplot[title={(b) Update rate},ylabel={$\kappa$},ymin=0.295,ymax=0.338,ytick={0.30,0.32,0.34},xticklabels={,,}]
+\addplot[name path=upper1,draw=none,forget plot] table[col sep=comma,x=decision_million,y=rate_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower1,draw=none,forget plot] table[col sep=comma,x=decision_million,y=rate_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper1 and lower1];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=rate] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[black!65,dashed] coordinates {(0,0.3)(1,0.3)} node[pos=0.98,anchor=south east,font=\small,fill=white,inner sep=1pt] {$\Gamma=0.30$};
+\nextgroupplot[title={(c) Owned multiplier},ylabel={$\lambda$},ymin=0.05,ymax=0.38,ytick={0.1,0.2,0.3},xticklabels={,,}]
+\addplot[name path=upper2,draw=none,forget plot] table[col sep=comma,x=decision_million,y=lambda_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower2,draw=none,forget plot] table[col sep=comma,x=decision_million,y=lambda_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper2 and lower2];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=lambda] {\FigureDataDir/continuing_stochastic.csv};
+\nextgroupplot[title={(d) Projected actor residual},ylabel={$R_{\rm act}$},ymode=log,ymin=0.000005,ymax=0.2,ytick={0.00001,0.001,0.1},xticklabels={,,}]
+\addplot[name path=upper3,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_act_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower3,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_act_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper3 and lower3];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=R_act] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[black!65,dashed] coordinates {(0,1e-05)(1,1e-05)} node[pos=0.98,anchor=south east,font=\small,fill=white,inner sep=1pt] {$10^{-5}$};
+\nextgroupplot[title={(e) Policy-space advantage},ylabel={$R_{\rm adv}$},ymin=2,ymax=2.35,ytick={2,2.15,2.3},xlabel={Complete decisions $k/10^6$}]
+\addplot[name path=upper4,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_adv_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower4,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_adv_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper4 and lower4];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=R_adv] {\FigureDataDir/continuing_stochastic.csv};
+\nextgroupplot[title={(f) Complementarity},ylabel={$R_{\rm comp}$},ymode=log,ymin=0.0000005,ymax=0.02,ytick={0.000001,0.0001,0.01},xlabel={Complete decisions $k/10^6$}]
+\addplot[name path=upper5,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_comp_upper] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[name path=lower5,draw=none,forget plot] table[col sep=comma,x=decision_million,y=R_comp_lower] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[blue!12,draw=none,forget plot] fill between[of=upper5 and lower5];
+\addplot[blue!70!black,line width=1pt,mark=*,mark size=1pt,mark options={draw=blue!70!black,fill=blue!70!black}] table[col sep=comma,x=decision_million,y=R_comp] {\FigureDataDir/continuing_stochastic.csv};
+\addplot[black!65,dashed] coordinates {(0,1e-06)(1,1e-06)} node[pos=0.98,anchor=south east,font=\small,fill=white,inner sep=1pt] {$10^{-6}$};
+\end{groupplot}
+\end{tikzpicture}

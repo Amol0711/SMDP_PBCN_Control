@@ -1,0 +1,19 @@
+{
+  "mpmath": {
+    "version": "1.3.0",
+    "metadata": {
+      "Metadata-Version": "2.1",
+      "Name": "mpmath",
+      "Version": "1.3.0",
+      "Summary": "Python library for arbitrary-precision floating-point arithmetic",
+      "Home-page": "http://mpmath.org/",
+      "Author": "Fredrik Johansson",
+      "Author-email": "fredrik.johansson@gmail.com",
+      "License": "BSD",
+      "Project-URL": "Documentation, http://mpmath.org/doc/current/",
+      "License-File": "LICENSE",
+      "Provides-Extra": "tests",
+      "Requires-Dist": "pytest (>=4.6) ; extra == 'tests'"
+    }
+  }
+}

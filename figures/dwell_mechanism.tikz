@@ -1,0 +1,72 @@
+\providecommand{\FigureDataDir}{figures/data}
+\begin{minipage}{\textwidth}
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.27\textheight,xmin=0.8,xmax=5.2,ymin=0,ymax=1.05,xtick={1,2,3,4,5},grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(a) Conditional hold response},xlabel={Scheduled hold $\tau$},ylabel={Target fraction in one hold},
+legend style={font=\small,at={(0.03,0.03)},anchor=south west,draw=none,fill=white,legend cell align=left},
+]
+\addplot+[only marks,mark size=2.6pt,blue!65!black,mark=*,mark options={draw=blue!65!black,fill=blue!65!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p1_s01.csv};
+\addlegendentry{Safe $S$, $u=0$}
+\addplot+[only marks,mark size=2.6pt,orange!85!black,mark=square*,mark options={draw=orange!85!black,fill=orange!85!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p1_s02.csv};
+\addlegendentry{Boundary $B$, $u=1$}
+\addplot+[only marks,mark size=2.6pt,green!40!black,mark=triangle*,mark options={draw=green!40!black,fill=green!40!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p1_s03.csv};
+\addlegendentry{Off-target $O$, $u=1$}
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.27\textheight,xmin=0.15,xmax=1.07,ymin=0.89,ymax=1.02,xtick={0.2,0.4,0.6,0.8,1.0},grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(b) Stationary comparison},xlabel={Updates / plant step},ylabel={Target occupancy},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.3,0.89) (1.07,0.89) (1.07,1.02) (0.3,1.02)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.3,0.89) (0.3,1.02)};
+\addplot+[only marks,blue!65!black,mark=triangle*,mark size=2.8pt,mark options={draw=blue!65!black,fill=blue!65!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s03.csv};
+\addplot+[only marks,orange!85!black,mark=star,mark size=4.4pt,mark options={draw=orange!85!black,fill=orange!85!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s04.csv};
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.8pt,mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f5_p2_s05.csv};
+\addplot+[only marks,black,mark=o,mark size=4.5pt,mark options={draw=black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f5_p2_s07.csv};
+\addplot+[only marks,violet!80!black,mark=square*,mark size=3pt,mark options={draw=violet!80!black,fill=violet!80!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s06.csv};
+\node[font=\small,anchor=south] at (axis cs:1.0,1.002) {$\tau=1$};
+\node[font=\small,anchor=south] at (axis cs:0.5,1.002) {$\tau=2$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{1.0em}\centering
+\begin{minipage}{0.84\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.96\linewidth,height=0.24\textheight,xmin=0.18,xmax=0.35,ymin=0.901,ymax=0.99,xtick={0.2,0.225,0.25,0.275,0.3,0.325,0.35},grid=major,tick label style={font=\small},label style={font=\small},title style={font=\normalsize},
+filter discard warning=false,unbounded coords=discard,scaled ticks=false,xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+title={(c) Expanded rate view of panel (b)},xlabel={Updates / plant step},ylabel={Target occupancy},restrict x to domain=0.18:0.35,
+legend to name=prtenhetlegend,legend columns=2,
+legend style={font=\small,draw=none,fill=none,legend cell align=left,/tikz/every even column/.append style={column sep=1.6em}},
+]
+\addplot[draw=none,fill=black!4,forget plot] coordinates {(0.3,0.901) (0.35,0.901) (0.35,0.99) (0.3,0.99)} \closedcycle;
+\addplot[black!65,densely dashdotted,forget plot] coordinates {(0.3,0.901) (0.3,0.99)};
+\addplot+[only marks,blue!65!black,mark=triangle*,mark size=2.8pt,mark options={draw=blue!65!black,fill=blue!65!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s03.csv};
+\addlegendentry{Fixed-$\tau$ input optimum}
+\addplot+[only marks,orange!85!black,mark=star,mark size=4.4pt,mark options={draw=orange!85!black,fill=orange!85!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s04.csv};
+\addlegendentry{Feasible deterministic optimum}
+\addplot+[only marks,green!40!black,mark=diamond*,mark size=2.8pt,mark options={draw=green!40!black,fill=green!40!black},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f5_p2_s05.csv};
+\addlegendentry{PD-SMAC, stochastic}
+\addplot+[only marks,black,mark=o,mark size=4.5pt,mark options={draw=black,fill=white},error bars/.cd,x dir=both,x explicit,y dir=both,y explicit] table[col sep=comma,x=x,y=y,x error=x_error,y error=y_error] {\FigureDataDir/f5_p2_s07.csv};
+\addlegendentry{PD-SMAC, greedy}
+\addplot+[only marks,violet!80!black,mark=square*,mark size=3pt,mark options={draw=violet!80!black,fill=violet!80!black}] table[col sep=comma,x=x,y=y] {\FigureDataDir/f5_p2_s06.csv};
+\addlegendentry{Unrestricted LPs, both objectives}
+\node[font=\small,anchor=south] at (axis cs:0.33333333333333337,0.902) {$\tau=3$};
+\node[font=\small,anchor=south] at (axis cs:0.25,0.902) {$\tau=4$};
+\node[font=\small,anchor=south] at (axis cs:0.2,0.902) {$\tau=5$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{0.8em}\noindent\makebox[\textwidth][c]{\pgfplotslegendfromname{prtenhetlegend}}
+\end{minipage}

@@ -1,0 +1,613 @@
+{
+  "article_pages": 42,
+  "proof_supplement_pages": 12,
+  "computational_guide_pages": 22,
+  "outputs": [
+    {
+      "id": "article.figure.1",
+      "document": "article",
+      "kind": "figure",
+      "number": "1",
+      "caption": "Conceptual architecture diagram; supplied in the article only.",
+      "cases": [],
+      "configuration_paths": [],
+      "record_files": [],
+      "export_files": [],
+      "commands": [],
+      "scope": "Noncomputational literature comparison or method schematic. Intentionally not included as manuscript/theory source in this computational repository."
+    },
+    {
+      "id": "article.figure.2",
+      "document": "article",
+      "kind": "figure",
+      "number": "2",
+      "caption": "Heterogeneous-dwell mechanism and reset/annealed endpoints. Panel (a) gives the expected target fraction during one complete hold conditional on state and input. Panels (b) and (c) give the same stationary comparison at full and expanded rate scales. Markers represent discrete references, with no interpolating policy segments. Both LP objectives select the same randomized policy here. The saved stochastic actors and greedy extractions are plotted separately but nearly coincide at this resolution; bars are sample standard deviations over ten training seeds. Labels identify scheduled fixed holds. The vertical line and shading mark the budget and its infeasible side. The expanded rate axis separates the feasible reference classes without moving any coordinates.",
+      "cases": [
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "figures/dwell_mechanism.tex",
+        "figures/dwell_mechanism.tikz",
+        "figures/preamble.tex",
+        "figures/data/f5_p1_s01.csv",
+        "figures/data/f5_p1_s02.csv",
+        "figures/data/f5_p1_s03.csv",
+        "figures/data/f5_p2_s03.csv",
+        "figures/data/f5_p2_s04.csv",
+        "figures/data/f5_p2_s05.csv",
+        "figures/data/f5_p2_s06.csv",
+        "figures/data/f5_p2_s07.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only dwell_mechanism --out ../article_figure_2"
+      ],
+      "scope": "Exact stationary references and reset/annealed endpoints. Unrestricted LP and compact witness are different references.",
+      "figure_name": "dwell_mechanism"
+    },
+    {
+      "id": "article.figure.3",
+      "document": "article",
+      "kind": "figure",
+      "number": "3",
+      "caption": "Continuing four-state sampled learning at temperature one. All 13 declared checkpoints, including initialization, are shown against complete decision count; the horizontal scaling is $k/10^6$, not plant time. Lines join successive checkpoints of the same stochastic training protocol. Bands are sample standard deviations across ten seeds, not confidence intervals. The horizontal references are the update budget $0.30$, actor threshold $10^{-5}$ and complementarity threshold $10^{-6}$; the actor and complementarity panels use logarithmic ordinates. The final stochastic policies fail all three diagnostics. $R_{\\rm adv}$ is an objective- and multiplier-matched advantage diagnostic, not an optimality certificate. Exact checkpoint evaluations do not feed back into learning.",
+      "cases": [
+        "four_state_continuing"
+      ],
+      "configuration_paths": [
+        "pd_smac/analysis/config/four_state_continuing.json"
+      ],
+      "record_files": [
+        "results/diagnostics/continuing/scalar_records.json"
+      ],
+      "export_files": [
+        "figures/continuing_diagnostics.tex",
+        "figures/continuing_diagnostics.tikz",
+        "figures/preamble.tex",
+        "figures/data/continuing_stochastic.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only continuing_diagnostics --out ../article_figure_3"
+      ],
+      "scope": "Ten original continuing paths, 13 checkpoints each; checkpoints are not independent seeds.",
+      "figure_name": "continuing_diagnostics"
+    },
+    {
+      "id": "guide.figure.C4",
+      "document": "guide",
+      "kind": "figure",
+      "number": "C4",
+      "caption": "70-node force-pirin comparison from the final saved policies. Learned bars are sample standard deviations across five training-seed means; periodic bars are population standard deviations across 1500 rollouts. Open triangles identify nominal holds $1,2,4,6$ under $u\\equiv1$, at rates $1,0.5,0.25,0.2$. TT-AC and PD-SMAC coincide with the nominal-1 and nominal-6 reference means, respectively. The vertical line and shading identify $\\Gamma=0.40$ and larger rates. Points are not joined into unattested interpolated policies. Panel (b) uses failure-coded first-target time. Panel (c) expands the rate axis of panel (a), with identical coordinates and error bars.",
+      "cases": [
+        "melanoma_persistent"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma70/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "figures/melanoma70_endpoints.tex",
+        "figures/melanoma70_endpoints.tikz",
+        "figures/preamble.tex",
+        "figures/data/f4_p1_ddqn.csv",
+        "figures/data/f4_p1_fixed.csv",
+        "figures/data/f4_p1_pdsmac.csv",
+        "figures/data/f4_p1_ttac.csv",
+        "figures/data/f4_p2_ddqn.csv",
+        "figures/data/f4_p2_fixed.csv",
+        "figures/data/f4_p2_pdsmac.csv",
+        "figures/data/f4_p2_ttac.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only melanoma70_endpoints --out ../guide_figure_C4"
+      ],
+      "scope": "Final saved policies; sample SD over five learned seeds versus population SD over 1500 fixed-policy rollouts.",
+      "figure_name": "melanoma70_endpoints"
+    },
+    {
+      "id": "article.table.1",
+      "document": "article",
+      "kind": "table",
+      "number": "1",
+      "caption": "Selected literature comparison; supplied in the article only.",
+      "cases": [],
+      "configuration_paths": [],
+      "record_files": [],
+      "export_files": [],
+      "commands": [],
+      "scope": "Noncomputational literature comparison or method schematic. Intentionally not included as manuscript/theory source in this computational repository."
+    },
+    {
+      "id": "article.table.2",
+      "document": "article",
+      "kind": "table",
+      "number": "2",
+      "caption": "Four-state references and reset/annealed endpoints at $\\Gamma=0.30$. Occupancy and reward are plant-time rates; reward subtracts $0.02$ times input-ON exposure. Fixed-duration rows maximize occupancy. The minimum-rate deterministic tie member maximizes both objectives in this model; the two LPs optimize their named objectives over unrestricted randomized policies. PD-SMAC rows give means $\\pm$ sample standard deviations across ten training seeds. The feasible logit witness is model-informed, not learned; its rate is strictly below $0.30$ despite the displayed rounding.",
+      "cases": [
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/diagnostics/scalar_tables/witness_and_gap_bounds.csv",
+        "results/diagnostics/scalar_tables/fixed_duration_ordering.csv"
+      ],
+      "export_files": [
+        "results/table_sources/article_table_2.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id article.table.2 --out ../article_table_2"
+      ],
+      "scope": "Plain tabular data at displayed precision. Unrounded observations and uncertainty units remain in the linked numerical records. No manuscript table source is bundled.",
+      "display_data_sha256": "fa46374e895bb889909ebd3e69b0e4a120379f7faddb37d348ae3159fc09bff7"
+    },
+    {
+      "id": "article.table.3",
+      "document": "article",
+      "kind": "table",
+      "number": "3",
+      "caption": "28-node XOR-pirin endpoints at $\\Gamma=0.40$. Learned rows evaluate the saved greedy policies and report means $\\pm$ sample standard deviations across four training seeds, with 120 rollouts per seed. Periodic-5 uses $u\\equiv1$ and population standard deviations across 480 rollouts. All hold entries are realized durations; its nominal hold is five.",
+      "cases": [
+        "melanoma_xor"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma28/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/evaluation_index.json"
+      ],
+      "export_files": [
+        "results/table_sources/article_table_3.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id article.table.3 --out ../article_table_3"
+      ],
+      "scope": "Plain tabular data at displayed precision. Unrounded observations and uncertainty units remain in the linked numerical records. No manuscript table source is bundled.",
+      "display_data_sha256": "8c866ad3270a6fca317c856e399711ce87d014729ad326d5cd7b90cc0f02b7aa"
+    },
+    {
+      "id": "article.table.4",
+      "document": "article",
+      "kind": "table",
+      "number": "4",
+      "caption": "70-node force-pirin endpoints. Fixed-input duration accounting is in computational-guide Table C10.",
+      "cases": [
+        "melanoma_persistent"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma70/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/evaluation_index.json"
+      ],
+      "export_files": [
+        "results/table_sources/article_table_4.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id article.table.4 --out ../article_table_4"
+      ],
+      "scope": "Plain tabular data at displayed precision. Unrounded observations and uncertainty units remain in the linked numerical records. No manuscript table source is bundled.",
+      "display_data_sha256": "955dcb039f9dd7ef620ef19955dc762f7a588da33db73a76e221e39e0fc17484"
+    },
+    {
+      "id": "article.table.5",
+      "document": "article",
+      "kind": "table",
+      "number": "5",
+      "caption": "Lactose first arrival with horizon $H=100$. Exact rows are model-based expectations without sampling-error bars. Learned rows give mean $\\pm$ sample standard deviation across ten training seeds, each evaluated on four trajectories per initial state. The PD-SMAC-FA stochastic row is primary; its greedy extraction is separate. Only the constrained exact reference and stochastic PD-SMAC-FA optimize under the numerator budget. Rates use total updates divided by total realized plant time within each seed.",
+      "cases": [
+        "lactose_first_arrival"
+      ],
+      "configuration_paths": [
+        "pd_smac/lactose_first_arrival/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/lactose_first_arrival/references/metrics.json"
+      ],
+      "export_files": [
+        "results/table_sources/article_table_5.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id article.table.5 --out ../article_table_5"
+      ],
+      "scope": "Plain tabular data at displayed precision. Unrounded observations and uncertainty units remain in the linked numerical records. No manuscript table source is bundled.",
+      "display_data_sha256": "9923c7d2b5fa813a292fa12b678fc630fa9d1a2d608d87cf9f8c65dfe19dccaa"
+    },
+    {
+      "id": "guide.figure.C1",
+      "document": "guide",
+      "kind": "figure",
+      "number": "C1",
+      "caption": "Exact-model lactose mean-field diagnostic at $\\Gamma_{\\rm lac}^{\\rm conv}=0.25$. The six panels show task-reward rate, update rate, multiplier, projected actor residual, primal violation, and complementarity for the same saved stochastic actors. The actor residual uses a logarithmic axis and remains above the dashed $10^{-5}$ diagnostic threshold at iteration 620. Feasibility and zero complementarity do not establish stationarity. Displayed data are every fifth iterate of the complete constant-gain trace. This calculation is separate from the first-arrival study and has no sampling-error band.",
+      "cases": [
+        "lactose_meanfield"
+      ],
+      "configuration_paths": [
+        "pd_smac/lactose_meanfield/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "figures/lactose_meanfield.tex",
+        "figures/lactose_meanfield.tikz",
+        "figures/preamble.tex",
+        "figures/data/lactose_meanfield_trace.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only lactose_meanfield --out ../guide_figure_C1"
+      ],
+      "scope": "Deterministic exact-model diagnostic, not the first-arrival learner and not sampled convergence.",
+      "figure_name": "lactose_meanfield"
+    },
+    {
+      "id": "guide.figure.C2",
+      "document": "guide",
+      "kind": "figure",
+      "number": "C2",
+      "caption": "28-node XOR-pirin endpoint comparisons. Learned bars are sample standard deviations across four training-seed means; fixed-hold bars are population standard deviations across 480 rollouts. Triangles mark $u\\equiv1$ holds $1,\\ldots,5$ and distinct diamond/pentagon markers the three greedy PD-SMAC budgets. Labels identify scheduled fixed holds. The expanded-rate panel resolves the low-rate policies without jitter. All points denote evaluated policies; no segments interpolate between discrete controllers. The line and shading refer to $\\Gamma=0.40$. Coded first-target times include failure code 29. The fixed-hold family is horizontal in occupancy--rate coordinates.",
+      "cases": [
+        "melanoma_xor"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma28/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "figures/melanoma28_endpoints.tex",
+        "figures/melanoma28_endpoints.tikz",
+        "figures/preamble.tex",
+        "figures/data/f2_budget.csv",
+        "figures/data/f2_ddqn.csv",
+        "figures/data/f2_fixed_u1.csv",
+        "figures/data/f2_time_budget.csv",
+        "figures/data/f2_time_ddqn.csv",
+        "figures/data/f2_time_fixed_u1.csv",
+        "figures/data/f2_time_ttac.csv",
+        "figures/data/f2_ttac.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only melanoma28_endpoints --out ../guide_figure_C2"
+      ],
+      "scope": "Greedy endpoint means over four seeds, budgets 0.25/0.40/0.55; fixed policies have 480 rollouts.",
+      "figure_name": "melanoma28_endpoints"
+    },
+    {
+      "id": "guide.figure.C3",
+      "document": "guide",
+      "kind": "figure",
+      "number": "C3",
+      "caption": "28-node greedy checkpoint evaluations at $\\Gamma=0.40$. Means and sample standard deviations use four training seeds, each with 120 evaluation rollouts. The horizontal axis counts training plant steps per seed; episode $e$ corresponds to $28e$ steps. The terminal evaluation records are exactly those in main Table~\\ref{tab:melanoma28_main}. DDQN+PER and TT-AC coincide at update rate one and residual $+0.60$; their distinct markers share those coordinates. Lines connect successive checkpoints, not asymptotic convergence certificates.",
+      "cases": [
+        "melanoma_xor"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma28/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "figures/melanoma28_learning.tex",
+        "figures/melanoma28_learning.tikz",
+        "figures/preamble.tex",
+        "figures/data/f3_ddqn.csv",
+        "figures/data/f3_pdsmac.csv",
+        "figures/data/f3_ttac.csv"
+      ],
+      "commands": [
+        "python -B companion.py figures --only melanoma28_learning --out ../guide_figure_C3"
+      ],
+      "scope": "Saved checkpoints of the same four paths; not additional seeds.",
+      "figure_name": "melanoma28_learning"
+    },
+    {
+      "id": "guide.table.C1",
+      "document": "guide",
+      "kind": "table",
+      "number": "C1",
+      "caption": "Notation for interpreting the computational specifications and numerical records.",
+      "cases": [],
+      "configuration_paths": [],
+      "record_files": [
+        "docs/computational_guide.pdf"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C1.tex",
+        "results/table_sources/guide_table_C1.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C1 --out ../guide_table_C1"
+      ],
+      "scope": "Computational notation reference, not a numerical experiment.",
+      "source_table_sha256": "caa12c77bcaa5ba66c1ddabb752de8e0377e91e5b5a3c43ccf0b4f31b81861f1"
+    },
+    {
+      "id": "guide.table.C2",
+      "document": "guide",
+      "kind": "table",
+      "number": "C2",
+      "caption": "Boolean update laws for the 9-gene lactose-operon PBCN benchmark.",
+      "cases": [
+        "lactose_first_arrival",
+        "lactose_meanfield"
+      ],
+      "configuration_paths": [
+        "pd_smac/lactose_first_arrival/config.json",
+        "pd_smac/lactose_meanfield/config.json"
+      ],
+      "record_files": [
+        "pd_smac/lactose_first_arrival/model.py",
+        "pd_smac/lactose_meanfield/model.py"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C2.tex",
+        "results/table_sources/guide_table_C2.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C2 --out ../guide_table_C2"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "bf6575da10f3086d0b7e4a4418e47230bc953849797b1de471ae77e1270b8f0a"
+    },
+    {
+      "id": "guide.table.C3",
+      "document": "guide",
+      "kind": "table",
+      "number": "C3",
+      "caption": "Essential evaluation profiles. The 28-node row describes the saved-policy experiment; its fixed holds use four paired terminal blocks totaling 480 rollouts. The 70-node fixed policies use five paired terminal blocks totaling 1500 rollouts. Fixed holds require no training. The lactose mean-field protocol is specified separately in \\hyperref[comp:sec:lactose]{Section~C2.1}.",
+      "cases": [
+        "melanoma_xor",
+        "melanoma_persistent",
+        "lactose_first_arrival",
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma28/config.json",
+        "pd_smac/melanoma70/config.json",
+        "pd_smac/lactose_first_arrival/config.json",
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "manifests/studies.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C3.tex",
+        "results/table_sources/guide_table_C3.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C3 --out ../guide_table_C3"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "112f1a483ff04c86803f5f987736132da983856387137e83d352f8d403c05c28"
+    },
+    {
+      "id": "guide.table.C4",
+      "document": "guide",
+      "kind": "table",
+      "number": "C4",
+      "caption": "Uncertainty across ten exactly evaluated stochastic PD-SMAC endpoints. The unrestricted references are objective-matched. Gaps are learned values minus the named reference.",
+      "cases": [
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/four_state/bootstrap_indices.npy"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C4.tex",
+        "results/table_sources/guide_table_C4.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C4 --out ../guide_table_C4"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "8d0f14eb2326cd069c181e435807944080f72a2fca949c8b7908b84ca5cc04ac"
+    },
+    {
+      "id": "guide.table.C5",
+      "document": "guide",
+      "kind": "table",
+      "number": "C5",
+      "caption": "Statewise action counts across the ten final greedy PD-SMAC policies in the heterogeneous-dwell diagnostic. The state labels are $S$ for the safe target state, $B$ for the boundary target state, $O$ for the off-target state, and $L$ for the latent off-target state.",
+      "cases": [
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/evaluation_index.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C5.tex",
+        "results/table_sources/guide_table_C5.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C5 --out ../guide_table_C5"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "39959bc2cee3a3288f7068f7fedb9dbaf20ac50a9520b81d0130244be1f7dc5b"
+    },
+    {
+      "id": "guide.table.C6",
+      "document": "guide",
+      "kind": "table",
+      "number": "C6",
+      "caption": "Continuing four-state endpoints after $10^6$ complete decisions per seed. Rates and deviations are computed from ten stationary saved-policy evaluations. Values are mean $\\pm$ sample standard deviation. The stochastic row is primary. The greedy maps have no inherited actor or multiplier certificate; only the stochastic policies carry the diagnostics below.",
+      "cases": [
+        "four_state_continuing"
+      ],
+      "configuration_paths": [
+        "pd_smac/analysis/config/four_state_continuing.json"
+      ],
+      "record_files": [
+        "results/diagnostics/scalar_tables/continuing_endpoints.csv",
+        "results/diagnostics/continuing/scalar_records.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C6.tex",
+        "results/table_sources/guide_table_C6.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C6 --out ../guide_table_C6"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "3a9ae392e746855dde683f18a69704727dbae554292bea682ab289f7d808b145"
+    },
+    {
+      "id": "guide.table.C7",
+      "document": "guide",
+      "kind": "table",
+      "number": "C7",
+      "caption": "Paired training-budget 28-node control. Each learned entry is a mean $\\pm$ sample standard deviation across four paths, with 120 paired evaluation rollouts per path. Primary comparisons use greedy policies. The lower block gives within-path occupancy changes from episode 240 to 1200 and unadjusted 95\\% percentile intervals from 20,000 whole-path resamples. Secondary stochastic modes are not substituted for primary rows.",
+      "cases": [
+        "melanoma_training_budget"
+      ],
+      "configuration_paths": [
+        "pd_smac/analysis/config/biological_protocol_identity.json"
+      ],
+      "record_files": [
+        "results/diagnostics/scalar_tables/sensitivity_endpoints.csv",
+        "results/diagnostics/scalar_tables/sensitivity_paired_changes.csv",
+        "results/evidence/statistics.json",
+        "results/melanoma_training_budget/count_schema.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C7.tex",
+        "results/table_sources/guide_table_C7.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C7 --out ../guide_table_C7"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records. Whole-path paired continuation; not new independent seeds. Scalar count views are provided, biological states are excluded.",
+      "source_table_sha256": "5611b2bbea9111beae0d175df117c9e1dd512166a30c1dbd51f9efb13c530cf6"
+    },
+    {
+      "id": "guide.table.C8",
+      "document": "guide",
+      "kind": "table",
+      "number": "C8",
+      "caption": "Same-policy diagnostics of the ten reset/annealed stochastic endpoints. Every row uses its owned multiplier, stored temperature and penalized task reward. All are feasible and have $R_{\\rm act}<10^{-5}$; seeds 1, 4 and 5 fail the $10^{-6}$ complementarity threshold. These are exact-model numerical evaluations, not additional training replications.",
+      "cases": [
+        "four_state_reset"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json"
+      ],
+      "record_files": [
+        "results/diagnostics/scalar_tables/retrospective_diagnostics.csv"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C8.tex",
+        "results/table_sources/guide_table_C8.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C8 --out ../guide_table_C8"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "184b118f7dd031a7460d3c606196769d7ee75a9031b7da940b0b556aea835ff3"
+    },
+    {
+      "id": "guide.table.C9",
+      "document": "guide",
+      "kind": "table",
+      "number": "C9",
+      "caption": "28-node PD-SMAC budget sweep for saved greedy policies. Entries are means $\\pm$ sample standard deviations across four training seeds. The common target occupancy is $0.663\\pm0.019$ across the same four seedwise evaluation means. All three budgets have the same observed target trajectories, but their inputs, rewards and schedules need not coincide. The last column counts seedwise empirical feasibility, not stochastic-actor feasibility.",
+      "cases": [
+        "melanoma_xor"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma28/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json",
+        "results/evaluation_index.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C9.tex",
+        "results/table_sources/guide_table_C9.csv"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C9 --out ../guide_table_C9"
+      ],
+      "scope": "Exact table source with displayed precision; unrounded values and uncertainty units remain in the linked records.",
+      "source_table_sha256": "0536761e89cdb2d89684e5656563668c9ca177ac96fb8b55a8502067a483daa3"
+    },
+    {
+      "id": "article.algorithm.1",
+      "document": "article",
+      "kind": "algorithm",
+      "number": "1",
+      "caption": "Training/evaluation pseudocode",
+      "cases": [
+        "four_state_reset",
+        "four_state_continuing"
+      ],
+      "configuration_paths": [
+        "pd_smac/four_state/config.json",
+        "pd_smac/analysis/config/four_state_continuing.json"
+      ],
+      "record_files": [],
+      "export_files": [],
+      "commands": [],
+      "implementation_files": [
+        "pd_smac/four_state/training.py",
+        "pd_smac/analysis/continuing/learner.py"
+      ],
+      "scope": "Pseudocode remains in the article; these numerical implementations have separately declared reset/continuing scopes."
+    },
+    {
+      "id": "guide.table.C10",
+      "document": "guide",
+      "kind": "table",
+      "number": "C10",
+      "caption": "70-node fixed-input duration accounting at horizon 20 and budget 0.40.",
+      "cases": [
+        "melanoma_persistent"
+      ],
+      "configuration_paths": [
+        "pd_smac/melanoma70/config.json"
+      ],
+      "record_files": [
+        "results/canonical_summary.json"
+      ],
+      "export_files": [
+        "results/table_sources/guide_table_C10.csv",
+        "results/table_sources/guide_table_C10.tex"
+      ],
+      "commands": [
+        "python -B companion.py export-output --id guide.table.C10 --out ../guide_table_C10"
+      ],
+      "scope": "Deterministic accounting of saved fixed-input comparisons; no new run.",
+      "source_table_sha256": "0b777bdc4a27adc9219bdf0fcc76b6c3a5c4dc8596b78aa496e7575656de48d2"
+    }
+  ],
+  "scientific_output_scope": "Saved figures/tables and their numerical records; a copy/export is not a fresh training or optimization result.",
+  "proof_text_bundled": false,
+  "article_source_bundled": false,
+  "article_title": "Update-Rate-Constrained Semi-Markov Actor–Critic Learning for Probabilistic Boolean Control Networks",
+  "article_authors": [
+    "Jiahao Wu",
+    "Amol Yerudkar",
+    "Carmen Del Vecchio"
+  ]
+}

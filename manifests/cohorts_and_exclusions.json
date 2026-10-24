@@ -1,0 +1,34 @@
+{
+  "continuing_four_state": {
+    "independent_training_streams": 10,
+    "checkpoints_per_stream": 13,
+    "saved_states": 130,
+    "evaluated_modes": [
+      "stochastic",
+      "greedy"
+    ],
+    "evaluation_modes_are_not_new_seeds": true
+  },
+  "biological_training_budget": {
+    "original_training_paths": 12,
+    "paired_continuation": true,
+    "new_independent_seeds": 0,
+    "count_only_exports": 100,
+    "biological_trajectories_included": false
+  },
+  "first_arrival_count_views": {
+    "views": 150,
+    "initial_target_time": 0,
+    "failure_horizon": 100,
+    "failure_time_code": 101
+  },
+  "roles_excluded_from_primary_comparison": [
+    "failed",
+    "debug",
+    "replay",
+    "interrupted"
+  ],
+  "uncertainty_unit": "independently trained seed blocks for learned summaries; fixed-policy rollout uncertainty separately labelled",
+  "witness_is_trained_policy": false,
+  "numerical_certificate_is_fresh_optimization": false
+}

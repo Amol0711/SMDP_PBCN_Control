@@ -1,0 +1,69 @@
+{
+  "studies": [
+    {
+      "study": "four_state_reset",
+      "description": "reset/annealed synthetic training",
+      "configuration": "pd_smac/four_state/config.json",
+      "implementation": "pd_smac/four_state",
+      "saved_results": "results/four_state",
+      "external_biological_inputs_for_new_execution": false,
+      "guide": "docs/computational_guide.pdf"
+    },
+    {
+      "study": "four_state_continuing",
+      "description": "single continuing path, fixed temperature one",
+      "configuration": "pd_smac/analysis/config/four_state_continuing.json",
+      "implementation": "pd_smac/analysis/continuing",
+      "saved_results": "results/diagnostics/continuing",
+      "external_biological_inputs_for_new_execution": false,
+      "guide": "docs/computational_guide.pdf"
+    },
+    {
+      "study": "melanoma_xor",
+      "description": "28-node XOR-pirin finite-reset protocol",
+      "configuration": "pd_smac/melanoma28/config.json",
+      "implementation": "pd_smac/melanoma28",
+      "saved_results": "results/melanoma28",
+      "external_biological_inputs_for_new_execution": true,
+      "guide": "docs/computational_guide.pdf"
+    },
+    {
+      "study": "melanoma_persistent",
+      "description": "70-node force-pirin finite-reset protocol",
+      "configuration": "pd_smac/melanoma70/config.json",
+      "implementation": "pd_smac/melanoma70",
+      "saved_results": "results/melanoma70",
+      "external_biological_inputs_for_new_execution": true,
+      "guide": "docs/computational_guide.pdf"
+    },
+    {
+      "study": "melanoma_training_budget",
+      "description": "paired continuation of original 28-node paths",
+      "configuration": "pd_smac/analysis/config/biological_protocol_identity.json",
+      "implementation": "pd_smac/analysis/biological",
+      "saved_results": "results/melanoma_training_budget",
+      "external_biological_inputs_for_new_execution": true,
+      "guide": "docs/computational_guide.pdf",
+      "configuration_scope": "Recorded protocol hash only. Complete authorized restart descriptors/schemas/states are external and hash-bound; see manifests/continuation_external.json."
+    },
+    {
+      "study": "lactose_meanfield",
+      "description": "separate exact-model deterministic continuing diagnostic",
+      "configuration": "pd_smac/lactose_meanfield/config.json",
+      "implementation": "pd_smac/lactose_meanfield",
+      "saved_results": "results/lactose_meanfield",
+      "external_biological_inputs_for_new_execution": false,
+      "guide": "docs/computational_guide.pdf"
+    },
+    {
+      "study": "lactose_first_arrival",
+      "description": "immediate stopping at target, including within a hold",
+      "configuration": "pd_smac/lactose_first_arrival/config.json",
+      "implementation": "pd_smac/lactose_first_arrival",
+      "saved_results": "results/lactose_first_arrival",
+      "external_biological_inputs_for_new_execution": false,
+      "guide": "docs/computational_guide.pdf"
+    }
+  ],
+  "scientific_case_names_do_not_change_original_internal_model_identifiers": true
+}
