@@ -1,0 +1,481 @@
+{
+  "count": 10000,
+  "feasible_count": 3307,
+  "reducible_count": 2150,
+  "multichain_count": 0,
+  "max_stationary_check_abs": 2.142730437526552e-14,
+  "deterministic": {
+    "occupancy": {
+      "selected": {
+        "occupancy": 0.9684776575347923,
+        "reward": 0.9677393137584405,
+        "rate": 0.2764032947928261,
+        "mean_duration": 3.617901880473367,
+        "exposure_rate": 0.036917188817594884,
+        "feasible": true,
+        "stationary_check_abs": 3.0531133177191805e-16,
+        "actions": [
+          3,
+          5,
+          5,
+          6
+        ],
+        "irreducible": true,
+        "unichain": true,
+        "recurrent_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "stationary": [
+          0.8710847784071001,
+          0.06790933586616328,
+          0.05635834047466943,
+          0.004647545252067083
+        ]
+      },
+      "optimal_objective": 0.9684776575347923,
+      "objective_ties": 2,
+      "minimum_rate_among_objective_ties": 0.2764032947928261,
+      "rate_ties": 1,
+      "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+    },
+    "reward": {
+      "selected": {
+        "occupancy": 0.9684776575347923,
+        "reward": 0.9677393137584405,
+        "rate": 0.2764032947928261,
+        "mean_duration": 3.617901880473367,
+        "exposure_rate": 0.036917188817594884,
+        "feasible": true,
+        "stationary_check_abs": 3.0531133177191805e-16,
+        "actions": [
+          3,
+          5,
+          5,
+          6
+        ],
+        "irreducible": true,
+        "unichain": true,
+        "recurrent_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "stationary": [
+          0.8710847784071001,
+          0.06790933586616328,
+          0.05635834047466943,
+          0.004647545252067083
+        ]
+      },
+      "optimal_objective": 0.9677393137584405,
+      "objective_ties": 2,
+      "minimum_rate_among_objective_ties": 0.2764032947928261,
+      "rate_ties": 1,
+      "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+    }
+  },
+  "fixed": [
+    {
+      "duration": 1,
+      "policy_count": 16,
+      "occupancy": {
+        "selected": {
+          "occupancy": 0.9999999999999987,
+          "reward": 0.9995876288659781,
+          "rate": 1.0,
+          "mean_duration": 1.0,
+          "exposure_rate": 0.02061855670103092,
+          "feasible": false,
+          "stationary_check_abs": 1.4432899320127035e-15,
+          "actions": [
+            0,
+            5,
+            0,
+            0
+          ],
+          "irreducible": false,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1
+            ]
+          ],
+          "stationary": [
+            0.9793814432989677,
+            0.02061855670103092,
+            5.782411586589351e-16,
+            7.517135062566155e-16
+          ]
+        },
+        "optimal_objective": 1.0,
+        "objective_ties": 4,
+        "minimum_rate_among_objective_ties": 1.0,
+        "rate_ties": 4,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      },
+      "reward": {
+        "selected": {
+          "occupancy": 0.9999999999999987,
+          "reward": 0.9995876288659781,
+          "rate": 1.0,
+          "mean_duration": 1.0,
+          "exposure_rate": 0.02061855670103092,
+          "feasible": false,
+          "stationary_check_abs": 1.4432899320127035e-15,
+          "actions": [
+            0,
+            5,
+            0,
+            0
+          ],
+          "irreducible": false,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1
+            ]
+          ],
+          "stationary": [
+            0.9793814432989677,
+            0.02061855670103092,
+            5.782411586589351e-16,
+            7.517135062566155e-16
+          ]
+        },
+        "optimal_objective": 0.9995876288659794,
+        "objective_ties": 4,
+        "minimum_rate_among_objective_ties": 1.0,
+        "rate_ties": 4,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      }
+    },
+    {
+      "duration": 2,
+      "policy_count": 16,
+      "occupancy": {
+        "selected": {
+          "occupancy": 0.9753231308484328,
+          "reward": 0.9739051106312389,
+          "rate": 0.5,
+          "mean_duration": 2.0,
+          "exposure_rate": 0.0709010108597003,
+          "feasible": false,
+          "stationary_check_abs": 9.231139616158871e-16,
+          "actions": [
+            1,
+            6,
+            6,
+            1
+          ],
+          "irreducible": false,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "stationary": [
+            0.929098989140299,
+            0.029772895607089588,
+            0.04112811525261072,
+            6.517227608172754e-16
+          ]
+        },
+        "optimal_objective": 0.9753231308484336,
+        "objective_ties": 2,
+        "minimum_rate_among_objective_ties": 0.5,
+        "rate_ties": 2,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      },
+      "reward": {
+        "selected": {
+          "occupancy": 0.9753231308484328,
+          "reward": 0.9739051106312389,
+          "rate": 0.5,
+          "mean_duration": 2.0,
+          "exposure_rate": 0.0709010108597003,
+          "feasible": false,
+          "stationary_check_abs": 9.231139616158871e-16,
+          "actions": [
+            1,
+            6,
+            6,
+            1
+          ],
+          "irreducible": false,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "stationary": [
+            0.929098989140299,
+            0.029772895607089588,
+            0.04112811525261072,
+            6.517227608172754e-16
+          ]
+        },
+        "optimal_objective": 0.9739051106312396,
+        "objective_ties": 2,
+        "minimum_rate_among_objective_ties": 0.5,
+        "rate_ties": 2,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      }
+    },
+    {
+      "duration": 3,
+      "policy_count": 16,
+      "occupancy": {
+        "selected": {
+          "occupancy": 0.9264218666246469,
+          "reward": 0.922512036073784,
+          "rate": 0.33333333333333337,
+          "mean_duration": 3.0,
+          "exposure_rate": 0.1954915275431395,
+          "feasible": false,
+          "stationary_check_abs": 2.7777259659078624e-16,
+          "actions": [
+            2,
+            7,
+            7,
+            7
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8045084724568605,
+            0.07569336683053515,
+            0.1182680645187423,
+            0.0015300961938620565
+          ]
+        },
+        "optimal_objective": 0.9264218666246469,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.33333333333333337,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      },
+      "reward": {
+        "selected": {
+          "occupancy": 0.9264218666246469,
+          "reward": 0.922512036073784,
+          "rate": 0.33333333333333337,
+          "mean_duration": 3.0,
+          "exposure_rate": 0.1954915275431395,
+          "feasible": false,
+          "stationary_check_abs": 2.7777259659078624e-16,
+          "actions": [
+            2,
+            7,
+            7,
+            7
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8045084724568605,
+            0.07569336683053515,
+            0.1182680645187423,
+            0.0015300961938620565
+          ]
+        },
+        "optimal_objective": 0.922512036073784,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.33333333333333337,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      }
+    },
+    {
+      "duration": 4,
+      "policy_count": 16,
+      "occupancy": {
+        "selected": {
+          "occupancy": 0.9262815414191238,
+          "reward": 0.9228502304971576,
+          "rate": 0.25,
+          "mean_duration": 3.9999999999999996,
+          "exposure_rate": 0.17156554609830715,
+          "feasible": true,
+          "stationary_check_abs": 9.8879238130678e-17,
+          "actions": [
+            3,
+            8,
+            8,
+            8
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8284344539016928,
+            0.08103117978025684,
+            0.0861581379097006,
+            0.004376228408349675
+          ]
+        },
+        "optimal_objective": 0.9262815414191238,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.25,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      },
+      "reward": {
+        "selected": {
+          "occupancy": 0.9262815414191238,
+          "reward": 0.9228502304971576,
+          "rate": 0.25,
+          "mean_duration": 3.9999999999999996,
+          "exposure_rate": 0.17156554609830715,
+          "feasible": true,
+          "stationary_check_abs": 9.8879238130678e-17,
+          "actions": [
+            3,
+            8,
+            8,
+            8
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8284344539016928,
+            0.08103117978025684,
+            0.0861581379097006,
+            0.004376228408349675
+          ]
+        },
+        "optimal_objective": 0.9228502304971576,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.25,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      }
+    },
+    {
+      "duration": 5,
+      "policy_count": 16,
+      "occupancy": {
+        "selected": {
+          "occupancy": 0.9155358552361703,
+          "reward": 0.9119129241675744,
+          "rate": 0.2,
+          "mean_duration": 5.0,
+          "exposure_rate": 0.1811465534297964,
+          "feasible": true,
+          "stationary_check_abs": 3.3306690738754696e-16,
+          "actions": [
+            4,
+            9,
+            9,
+            9
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8188534465702036,
+            0.06591769335390617,
+            0.10718953857735182,
+            0.008039321498538421
+          ]
+        },
+        "optimal_objective": 0.9155358552361703,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.2,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      },
+      "reward": {
+        "selected": {
+          "occupancy": 0.9155358552361703,
+          "reward": 0.9119129241675744,
+          "rate": 0.2,
+          "mean_duration": 5.0,
+          "exposure_rate": 0.1811465534297964,
+          "feasible": true,
+          "stationary_check_abs": 3.3306690738754696e-16,
+          "actions": [
+            4,
+            9,
+            9,
+            9
+          ],
+          "irreducible": true,
+          "unichain": true,
+          "recurrent_classes": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "stationary": [
+            0.8188534465702036,
+            0.06591769335390617,
+            0.10718953857735182,
+            0.008039321498538421
+          ]
+        },
+        "optimal_objective": 0.9119129241675744,
+        "objective_ties": 1,
+        "minimum_rate_among_objective_ties": 0.2,
+        "rate_ties": 1,
+        "rule": "objective within 1e-10; rate within 1e-10; canonical lexicographic action tuple"
+      }
+    }
+  ]
+}

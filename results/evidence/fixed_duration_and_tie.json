@@ -1,0 +1,205 @@
+{
+  "L_next_support_input1": [
+    "B",
+    "O",
+    "L"
+  ],
+  "infeasible_duration3_cannot_replace_best_feasible_duration4": true,
+  "long_minus_short_exact": {
+    "exposure_rate": "0",
+    "mean_duration": "712761885094/42587072176645",
+    "occupancy": "0",
+    "rate": "-100358/78124123",
+    "reward": "0"
+  },
+  "no_immediate_transition_to_S": true,
+  "selected_fixed_duration_references": [
+    {
+      "duration": 1,
+      "feasible": false,
+      "objective": "occupancy",
+      "policy": [
+        0,
+        5,
+        0,
+        0
+      ],
+      "rate": 1.0,
+      "value": 1.0,
+      "value_exact": "1"
+    },
+    {
+      "duration": 1,
+      "feasible": false,
+      "objective": "reward",
+      "policy": [
+        0,
+        5,
+        0,
+        0
+      ],
+      "rate": 1.0,
+      "value": 0.9995876288659794,
+      "value_exact": "2424/2425"
+    },
+    {
+      "duration": 2,
+      "feasible": false,
+      "objective": "occupancy",
+      "policy": [
+        1,
+        6,
+        6,
+        1
+      ],
+      "rate": 0.5,
+      "value": 0.9753231308484336,
+      "value_exact": "62329/63906"
+    },
+    {
+      "duration": 2,
+      "feasible": false,
+      "objective": "reward",
+      "policy": [
+        1,
+        6,
+        6,
+        1
+      ],
+      "rate": 0.5,
+      "value": 0.9739051106312396,
+      "value_exact": "3111919/3195300"
+    },
+    {
+      "duration": 3,
+      "feasible": false,
+      "objective": "occupancy",
+      "policy": [
+        2,
+        7,
+        7,
+        7
+      ],
+      "rate": 0.3333333333333333,
+      "value": 0.926421866624647,
+      "value_exact": "7103634787/7667818564"
+    },
+    {
+      "duration": 3,
+      "feasible": false,
+      "objective": "reward",
+      "policy": [
+        2,
+        7,
+        7,
+        7
+      ],
+      "rate": 0.3333333333333333,
+      "value": 0.9225120360737842,
+      "value_exact": "176841372893/191695464100"
+    },
+    {
+      "duration": 4,
+      "feasible": true,
+      "objective": "occupancy",
+      "policy": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "rate": 0.25,
+      "value": 0.926281541419124,
+      "value_exact": "19505449521566309/21057797925760976"
+    },
+    {
+      "duration": 4,
+      "feasible": true,
+      "objective": "reward",
+      "policy": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "rate": 0.25,
+      "value": 0.9228502304971579,
+      "value_exact": "485829841738777237/526444948144024400"
+    },
+    {
+      "duration": 5,
+      "feasible": true,
+      "objective": "occupancy",
+      "policy": [
+        4,
+        9,
+        9,
+        9
+      ],
+      "rate": 0.2,
+      "value": 0.9155358552361704,
+      "value_exact": "746746816860236774273/815639073652235023370"
+    },
+    {
+      "duration": 5,
+      "feasible": true,
+      "objective": "reward",
+      "policy": [
+        4,
+        9,
+        9,
+        9
+      ],
+      "rate": 0.2,
+      "value": 0.9119129241675745,
+      "value_exact": "1859479531798853231389/2039097684130587558425"
+    }
+  ],
+  "source_path": "sha256:1e0ea2a21dc974993db3470c016890f52d52a8a2fd0e945cbc2f9ac4ffb393b5",
+  "tie_policies": [
+    {
+      "action_indices": [
+        3,
+        5,
+        5,
+        5
+      ],
+      "metrics_exact": {
+        "exposure_rate": "262193/7102193",
+        "mean_duration": "7102193/1972193",
+        "occupancy": "171957881/177554825",
+        "rate": "1972193/7102193",
+        "reward": "1583657/1636450"
+      },
+      "name": "short_L",
+      "stationary_exact": [
+        "1710000/1972193",
+        "3378386/49304825",
+        "2925544/49304825",
+        "50179/9860965"
+      ]
+    },
+    {
+      "action_indices": [
+        3,
+        5,
+        5,
+        6
+      ],
+      "metrics_exact": {
+        "exposure_rate": "262193/7102193",
+        "mean_duration": "78124123/21593765",
+        "occupancy": "171957881/177554825",
+        "rate": "21593765/78124123",
+        "reward": "1583657/1636450"
+      },
+      "name": "long_L",
+      "stationary_exact": [
+        "3762000/4318753",
+        "36660456/539844125",
+        "30424719/539844125",
+        "100358/21593765"
+      ]
+    }
+  ]
+}

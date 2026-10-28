@@ -1,0 +1,432 @@
+{
+  "continuing_reference_contrasts": [
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "occupancy",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "witness_lower",
+      "reference_value": 0.9726609874463615,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.4117891923962552,
+        "mean": 0.4039598443120892,
+        "minimum": 0.3895340845530296,
+        "n": 10,
+        "percentile95": [
+          0.4001595405876109,
+          0.4069310690534151
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.005810619014776201,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.40616750016595926,
+          0.4117891923962552,
+          0.4055899721254057,
+          0.40728381080584397,
+          0.40508507780447656,
+          0.40480977533407236,
+          0.4011023612210308,
+          0.4058042478630728,
+          0.4024324208517457,
+          0.3895340845530296
+        ]
+      }
+    },
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "occupancy",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "unrestricted_optimum",
+      "reference_value": 0.9726619892338253,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.411790194183719,
+        "mean": 0.4039608460995529,
+        "minimum": 0.3895350863404934,
+        "n": 10,
+        "percentile95": [
+          0.40016054237507465,
+          0.4069320708408788
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.0058106190147762,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.406168501953423,
+          0.411790194183719,
+          0.40559097391286947,
+          0.40728481259330773,
+          0.4050860795919403,
+          0.4048107771215361,
+          0.4011033630084946,
+          0.40580524965053655,
+          0.40243342263920945,
+          0.3895350863404934
+        ]
+      }
+    },
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "occupancy",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "fixed_duration_4",
+      "reference_value": 0.926281541419124,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.3654097463690177,
+        "mean": 0.35758039828485166,
+        "minimum": 0.3431546385257921,
+        "n": 10,
+        "percentile95": [
+          0.3537800945603733,
+          0.3605516230261775
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.005810619014776201,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.3597880541387217,
+          0.3654097463690177,
+          0.35921052609816817,
+          0.36090436477860643,
+          0.358705631777239,
+          0.3584303293068348,
+          0.3547229151937933,
+          0.35942480183583525,
+          0.35605297482450815,
+          0.3431546385257921
+        ]
+      }
+    },
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "reward",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "witness_lower",
+      "reference_value": 0.9719263559448446,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.4214874569024354,
+        "mean": 0.4135837610782989,
+        "minimum": 0.39865857527865756,
+        "n": 10,
+        "percentile95": [
+          0.4096756135348464,
+          0.4166049555506037
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.0059685718519533765,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.41590451911726545,
+          0.4214874569024354,
+          0.4152687275690021,
+          0.41696956169075894,
+          0.4146824171619754,
+          0.4145882538249903,
+          0.41089205907202,
+          0.41545529267484904,
+          0.4119307474910343,
+          0.39865857527865756
+        ]
+      }
+    },
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "reward",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "unrestricted_optimum",
+      "reference_value": 0.9719273857465286,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.4214884867041194,
+        "mean": 0.4135847908799829,
+        "minimum": 0.3986596050803416,
+        "n": 10,
+        "percentile95": [
+          0.40967664333653053,
+          0.4166059853522877
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.0059685718519533765,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.4159055489189495,
+          0.4214884867041194,
+          0.41526975737068617,
+          0.416970591492443,
+          0.41468344696365944,
+          0.41458928362667435,
+          0.410893088873704,
+          0.4154563224765331,
+          0.41193177729271835,
+          0.3986596050803416
+        ]
+      }
+    },
+    {
+      "feasible_family_optimality_gap": null,
+      "objective": "reward",
+      "reason": "all endpoints infeasible; also do not turn a witness into family optimum",
+      "reference": "fixed_duration_4",
+      "reference_value": 0.9228502304971579,
+      "source_context_ids": [
+        "continuing/seed00/k001000000/stochastic",
+        "continuing/seed01/k001000000/stochastic",
+        "continuing/seed02/k001000000/stochastic",
+        "continuing/seed03/k001000000/stochastic",
+        "continuing/seed04/k001000000/stochastic",
+        "continuing/seed05/k001000000/stochastic",
+        "continuing/seed06/k001000000/stochastic",
+        "continuing/seed07/k001000000/stochastic",
+        "continuing/seed08/k001000000/stochastic",
+        "continuing/seed09/k001000000/stochastic"
+      ],
+      "statistics": {
+        "ddof": 1,
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maximum": 0.3724113314547487,
+        "mean": 0.36450763563061217,
+        "minimum": 0.34958244983097087,
+        "n": 10,
+        "percentile95": [
+          0.36059948808715975,
+          0.3675288301029169
+        ],
+        "resamples": 20000,
+        "sample_sd": 0.0059685718519533765,
+        "scope": "descriptive unadjusted whole-unit interval; no multiplicity-adjusted significance or optimality claim",
+        "unit": "training_seed",
+        "values": [
+          0.36682839366957876,
+          0.3724113314547487,
+          0.36619260212131544,
+          0.36789343624307225,
+          0.3656062917142887,
+          0.3655121283773036,
+          0.3618159336243333,
+          0.36637916722716235,
+          0.3628546220433476,
+          0.34958244983097087
+        ]
+      }
+    }
+  ],
+  "occupancy": {
+    "cold_family_finite_training_loss": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.011569274904816757,
+      "lower_exact": "4558526414873809827125153054005090855304119315562678908014471788852861565087509867682543354051406602067361127320153/394020061963944792122790401001436138050797392704654466679482934042457217714972106114142662548849156408066279903068160",
+      "lower_outward15": "0.011569274904816",
+      "upper": 0.011570276692280489,
+      "upper_exact": "1316647226430342891686848092488598115014367834927576079543949263561238207664140471570572844777165841364350187462808249315200731879/113795656011302630009039975302573304363908861184688493215174151722289253597518431316553530267396635250565490192465639640010221158400",
+      "upper_outward15": "0.011570276692281"
+    },
+    "hot_family_shortfall_from_cold_means_permitted": false,
+    "objective": "occupancy",
+    "representation_loss": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.0,
+      "lower_exact": "0",
+      "lower_outward15": "0.000000000000000",
+      "upper": 1.0017874637322323e-06,
+      "upper_exact": "14249882702413552159011056938951160687942007303151018964408756178075240647750451571519232790494242234164059670565784025008293/14224457001412828751129996912821663045488607648086061651896768965286156699689803914569191283424579406320686274058204955001277644800",
+      "upper_outward15": "0.000001001787464"
+    },
+    "scope": "Interval operations only; no new optimizer or assertion of exact compact-family optimum",
+    "source_paths": [
+      "sha256:025e97391199e8bbbc8a5815a460f40687180458e92bad4e8778a9eb9039a3c4",
+      "sha256:2f3d0cb1c7555da17d993566ab80ebb0d72efe24f66e1c38fb6b158f3773cd7b",
+      "sha256:8549e0f831857b59b34884146909e05af4c3d4354580507f068cd394ec7fa57e"
+    ],
+    "unrestricted_minus_saved_mean": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.011570276692280489,
+      "lower_exact": "1316647226430342891686848092488598115014367834927576079543949263561238207664140471570572844777165841364350187459860687560445133689/113795656011302630009039975302573304363908861184688493215174151722289253597518431316553530267396635250565490192465639640010221158400",
+      "lower_outward15": "0.011570276692280",
+      "upper": 0.011570276692280489,
+      "upper_exact": "1316647226430342891686848092488598115014367834927576079543949263561238207664140471570572844777165841364350187462808249315200731879/113795656011302630009039975302573304363908861184688493215174151722289253597518431316553530267396635250565490192465639640010221158400",
+      "upper_outward15": "0.011570276692281"
+    },
+    "unrestricted_reference_exact": "5618227081658093/5776135125917300",
+    "valid_family": "recorded endpoint and nominal0.15 families",
+    "witness_policy_id": "model-informed-feasible-witness:v1"
+  },
+  "reward": {
+    "cold_family_finite_training_loss": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.011876450252729685,
+      "lower_exact": "58494495806153225810063892539984880098372118245811510171027192906494295947398199918731727069098688061384587510439/4925250774549309901534880012517951725634967408808180833493536675530715221437151326426783281860614455100828498788352",
+      "lower_outward15": "0.011876450252729",
+      "upper": 0.011877480054413692,
+      "upper_exact": "675802817276584281568262332665324209536656859325307112205072851478118882987377377520270042291600539362564409458704822973807208043/56897828005651315004519987651286652181954430592344246607587075861144626798759215658276765133698317625282745096232819820005110579200",
+      "upper_outward15": "0.011877480054414"
+    },
+    "hot_family_shortfall_from_cold_means_permitted": false,
+    "objective": "reward",
+    "representation_loss": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.0,
+      "lower_exact": "0",
+      "lower_outward15": "0.000000000000000",
+      "upper": 1.0298016840077332e-06,
+      "upper_exact": "14648369774150523790092051329181618139825814065782003744300590911827003324788087614089092306711119008153058613368654532188347/14224457001412828751129996912821663045488607648086061651896768965286156699689803914569191283424579406320686274058204955001277644800",
+      "upper_outward15": "0.000001029801685"
+    },
+    "scope": "Interval operations only; no new optimizer or assertion of exact compact-family optimum",
+    "source_paths": [
+      "sha256:025e97391199e8bbbc8a5815a460f40687180458e92bad4e8778a9eb9039a3c4",
+      "sha256:2f3d0cb1c7555da17d993566ab80ebb0d72efe24f66e1c38fb6b158f3773cd7b",
+      "sha256:8549e0f831857b59b34884146909e05af4c3d4354580507f068cd394ec7fa57e"
+    ],
+    "unrestricted_minus_saved_mean": {
+      "interval_kind": "deterministic enclosure, not statistical confidence interval",
+      "lower": 0.011877480054413692,
+      "lower_exact": "168950704319146070392065583166331052384164214831326778051268212869529720746844344380067510572900134840641102364308915751132535697/14224457001412828751129996912821663045488607648086061651896768965286156699689803914569191283424579406320686274058204955001277644800",
+      "lower_outward15": "0.011877480054413",
+      "upper": 0.011877480054413692,
+      "upper_exact": "675802817276584281568262332665324209536656859325307112205072851478118882987377377520270042291600539362564409458704822973807208043/56897828005651315004519987651286652181954430592344246607587075861144626798759215658276765133698317625282745096232819820005110579200",
+      "upper_outward15": "0.011877480054414"
+    },
+    "unrestricted_reference_exact": "5613983912651497/5776135125917300",
+    "valid_family": "recorded endpoint and nominal0.15 families",
+    "witness_policy_id": "model-informed-feasible-witness:v1"
+  }
+}
