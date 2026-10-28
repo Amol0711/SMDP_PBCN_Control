@@ -1,0 +1,25 @@
+{
+  "array": "counts",
+  "columns": [
+    "executed_plant_steps",
+    "initiated_holds",
+    "scheduled_duration_total",
+    "input_on_steps",
+    "target_occupancy_steps",
+    "target_hit_indicator",
+    "failure_coded_first_target_time"
+  ],
+  "dtype": "int64",
+  "failure_code": 29,
+  "horizon": 28,
+  "initial_target_does_not_stop": true,
+  "new_rollouts": false,
+  "raw_states_inputs_logits_and_decision_arrays_excluded": true,
+  "right_to_redistribute_derived_outputs_established": false,
+  "shape": [
+    120,
+    7
+  ],
+  "source_arrays_equal": true,
+  "study": "28-node XOR-pirin original-path continuation"
+}
