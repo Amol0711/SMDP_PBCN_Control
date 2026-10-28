@@ -1,0 +1,7 @@
+Controller,Hit prob.,J,E[T_ cap],E[K],Update rate,Realized hold
+Time-triggered exact reference,1.000,5.734,5.688,5.688,1.000,1.000
+Macro-action exact reference,1.000,5.734,5.688,2.995,0.527,1.899
+Constrained macro exact reference,1.000,5.737,5.688,2.275,0.400,2.500
+Macro-Q,0.536 ±0.060,110.665 ±9.521,63.672 ±4.001,37.878 ±2.525,0.595 ±0.008,1.681 ±0.024
+PD-SMAC-FA stochastic,0.742 ±0.010,82.021 ±1.856,55.713 ±0.982,20.241 ±0.378,0.363 ±0.002,2.753 ±0.014
+PD-SMAC-FA greedy,0.759 ±0.042,78.607 ±10.158,54.220 ±6.359,39.173 ±4.870,0.722 ±0.014,1.385 ±0.027

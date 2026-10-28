@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\caption{28-node PD-SMAC budget sweep for saved greedy policies. Entries are means $\pm$ sample standard deviations across four training seeds. The common target occupancy is $0.663\pm0.019$ across the same four seedwise evaluation means. All three budgets have the same observed target trajectories, but their inputs, rewards and schedules need not coincide. The last column counts seedwise empirical feasibility, not stochastic-actor feasibility.}
+\label{comp:tab:melanoma28_budget_sweep}
+\centering
+\begingroup
+\fontsize{8}{10}\selectfont
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.14}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}cccccc@{}}
+\toprule
+$\Gamma$ & \shortstack{Task\\reward} & \shortstack{Update\\rate} & \shortstack{Realized\\hold} & \shortstack{Rate\\residual} & \shortstack{Feasible\\seeds} \\
+\midrule
+$0.25$ & \shortstack{$0.607$\\$\pm0.025$} & \shortstack{$0.218$\\$\pm0.007$} & \shortstack{$4.595$\\$\pm0.143$} & \shortstack{$-0.032$\\$\pm0.007$} & 4/4 \\[2pt]
+$0.40$ & \shortstack{$0.610$\\$\pm0.018$} & \shortstack{$0.226$\\$\pm0.024$} & \shortstack{$4.455$\\$\pm0.424$} & \shortstack{$-0.174$\\$\pm0.024$} & 4/4 \\[2pt]
+$0.55$ & \shortstack{$0.610$\\$\pm0.023$} & \shortstack{$0.252$\\$\pm0.046$} & \shortstack{$4.052$\\$\pm0.658$} & \shortstack{$-0.298$\\$\pm0.046$} & 4/4 \\[2pt]
+\bottomrule
+\end{tabular*}
+\endgroup
+\end{table}

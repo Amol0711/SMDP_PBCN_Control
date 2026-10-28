@@ -1,0 +1,6 @@
+row_index,latex_display_row
+1,State & Modal learned macro-action & Modal count & Long holds $\tau\ge4$ & Short holds $\tau\le2$ \\
+2,"$S$ safe target & $(u,\tau)=(0,4)$ & $7/10$ & $10/10$ & $0/10$ \\"
+3,"$B$ boundary target & $(u,\tau)=(1,1)$ & $9/10$ & $1/10$ & $9/10$ \\"
+4,"$O$ off target & $(u,\tau)=(1,2)$ & $8/10$ & $2/10$ & $8/10$ \\"
+5,"$L$ latent off target & $(u,\tau)=(1,3)$ & $5/10$ & $0/10$ & $5/10$ \\"

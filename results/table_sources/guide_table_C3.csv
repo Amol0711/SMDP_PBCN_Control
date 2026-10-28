@@ -1,0 +1,8 @@
+row_index,latex_display_row
+1,Study & Holds and update budget & Training & Evaluation \\
+2,"28-node & $\{1,\ldots,5\}$; $0.40$, sweep $\{0.25,0.40,0.55\}$ & 240 episodes; four seeds & $H=28$; 120 rollouts per seed. \\"
+3,"70-node & $\{1,2,4,6\}$; $0.40$ & 300 episodes; five seeds & $H=20$; 300 rollouts per seed. \\"
+4,"Four-state, reset/annealed & $\{1,\ldots,5\}$; $0.30$ & 1200 episodes; ten seeds & Exact stationary rates; 295--299 steps per episode. \\"
+5,"Four-state, continuing & $\{1,\ldots,5\}$; $0.30$ & $10^6$ decisions; ten seeds & No resets, temperature one and three reference indicators. \\"
+6,"28-node continuation & $\{1,\ldots,5\}$; $0.40$ & 240 to 1200 episodes; four paths/method & Same-path short--long evaluations on terminal tapes. \\"
+7,"Lactose arrival & $\{1,\ldots,5\}$ for macro-actions & 5000 episodes; ten seeds & $H=100$; four rollouts per initial state; immediate first-hit stopping. \\"

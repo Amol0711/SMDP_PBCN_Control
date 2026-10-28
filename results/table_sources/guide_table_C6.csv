@@ -1,0 +1,10 @@
+row_index,latex_display_row
+1,Policy & Target occupancy & Task reward & Update rate & Feasible seeds \\
+2,Stochastic & $0.568701\pm0.005811$ & $0.558343\pm0.005969$ & $0.327455\pm0.001490$ & 0/10 \\
+3,Greedy & $0.929183\pm0.007752$ & $0.926353\pm0.008241$ & $0.215062\pm0.018074$ & 10/10 \\
+4,Stochastic diagnostic & Mean & Minimum & Maximum \\
+5,$\lambda$ & $0.299313$ & $0.196823$ & $0.379040$ \\
+6,$R_{\rm act}$ & $0.091731$ & $0.088950$ & $0.097163$ \\
+7,$R_{\rm adv}$ & $2.073806$ & $2.042679$ & $2.129584$ \\
+8,$R_{\rm pri}$ & $0.027455$ & $0.024146$ & $0.029215$ \\
+9,$R_{\rm comp}$ & $0.008273$ & $0.004752$ & $0.011006$ \\

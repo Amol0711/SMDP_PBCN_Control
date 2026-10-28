@@ -1,0 +1,5 @@
+Controller,Hit probability,Coded first- target time,Target occupancy,Update rate,Realized hold,Rate residual
+DDQN+PER,0.960 ±0.080,3.170 ±1.609,0.810 ±0.084,1.000 ±0.000,1.000 ±0.000,+0.600 ±0.000
+TT-AC,1.000 ±0.000,2.172 ±0.066,0.884 ±0.004,1.000 ±0.000,1.000 ±0.000,+0.600 ±0.000
+PD-SMAC,1.000 ±0.000,2.172 ±0.066,0.884 ±0.004,0.200 ±0.000,5.000 ±0.000,-0.200 ±0.000
+Fixed u≡1 all four holds,1.000 ±0.000,2.172 ±1.484,0.884 ±0.110,Duration-specific accounting in the computational guide,,

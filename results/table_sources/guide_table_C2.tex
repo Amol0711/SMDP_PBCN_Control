@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\caption{Boolean update laws for the 9-gene lactose-operon PBCN benchmark.}
+\label{comp:tab:lactose_update_rules}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}c l c c l c@{}}
+\toprule
+Node & Update law & Prob. & Node & Update law & Prob. \\
+\midrule
+$X_1^+$ & $\neg X_7 \wedge X_3$ & $1$ & $X_6^+$ & $X_1$ & $1$ \\
+$X_2^+$ & $X_1$ & $1$ & $X_7^+$ & $\neg X_4 \wedge \neg X_8$ & $1$ \\
+$X_3^+$ & $\neg U_1$ & $1$ & $X_8^+$ & $X_4 \vee X_5 \vee X_9$ & $1$ \\
+$X_4^+$ & $X_5 \wedge X_6$ & $1$ & $X_9^+$ & $\neg U_1 \wedge (X_5 \vee U_2)$ & $0.6$ \\
+$X_5^+$ & $\neg U_1 \wedge X_2 \wedge U_2$ & $0.7$ & $X_9^+$ & $X_9$ & $0.4$ \\
+$X_5^+$ & $X_5$ & $0.3$ &  &  &  \\
+\bottomrule
+\end{tabular*}
+\end{table}

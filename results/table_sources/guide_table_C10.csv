@@ -1,0 +1,5 @@
+scheduled_hold,updates,realized_hold,update_rate,rate_residual,within_budget
+1,20,1.000,1.000,+0.600,No
+2,10,2.000,0.500,+0.100,No
+4,5,4.000,0.250,-0.150,Yes
+6,4,5.000,0.200,-0.200,Yes

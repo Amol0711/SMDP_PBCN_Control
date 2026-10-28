@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\caption{Statewise action counts across the ten final greedy PD-SMAC policies in the heterogeneous-dwell diagnostic. The state labels are $S$ for the safe target state, $B$ for the boundary target state, $O$ for the off-target state, and $L$ for the latent off-target state.}
+\label{comp:tab:heterogeneous_dwell_policy_counts}
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+State & Modal learned macro-action & Modal count & Long holds $\tau\ge4$ & Short holds $\tau\le2$ \\
+\midrule
+$S$ safe target & $(u,\tau)=(0,4)$ & $7/10$ & $10/10$ & $0/10$ \\
+$B$ boundary target & $(u,\tau)=(1,1)$ & $9/10$ & $1/10$ & $9/10$ \\
+$O$ off target & $(u,\tau)=(1,2)$ & $8/10$ & $2/10$ & $8/10$ \\
+$L$ latent off target & $(u,\tau)=(1,3)$ & $5/10$ & $0/10$ & $5/10$ \\
+\bottomrule
+\end{tabular}}
+\end{table}

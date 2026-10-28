@@ -1,0 +1,15 @@
+row_index,latex_display_row
+1,Symbols & Meaning \\
+2,"$t$, $k$, $t_k$ & Plant index, controller-decision index, and trigger instant. These differ from the fast critic and slow actor analysis clocks. \\"
+3,"$X(t),U(t),X_k$ & Plant state, applied input, and trigger state $X(t_k)$. \\"
+4,"$A_k=(u_k,\tau_k)$, $\tilde\tau_k$ & Selected macro-action and realized duration. Its components and $t_k$ are generally random. Complete holds have $\tilde\tau_k=\tau_k$ and $t_{k+1}=t_k+\tau_k$. \\"
+5,"$P_u$, $\bar P^a$, $P_\theta$ & Plant-step, complete-hold, and fixed-policy trigger kernels. \\"
+6,"$s$, $r_u=P_us_u$, $G$, $\widehat G_k$ & Post-transition score, its one-step expectation, complete-hold expected reward, and realized interval sum. \\"
+7,"$d_\theta$, $\mu_\theta$ & Trigger-state and trigger state--action distributions, not plant-step occupation distributions. \\"
+8,"$\Gbar$, $\Cbar$, $\Tbar$ & Reward, expenditure, and duration per trigger interval. Their ratios give plant-time rates $\eta$ and $\kappa$. \\"
+9,"$c(a)$, $\nu$, $\widehat\nu_k$ & Per-decision update expenditure, excess numerator $\Cbar-\Gamma\Tbar$, and sample $c(A_k)-\Gamma\tilde\tau_k$. Input penalties in $s$ instead accrue per plant step. \\"
+10,"$\theta$, $W$, $v$, $\vartheta_e$ & Actor coordinates, stored logit or actor-weight array, critic coordinates, and recorded softmax temperature. The numerical map from $W$ to the policy is stated in Section~C2.4. \\"
+11,"$\pi_{\theta_{\rm out}}$, $\omega_{\theta_{\rm out}}$ & Saved stochastic policy and its separately evaluated greedy extraction. \\"
+12,"$r=\kappa-\Gamma$, $R_{\rm pri}$ & Signed rate residual and nonnegative primal violation $\max\{0,r\}$, separate from the reward vectors $r_u$. \\"
+13,"$T_{\rm cap}$, $K$, $A$, $F_H$ & Stopping time capped by the horizon, initiated holds, scalar input exposure, and failure indicator. The scalar $A$ is not $A_k$ or the advantage $A_{\theta,\lambda}$. \\"
+14,"$h_{\theta,\lambda}$, $h^{\mathrm r}_{\theta,\lambda}$ & Stationary-mean and reference-state value normalizations. The state $i_0$ is fixed. The estimate $\hat\eta_k$ tracks $\eta_{\lambda_k}(\theta_k)$, not $\eta(\theta_k)$. \\"

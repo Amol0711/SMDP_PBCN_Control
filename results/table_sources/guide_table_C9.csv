@@ -1,0 +1,5 @@
+row_index,latex_display_row
+1,$\Gamma$ & \shortstack{Task\\reward} & \shortstack{Update\\rate} & \shortstack{Realized\\hold} & \shortstack{Rate\\residual} & \shortstack{Feasible\\seeds} \\
+2,$0.25$ & \shortstack{$0.607$\\$\pm0.025$} & \shortstack{$0.218$\\$\pm0.007$} & \shortstack{$4.595$\\$\pm0.143$} & \shortstack{$-0.032$\\$\pm0.007$} & 4/4 \\[2pt]
+3,$0.40$ & \shortstack{$0.610$\\$\pm0.018$} & \shortstack{$0.226$\\$\pm0.024$} & \shortstack{$4.455$\\$\pm0.424$} & \shortstack{$-0.174$\\$\pm0.024$} & 4/4 \\[2pt]
+4,$0.55$ & \shortstack{$0.610$\\$\pm0.023$} & \shortstack{$0.252$\\$\pm0.046$} & \shortstack{$4.052$\\$\pm0.658$} & \shortstack{$-0.298$\\$\pm0.046$} & 4/4 \\[2pt]

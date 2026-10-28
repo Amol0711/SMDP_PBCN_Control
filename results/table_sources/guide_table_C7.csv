@@ -1,0 +1,13 @@
+row_index,latex_display_row
+1,Policy & \shortstack{Occupancy\\240 episodes} & \shortstack{Occupancy\\1200 episodes} & \shortstack{Task reward\\1200 episodes} & \shortstack{Update rate\\1200 episodes} \\
+2,"DDQN+PER, greedy & $0.379911\pm0.176681$ & $0.616443\pm0.040297$ & $0.593546\pm0.032093$ & $1.000000\pm0.000000$ \\[2pt]"
+3,"TT-AC, greedy & $0.083333\pm0.028260$ & $0.518824\pm0.276882$ & $0.481833\pm0.252607$ & $1.000000\pm0.000000$ \\[2pt]"
+4,"TT-AC, stochastic & $0.416518\pm0.108934$ & $0.552827\pm0.200598$ & $0.513568\pm0.177669$ & $1.000000\pm0.000000$ \\[2pt]"
+5,"PD-SMAC, greedy & $0.662574\pm0.019172$ & $0.662054\pm0.018657$ & $0.632594\pm0.019108$ & $0.234747\pm0.014019$ \\[2pt]"
+6,"PD-SMAC, stochastic & $0.590476\pm0.041945$ & $0.653720\pm0.023528$ & $0.619381\pm0.024434$ & $0.263690\pm0.009919$ \\[2pt]"
+7,Policy & Mean paired occupancy change & 95\% percentile interval \\
+8,"DDQN+PER, greedy & $0.236533$ & $[0.098958,0.374107]$ \\"
+9,"TT-AC, greedy & $0.435491$ & $[0.145387,0.589583]$ \\"
+10,"TT-AC, stochastic & $0.136310$ & $[-0.061458,0.332292]$ \\"
+11,"PD-SMAC, greedy & $-0.000521$ & $[-0.001562,0.000000]$ \\"
+12,"PD-SMAC, stochastic & $0.063244$ & $[0.045833,0.083333]$ \\"

@@ -1,0 +1,17 @@
+\begin{table}[tbp]
+\caption{70-node fixed-input duration accounting at horizon $H=20$ and update budget $0.40$. Every row uses the same constant input and paired plant trajectories. Scheduled and realized holding times differ when the last interval is truncated.}
+\label{comp:tab:persistent_duration_accounting}
+\centering
+\begingroup\small
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}cccccc@{}}
+\toprule
+Scheduled $\tau$ & Updates $K_H$ & Realized hold & Update rate & Rate residual & Within budget \\
+\midrule
+$1$ & $20$ & $1.000$ & $1.000$ & $+0.600$ & No \\
+$2$ & $10$ & $2.000$ & $0.500$ & $+0.100$ & No \\
+$4$ & $5$ & $4.000$ & $0.250$ & $-0.150$ & Yes \\
+$6$ & $4$ & $5.000$ & $0.200$ & $-0.200$ & Yes \\
+\bottomrule
+\end{tabular*}
+\endgroup
+\end{table}

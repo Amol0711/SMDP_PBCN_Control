@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\caption{Uncertainty across ten exactly evaluated stochastic PD-SMAC endpoints. The unrestricted references are objective-matched. Gaps are learned values minus the named reference.}
+\label{comp:tab:heterogeneous_dwell_bootstrap}
+\centering
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.46\linewidth}ccc@{}}
+\toprule
+Quantity & Mean & \shortstack{Sample\\standard deviation} & \shortstack{Bootstrap 95\%\\confidence interval} \\
+\midrule
+Target occupancy & $0.961092$ & $0.010276$ & $[0.954643,0.966940]$ \\
+Task-reward rate & $0.960050$ & $0.010708$ & $[0.953298,0.966103]$ \\
+Update rate & $0.247135$ & $0.025124$ & $[0.231304,0.262089]$ \\
+Stationary mean hold & $4.087924$ & $0.454218$ & $[3.815796,4.376608]$ \\
+Update-rate residual & $-0.052865$ & $0.025124$ & $[-0.068696,-0.037911]$ \\
+Occupancy minus best feasible fixed-$\tau$ reference & $0.034810$ & $0.010276$ & $[0.028362,0.040658]$ \\
+Occupancy minus deterministic reference & $-0.007386$ & $0.010276$ & $[-0.013835,-0.001538]$ \\
+Occupancy minus unrestricted occupancy LP & $-0.011570$ & $0.010276$ & $[-0.018019,-0.005722]$ \\
+Reward minus unrestricted penalized LP & $-0.011877$ & $0.010708$ & $[-0.018629,-0.005824]$ \\
+\bottomrule
+\end{tabular*}
+\endgroup
+\end{table}

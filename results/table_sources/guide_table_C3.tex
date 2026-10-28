@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\caption{Essential evaluation profiles. The 28-node row describes the saved-policy experiment; its fixed holds use four paired terminal blocks totaling 480 rollouts. The 70-node fixed policies use five paired terminal blocks totaling 1500 rollouts. Fixed holds require no training. The lactose mean-field protocol is specified separately in \hyperref[comp:sec:lactose]{Section~C2.1}.}
+\label{comp:tab:melanoma_protocol}
+\centering
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.14}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}@{}}
+\toprule
+Study & Holds and update budget & Training & Evaluation \\
+\midrule
+28-node & $\{1,\ldots,5\}$; $0.40$, sweep $\{0.25,0.40,0.55\}$ & 240 episodes; four seeds & $H=28$; 120 rollouts per seed. \\
+70-node & $\{1,2,4,6\}$; $0.40$ & 300 episodes; five seeds & $H=20$; 300 rollouts per seed. \\
+Four-state, reset/annealed & $\{1,\ldots,5\}$; $0.30$ & 1200 episodes; ten seeds & Exact stationary rates; 295--299 steps per episode. \\
+Four-state, continuing & $\{1,\ldots,5\}$; $0.30$ & $10^6$ decisions; ten seeds & No resets, temperature one and three reference indicators. \\
+28-node continuation & $\{1,\ldots,5\}$; $0.40$ & 240 to 1200 episodes; four paths/method & Same-path short--long evaluations on terminal tapes. \\
+Lactose arrival & $\{1,\ldots,5\}$ for macro-actions & 5000 episodes; ten seeds & $H=100$; four rollouts per initial state; immediate first-hit stopping. \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
