@@ -1,0 +1,48 @@
+{
+  "FA_TT_exact": {
+    "T_cap": 5.687912510884836,
+    "updates": 5.687912510884836,
+    "input_exposure": 4.5930144096745575,
+    "failure_probability": 2.416536604187636e-38,
+    "hit_probability": 1.0,
+    "J": 5.733842654981581,
+    "budget_numerator": 3.412747506530901,
+    "rate": 1.0,
+    "coded_hit_time": 5.687912510884836,
+    "successful_hit_time": 5.687912510884836,
+    "scheduled_mean_hold": 1.0,
+    "realized_mean_hold": 1.0,
+    "pure_optimum": 5.733842654981592,
+    "tie_objective_gap": -1.0658141036401503e-14
+  },
+  "FA_macro_exact": {
+    "T_cap": 5.687912510884836,
+    "updates": 2.995123403733771,
+    "input_exposure": 4.5930144096745575,
+    "failure_probability": 2.41653660418764e-38,
+    "hit_probability": 1.0,
+    "J": 5.733842654981581,
+    "budget_numerator": 0.7199583993798364,
+    "rate": 0.526576911652925,
+    "coded_hit_time": 5.687912510884836,
+    "successful_hit_time": 5.687912510884836,
+    "scheduled_mean_hold": 2.4021059675254643,
+    "realized_mean_hold": 1.8990578163805167,
+    "pure_optimum": 5.733842654981591,
+    "tie_objective_gap": -9.769962616701378e-15
+  },
+  "FA_macro_constrained_exact": {
+    "T_cap": 5.6879125108849715,
+    "updates": 2.2751649867349952,
+    "input_exposure": 4.952410355091006,
+    "failure_probability": 2.1023697808329783e-15,
+    "hit_probability": 0.9999999999999979,
+    "J": 5.737436614436092,
+    "budget_numerator": -1.7618993375378977e-08,
+    "rate": 0.3999999969023797,
+    "coded_hit_time": 5.687912510884973,
+    "successful_hit_time": 5.6879125108847735,
+    "scheduled_mean_hold": 2.9959993290261746,
+    "realized_mean_hold": 2.5000000193601273
+  }
+}

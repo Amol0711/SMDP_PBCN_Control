@@ -1,0 +1,98 @@
+{
+  "decision": 0,
+  "mode": "production",
+  "parameter_scalars": {
+    "eta": 0.0,
+    "multiplier": 0.1
+  },
+  "protocol_sha256": "b5bd560861962dc9dc3568534854d30d30171420b50cb0dcae5e9cbb745859db",
+  "seed_label": 2,
+  "source_checkpoint_sha256": "a22401cf049065d45d49c111ee800965467b6f38d5bca405d1a0df9b35ca4f0c",
+  "state": {
+    "current_state": 3,
+    "initial_state": 3,
+    "initial_uniform": 0.922081975047097,
+    "input_exposure": 0,
+    "k": 0,
+    "mode": "production",
+    "offsets": {
+      "actor": 0,
+      "initial_state": 1,
+      "plant": 0
+    },
+    "plant_time": 0,
+    "reward_total": 0.0,
+    "rng_states": {
+      "actor": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 50302003870537967707249804832664958397,
+          "state": 323352206908382052359345507648782452915
+        },
+        "uinteger": 0
+      },
+      "initial_state": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 179363935414007425367580193686525218471,
+          "state": 75228381687163373230085564515126542279
+        },
+        "uinteger": 0
+      },
+      "plant": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 202201844247411597285257658117084169347,
+          "state": 228286588617870992782632157569312156753
+        },
+        "uinteger": 0
+      }
+    },
+    "seed_keys": {
+      "actor": [
+        20260919,
+        212,
+        21,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ],
+      "initial_state": [
+        20260919,
+        212,
+        23,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ],
+      "plant": [
+        20260919,
+        212,
+        22,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ]
+    },
+    "seed_label": 2,
+    "tail_counts": {
+      "actor": 0,
+      "initial_state": 0,
+      "plant": 0
+    },
+    "target_count": 0
+  },
+  "state_sha256": "2d41808d2daa690e64cf25cff5142a8ee182fa8debaf7882bc1084446594bf34"
+}

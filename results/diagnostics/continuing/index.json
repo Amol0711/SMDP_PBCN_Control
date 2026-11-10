@@ -1,0 +1,782 @@
+[
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_00/k_000000000",
+    "seed": 0,
+    "source_checkpoint_sha256": "553fe432b9c13870158db0471b3d8425b3ac65e06e08f7d0bf9f3d6bf10564ac"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_00/k_000000100",
+    "seed": 0,
+    "source_checkpoint_sha256": "8462a73f15b14ee5790a3d8d2fa6069e1492743ed8f511efe4efef06408347c4"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_00/k_000001000",
+    "seed": 0,
+    "source_checkpoint_sha256": "b281d713ee81c5d2c41b62779cdea66aea13ad8dc892816aca69db4d2d24846b"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_00/k_000005000",
+    "seed": 0,
+    "source_checkpoint_sha256": "e7bbeaf3a9a5e714a96601ca8959d87bba3996b1253c77848ce7acbccc84a4a3"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_00/k_000010000",
+    "seed": 0,
+    "source_checkpoint_sha256": "3b4ac25a13e844401501bbaa0b72ce4d3d769d4b69177dd6cffb5f539862b4e2"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_00/k_000025000",
+    "seed": 0,
+    "source_checkpoint_sha256": "a03778214f3d66b889931a6303139f92f4cf48ac560511fe6610ac11d51380ff"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_00/k_000050000",
+    "seed": 0,
+    "source_checkpoint_sha256": "efcc8e12ab8de277092f087a007037550817fcd1ec8056427e2a79ceb04ca8f2"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_00/k_000100000",
+    "seed": 0,
+    "source_checkpoint_sha256": "11933f61169b4af1e28600a62fb438f34041cd0518e72c4ca3db729b7ad74834"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_00/k_000200000",
+    "seed": 0,
+    "source_checkpoint_sha256": "0e512eb98bb0cb08ab842b1b9399a3c70f222d67c72f58a132b694f9ce41c0f7"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_00/k_000400000",
+    "seed": 0,
+    "source_checkpoint_sha256": "cb20fb38ab80df6a5e843804059640273dba6891a1dcfff9589138b5afb7a34a"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_00/k_000600000",
+    "seed": 0,
+    "source_checkpoint_sha256": "ab5738ee356652767eaee74b52ef16bfbbd6b544323f72cdb09e2b2fade7c8ae"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_00/k_000800000",
+    "seed": 0,
+    "source_checkpoint_sha256": "95770e69a4c3a052162b60e2d878ddad0743db433730000849436e0d0fbfae36"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_00/k_001000000",
+    "seed": 0,
+    "source_checkpoint_sha256": "76eafd119dc00495d76f2fc6bc9ab4bf59c8ba016dabadd5e8152471c763ba01"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_01/k_000000000",
+    "seed": 1,
+    "source_checkpoint_sha256": "755854f0913d7848ec910556e5a155a1af21a401e50c23e4a628dc2736584952"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_01/k_000000100",
+    "seed": 1,
+    "source_checkpoint_sha256": "68c4e285db6fcfe3013a2e917d2af2e2c9cc57ea4bd6739ec24d4cbdab58388b"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_01/k_000001000",
+    "seed": 1,
+    "source_checkpoint_sha256": "796ff326e8bc985ac581034070ff04d0b79b11c78bebfcb02aa52b3d6b739c46"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_01/k_000005000",
+    "seed": 1,
+    "source_checkpoint_sha256": "b47f0296263d1edab0a5ad0aae8aab9f873025316ee6f7b0c5f38abe22ae40f8"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_01/k_000010000",
+    "seed": 1,
+    "source_checkpoint_sha256": "39887198ff297ddb235f6e45bb5bd95518b7ead47d1b7bcf3c37940dd7e9b938"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_01/k_000025000",
+    "seed": 1,
+    "source_checkpoint_sha256": "3ed4174513654194019011b51188d4b3c8c93b20651031a6b8c0428526e2ed7e"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_01/k_000050000",
+    "seed": 1,
+    "source_checkpoint_sha256": "c457ecd07625b9a5849abf4ca4a6f4f97142cd8b45ad4a7868078b9b8c485d86"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_01/k_000100000",
+    "seed": 1,
+    "source_checkpoint_sha256": "de86277112fbf0e785c1deaf1592914888782e83126daab7762393d3c2c787ed"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_01/k_000200000",
+    "seed": 1,
+    "source_checkpoint_sha256": "481efa4b06eb07a0920bbe47b23654788aa024ec517ec51cb4f4b209eba7439b"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_01/k_000400000",
+    "seed": 1,
+    "source_checkpoint_sha256": "860e27fd66b546b937a5c1c278a6324012ca9787a88213f8d2477d65d08a32bb"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_01/k_000600000",
+    "seed": 1,
+    "source_checkpoint_sha256": "4c2b8aea78b8a6d74ff09d949da9babf8181b223e5a07d0d6882126efbe2bb68"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_01/k_000800000",
+    "seed": 1,
+    "source_checkpoint_sha256": "6a0d8528db03fefaf5e915c349cdb82e24618893b9a1f50f400aa2f15f55a47c"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_01/k_001000000",
+    "seed": 1,
+    "source_checkpoint_sha256": "269eeea93d328b07aa351f551e8030b634b7a7e77971e74655d3128c33599cfe"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_02/k_000000000",
+    "seed": 2,
+    "source_checkpoint_sha256": "a22401cf049065d45d49c111ee800965467b6f38d5bca405d1a0df9b35ca4f0c"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_02/k_000000100",
+    "seed": 2,
+    "source_checkpoint_sha256": "9a0bd79fc6c187606369ad946efeb0a4f5d20292c5816152eb298c9ad9338950"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_02/k_000001000",
+    "seed": 2,
+    "source_checkpoint_sha256": "4ca6cfc631a703c5258ebca73083ce196fc7efeb1458f15e2b151105e87d8db6"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_02/k_000005000",
+    "seed": 2,
+    "source_checkpoint_sha256": "40eac3a05ef78a30cc72ceb7afe83c88a47cf999477a366ff8e92a9913c752b5"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_02/k_000010000",
+    "seed": 2,
+    "source_checkpoint_sha256": "3ae604394c795f2f0c2388f714a8f1123460aec3014c36a0cf5ce95b45bcd976"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_02/k_000025000",
+    "seed": 2,
+    "source_checkpoint_sha256": "ff403a965160cbfd0e0051f5ba68fffdd68ee44ad59fb9026ebf103ecc548873"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_02/k_000050000",
+    "seed": 2,
+    "source_checkpoint_sha256": "95c3c846a8c730e8fed2af631db2ee166def993a2ee34b24639f8432bc677b07"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_02/k_000100000",
+    "seed": 2,
+    "source_checkpoint_sha256": "5cad5c850623b8ea8bebb4e04a090222f32e702ab7931b29fa9ece8f697d52b6"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_02/k_000200000",
+    "seed": 2,
+    "source_checkpoint_sha256": "5bc3d9ccc9639146b7e6e18965c85f2ccb42802a47c0b702edcbb0acb9bfb106"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_02/k_000400000",
+    "seed": 2,
+    "source_checkpoint_sha256": "3107e039a7b51b2f7d985534912eaaa5abc15949e71a7cc2f6b15b1ae6ecd76e"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_02/k_000600000",
+    "seed": 2,
+    "source_checkpoint_sha256": "4b4ddb8dc9b1dcc26621a39051ed3b6f77d4ca7ab06731ffdd09a7c0ec61fc11"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_02/k_000800000",
+    "seed": 2,
+    "source_checkpoint_sha256": "c52849cc5be6931408a3a4a9c40a967d1a76d5f6f45f4b75f916f0f2a09c2e74"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_02/k_001000000",
+    "seed": 2,
+    "source_checkpoint_sha256": "10d575a20a5a7c22abdeedb4966c1bd3a4a720014dcf43816429908f6f6c429b"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_03/k_000000000",
+    "seed": 3,
+    "source_checkpoint_sha256": "00adfb549d39187b379ece35b195a27673422f243db9e414754e245d3960c3b6"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_03/k_000000100",
+    "seed": 3,
+    "source_checkpoint_sha256": "2ea9ad0584cbdd8a26314d4674d4552fa3991ddb79c7ae3294d7c67e36bcb0d5"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_03/k_000001000",
+    "seed": 3,
+    "source_checkpoint_sha256": "d6b435f81f8c66340ba623cf3124ed9268e59fdfdfc9b4b49e2a271b99713494"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_03/k_000005000",
+    "seed": 3,
+    "source_checkpoint_sha256": "93a48bb0326f2db43b4fe0f4cd95e685fb49bfc6861ce5d87280e68417c2a601"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_03/k_000010000",
+    "seed": 3,
+    "source_checkpoint_sha256": "8a6320e2691a824016537caa0640ec419bbb6e9c7251b60adcf1f6b8ffce3c8b"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_03/k_000025000",
+    "seed": 3,
+    "source_checkpoint_sha256": "1f01956b794d7ecfe8bc46af1a0d4305fa3e15a676f02661b1e9d8f129fd6d67"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_03/k_000050000",
+    "seed": 3,
+    "source_checkpoint_sha256": "035408521be626b66a41f4106c5eed102c838472f82c32838ff9fd9001edee8d"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_03/k_000100000",
+    "seed": 3,
+    "source_checkpoint_sha256": "3b78d42b6bd9505d06b4fd2e696dacebe9dfc5c5e4099e33943ab58ade0212b3"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_03/k_000200000",
+    "seed": 3,
+    "source_checkpoint_sha256": "c6de8d6c081e5f197b70933e72c1d53005546611471d63ff01d2b41b2a4dbec2"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_03/k_000400000",
+    "seed": 3,
+    "source_checkpoint_sha256": "6bcabfa21aac2ea7bdc622dc59e1075b9437f5a3793e6c725b51da82193bea63"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_03/k_000600000",
+    "seed": 3,
+    "source_checkpoint_sha256": "a97cd33480ae59226f815fb87ef90f5428e5084ee01cc12589e8fdfe01b2cee6"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_03/k_000800000",
+    "seed": 3,
+    "source_checkpoint_sha256": "f1a88df10e06a1a6edce6c30f96bc2fe017e5729762f5c86defcf687603e4561"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_03/k_001000000",
+    "seed": 3,
+    "source_checkpoint_sha256": "7493db77c2a11a0364b08d288ae51719a5a9b59459438fd7e96ef4ea35801e79"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_04/k_000000000",
+    "seed": 4,
+    "source_checkpoint_sha256": "1d65b22acefe8f07c1c3f063bc899e7b37bbc09779cdb5e7cd2ad22d41d75edc"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_04/k_000000100",
+    "seed": 4,
+    "source_checkpoint_sha256": "2a91ae38a3b5d29849d18a04f0ec8d69a72702f55b0fbafe195f0db2112edf21"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_04/k_000001000",
+    "seed": 4,
+    "source_checkpoint_sha256": "76913f7a102e46bae0ea99d009b476739f00c05f569a863a6819544fa3f7b5ca"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_04/k_000005000",
+    "seed": 4,
+    "source_checkpoint_sha256": "ee8534572ee3f200acbdde13b5304b045c35a09139c1a777f843bb19f1a25e40"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_04/k_000010000",
+    "seed": 4,
+    "source_checkpoint_sha256": "b50974d25153f56c7cdc44e4bd8252f6e03a757edeadc2b881c9c1593eafc6cb"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_04/k_000025000",
+    "seed": 4,
+    "source_checkpoint_sha256": "3e507bf55916f4bef6a9130776f7a3245ee8b3a0b8d5847f176cd3d8eaa42308"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_04/k_000050000",
+    "seed": 4,
+    "source_checkpoint_sha256": "fbc2be1e0827eadb8e17171e469c92f04b13d3544b1bc14f8ab36766ae918a00"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_04/k_000100000",
+    "seed": 4,
+    "source_checkpoint_sha256": "21e475de23512b399f418d8d8df1fb1b61e867d07ec3be2268952ce19655f559"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_04/k_000200000",
+    "seed": 4,
+    "source_checkpoint_sha256": "a2b07d7a5d6e1143180f71175242718c4b792cd65759cf3bef4b0d79fbc1a513"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_04/k_000400000",
+    "seed": 4,
+    "source_checkpoint_sha256": "b0ffde41316c3a767e9777211ac679cfc62379b2a555eb32b4ec1c9db58d43c7"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_04/k_000600000",
+    "seed": 4,
+    "source_checkpoint_sha256": "7680e9a200dea5665daec0da7bbdc1db907c20db5fd942e22fdc1c3160586f62"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_04/k_000800000",
+    "seed": 4,
+    "source_checkpoint_sha256": "110d270e29a49c95ac899985cee927ed334aacdb2236cc3c5dba5522f41c353f"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_04/k_001000000",
+    "seed": 4,
+    "source_checkpoint_sha256": "b9c4f1e7eb6db7e39a3ec5d1adf3e96d0a3974911ee5ef68331f9616ec7ffbf7"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_05/k_000000000",
+    "seed": 5,
+    "source_checkpoint_sha256": "548943a64570087ba1caba5b5598f5353f058bd02a566c46b62db479e7d2bbdb"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_05/k_000000100",
+    "seed": 5,
+    "source_checkpoint_sha256": "85b5eb866c5a20c4d2ba46ba67a98dc232535676299c567aa319359d11e9be12"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_05/k_000001000",
+    "seed": 5,
+    "source_checkpoint_sha256": "d31074ce967a14f58c08cc7820e29711d57b16686d7a9ebfd6ca2804f0765877"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_05/k_000005000",
+    "seed": 5,
+    "source_checkpoint_sha256": "5b3d6eda7f5fe882c67e4cf86a64174692e568a6ebf497b8f6de8e4e2b67e608"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_05/k_000010000",
+    "seed": 5,
+    "source_checkpoint_sha256": "b31638c19a0f44fb44ec0bfa4770a4385b359154be5b8fab40dc04877e3dff3a"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_05/k_000025000",
+    "seed": 5,
+    "source_checkpoint_sha256": "ce954ede716bcd6f092a3bd43e73b7a7c6e4bde1325e2bd0d0b9306d2333b662"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_05/k_000050000",
+    "seed": 5,
+    "source_checkpoint_sha256": "0f326c840d8d807355ec07eba4a0968434be85b39e812b9cd04edb4d2093dbfa"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_05/k_000100000",
+    "seed": 5,
+    "source_checkpoint_sha256": "42a5769bca87bfb271a56245578ae2dd7697f645171631f5e0b6ef27fa709988"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_05/k_000200000",
+    "seed": 5,
+    "source_checkpoint_sha256": "5fe0e8aad49b8485e54a112e52be11a996afc6ab0679115311271604794dfc1d"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_05/k_000400000",
+    "seed": 5,
+    "source_checkpoint_sha256": "861cdc3f58987c01f8e653d80d43c88f3515cb06d974f7b5ea9f6ede34717d0b"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_05/k_000600000",
+    "seed": 5,
+    "source_checkpoint_sha256": "e2afd59b6e86585daa09cd0d06986b9861909c1eff8657ed8947d4d4337f1bd7"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_05/k_000800000",
+    "seed": 5,
+    "source_checkpoint_sha256": "3341b6adeb806bf7058582df5630dce0100ebb68705f5e840899024a37948421"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_05/k_001000000",
+    "seed": 5,
+    "source_checkpoint_sha256": "29d97249d58c9f78d300fa4f03c7962edff3ce3867b7c0a5514e711f551744a9"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_06/k_000000000",
+    "seed": 6,
+    "source_checkpoint_sha256": "9b3d9b485a4944e9f07b15573af196ada5ef8b59051df629881154f9493da4f6"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_06/k_000000100",
+    "seed": 6,
+    "source_checkpoint_sha256": "6324790f1ea9e51e332f838b30c36a06d3900114e4c438cf234652b24f4cc3e4"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_06/k_000001000",
+    "seed": 6,
+    "source_checkpoint_sha256": "0f2defaa170d61e9e92bba38d383e25a975c102bfcec98fe16d741d683d62d82"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_06/k_000005000",
+    "seed": 6,
+    "source_checkpoint_sha256": "e15941496382dd8f38041dbcdcac0e4da3b6a6502d0a15bd479baf67217b8c39"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_06/k_000010000",
+    "seed": 6,
+    "source_checkpoint_sha256": "4b7eea976d4d193b032472fc6d79fa53fa62e58040b6c1cd965db1ad52956a85"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_06/k_000025000",
+    "seed": 6,
+    "source_checkpoint_sha256": "8f2ddb39e5eb3af2e1b6f06060309ada6c9f40ea4ad210ebe0ed5ef641904961"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_06/k_000050000",
+    "seed": 6,
+    "source_checkpoint_sha256": "e477ffbb9e4126688bc057fa5a6d978840562edce85d37b8dee68ab7cfd5b366"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_06/k_000100000",
+    "seed": 6,
+    "source_checkpoint_sha256": "cbf1a8295c8ddd5d37a1cad25f96c4d52fc28c58bba1e216b43f01fff08d0601"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_06/k_000200000",
+    "seed": 6,
+    "source_checkpoint_sha256": "23c33134621cc7b8044b90c0bbaf8b1f1c5b4a630c1cbc83899bec683e048317"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_06/k_000400000",
+    "seed": 6,
+    "source_checkpoint_sha256": "6290a06e8b879fad55ebfd453a6ad40137c8972b796943116174802e577c5243"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_06/k_000600000",
+    "seed": 6,
+    "source_checkpoint_sha256": "212327080cecaba1a4b43e7ebfae05e8d8929a6d8f16413f699ed0aadf54c9a1"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_06/k_000800000",
+    "seed": 6,
+    "source_checkpoint_sha256": "604c38ac55646066fc15330c358b967ab203eb46f8e42134bc8f97bcbba4c2b4"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_06/k_001000000",
+    "seed": 6,
+    "source_checkpoint_sha256": "73262b51cdc27fb3c734360bad792f3f1214d273596a84674c811967ce888a68"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_07/k_000000000",
+    "seed": 7,
+    "source_checkpoint_sha256": "ac4271a6b01ba4e6da0a499740f847157807129040a3a1dd72db5c9a8233c24b"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_07/k_000000100",
+    "seed": 7,
+    "source_checkpoint_sha256": "a03a7a15be867fe03d431583b1fd5dd6fece17737ce1d5d8b6c75d8e6be59a5b"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_07/k_000001000",
+    "seed": 7,
+    "source_checkpoint_sha256": "0b27bb406a20e2368328ef406ab421fe8462965d3d401867d133ad87a7e8ac04"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_07/k_000005000",
+    "seed": 7,
+    "source_checkpoint_sha256": "92c7d2fd7d35517caad25c1c89e4c2112c77d872d535e13bdbb44b6675373bd0"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_07/k_000010000",
+    "seed": 7,
+    "source_checkpoint_sha256": "e74d6810db8568d66d1772c63e8465644455ffbba74427bd3d8201c3ab61df79"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_07/k_000025000",
+    "seed": 7,
+    "source_checkpoint_sha256": "530023f146cfae38ac33029ffe32d7610a6b2fa830da0e9aa163d10401dc8a52"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_07/k_000050000",
+    "seed": 7,
+    "source_checkpoint_sha256": "a6b28a1a5f878ebdd1c89c35d95a17e582ccc4632f332bbc923b913afe0a09b5"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_07/k_000100000",
+    "seed": 7,
+    "source_checkpoint_sha256": "cc1ce0ed6d16a1de382d2b304b4fb5ddba0bf381bf8bf7dd46221e1341a2b7cf"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_07/k_000200000",
+    "seed": 7,
+    "source_checkpoint_sha256": "45b2ee1f673c00bcb26cc6ada69d5956168edcfe8a7801d0940e16b00f02436d"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_07/k_000400000",
+    "seed": 7,
+    "source_checkpoint_sha256": "da5e4c200eb7bfdf5f3e4d059dc5efc37db5dcaf3fd57513fafdf7f9352ceba9"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_07/k_000600000",
+    "seed": 7,
+    "source_checkpoint_sha256": "26003389ee3f7f210b00e92fa1b7989b4d6fc0ccd0fa08065d618d00fb3b3db9"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_07/k_000800000",
+    "seed": 7,
+    "source_checkpoint_sha256": "7c6cd302104f7c4e65cde46eb5e4673b7e8bd6d4a0aa1a0af02a16383d21b7b2"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_07/k_001000000",
+    "seed": 7,
+    "source_checkpoint_sha256": "cd08f65f26838485e733af5c8572418dec5f87fd8acb6266221c9107dec2832b"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_08/k_000000000",
+    "seed": 8,
+    "source_checkpoint_sha256": "18b87392f1eea6dcb1aba55fd54f86982cda3274146f566be3151e8973edba37"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_08/k_000000100",
+    "seed": 8,
+    "source_checkpoint_sha256": "a9a73a07401609b5212d48d1048e2bfd20b31d3f9afdfb758093c42b7fdf62fd"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_08/k_000001000",
+    "seed": 8,
+    "source_checkpoint_sha256": "ab15d3ae8dc2a04f8f9b299063e0d0501d71f52f562874dc2f9ecdde934c6692"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_08/k_000005000",
+    "seed": 8,
+    "source_checkpoint_sha256": "4c0741261a70a0b7f58ddefcbec0f4e119ae5c02becc26c20e9fbfa5ac9411e2"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_08/k_000010000",
+    "seed": 8,
+    "source_checkpoint_sha256": "8019e59a3d88195e275d7daf8a9da56a632b76237ec5593c3c67ae8fd46c7bed"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_08/k_000025000",
+    "seed": 8,
+    "source_checkpoint_sha256": "ab9b8d17015e84d8ee3a7f3bd662994a313acf77de1aaef13af8385da11e4186"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_08/k_000050000",
+    "seed": 8,
+    "source_checkpoint_sha256": "4eeaed8a4057f82638dd9de2eba9046573bee388d099d9dec3f8f039def805d7"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_08/k_000100000",
+    "seed": 8,
+    "source_checkpoint_sha256": "0557b35292e654adacb8616b1d30f298a91298caa433109383f908d1580d429e"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_08/k_000200000",
+    "seed": 8,
+    "source_checkpoint_sha256": "10e5dffd3c841f45b7b5d067ee4c83b3b115f1ac73abfabc0405d7324ea9f636"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_08/k_000400000",
+    "seed": 8,
+    "source_checkpoint_sha256": "7c80d9ba7b3828a2dfdab2f2c275e2f706df6472e602a6a79d62dc59a593998e"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_08/k_000600000",
+    "seed": 8,
+    "source_checkpoint_sha256": "4700c53a6bc431a14f9429b26a5774ff850192d4e22e5603426220273b5608da"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_08/k_000800000",
+    "seed": 8,
+    "source_checkpoint_sha256": "5d93dcfb1e1e03626934989f5b52ac207e578a28b5df064ff9fd570524090f05"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_08/k_001000000",
+    "seed": 8,
+    "source_checkpoint_sha256": "eef3f96bc6493efd2b0c28b3dfcd009732ee377ad6782b73a98a217a9cf28783"
+  },
+  {
+    "decision": 0,
+    "path": "results/diagnostics/continuing/seed_09/k_000000000",
+    "seed": 9,
+    "source_checkpoint_sha256": "007a24520c9d14c4a2ff78d78237426a45268bb79237a107540e093bdd63c484"
+  },
+  {
+    "decision": 100,
+    "path": "results/diagnostics/continuing/seed_09/k_000000100",
+    "seed": 9,
+    "source_checkpoint_sha256": "b044ab8f6870b34183d911a171d1821937eedf5dc713c68f47c6cfebf92aaf95"
+  },
+  {
+    "decision": 1000,
+    "path": "results/diagnostics/continuing/seed_09/k_000001000",
+    "seed": 9,
+    "source_checkpoint_sha256": "adf986d7a1f6e2dcbf41560dd1d155ef20363a4cb4364c4c0e471c2a4ffda79d"
+  },
+  {
+    "decision": 5000,
+    "path": "results/diagnostics/continuing/seed_09/k_000005000",
+    "seed": 9,
+    "source_checkpoint_sha256": "7b4d197af4f000dc160cf76757f5e58b8814c25e652abdbb6c4354cd4420cdb3"
+  },
+  {
+    "decision": 10000,
+    "path": "results/diagnostics/continuing/seed_09/k_000010000",
+    "seed": 9,
+    "source_checkpoint_sha256": "5faa84ac52202983c69ac82340b318da0ce808e20cc936558864e995300eb1c6"
+  },
+  {
+    "decision": 25000,
+    "path": "results/diagnostics/continuing/seed_09/k_000025000",
+    "seed": 9,
+    "source_checkpoint_sha256": "129b60a18b0cc0df015551c729e39f13437229f684d6506f1e1c276028cca5f5"
+  },
+  {
+    "decision": 50000,
+    "path": "results/diagnostics/continuing/seed_09/k_000050000",
+    "seed": 9,
+    "source_checkpoint_sha256": "ff19e7f0f96e767178df75fa9a85cdcf633c78b468bc5de9ff3ee8140c09878b"
+  },
+  {
+    "decision": 100000,
+    "path": "results/diagnostics/continuing/seed_09/k_000100000",
+    "seed": 9,
+    "source_checkpoint_sha256": "1cb5390994d8ed81f4327272617e6fbebc064eadd2a390741851f9bade199ca8"
+  },
+  {
+    "decision": 200000,
+    "path": "results/diagnostics/continuing/seed_09/k_000200000",
+    "seed": 9,
+    "source_checkpoint_sha256": "811de35517786781dc7cc588c57fa685912ec0e2afa0d0c6c6ac9054ce79c59b"
+  },
+  {
+    "decision": 400000,
+    "path": "results/diagnostics/continuing/seed_09/k_000400000",
+    "seed": 9,
+    "source_checkpoint_sha256": "15116e074f130687e2be27e9f8b86850b8eea117204e390c82e00c1af3ab6aee"
+  },
+  {
+    "decision": 600000,
+    "path": "results/diagnostics/continuing/seed_09/k_000600000",
+    "seed": 9,
+    "source_checkpoint_sha256": "142d5b053bd2420b1876a4e09a5b2beaf4a6d18316f44e7f8206a53f047128ed"
+  },
+  {
+    "decision": 800000,
+    "path": "results/diagnostics/continuing/seed_09/k_000800000",
+    "seed": 9,
+    "source_checkpoint_sha256": "16379d75b3ef7e1f204485167f3c90f18faa280c96e779f3217240cac2a860cc"
+  },
+  {
+    "decision": 1000000,
+    "path": "results/diagnostics/continuing/seed_09/k_001000000",
+    "seed": 9,
+    "source_checkpoint_sha256": "45e8513452afa405204e5445b9f44db26835e0cbee243c8d47194d9f2d6762cc"
+  }
+]

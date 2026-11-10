@@ -1,0 +1,422 @@
+{
+  "critic_tracking": {
+    "exact_penalized_rate": 0.43252606454114817,
+    "finite_error_not_convergence_certificate": true,
+    "h_reference_normalized": [
+      0.0,
+      -2.1320018985850613,
+      -2.1206686521911084,
+      -3.019747513670572
+    ],
+    "rate_abs_error": 0.001043493109396998,
+    "rate_estimate": 0.43148257143175117,
+    "v": [
+      -2.0352387798896694,
+      -2.032044667551675,
+      -2.8105954196978584
+    ],
+    "value_norm2_error": 0.24690465812981316,
+    "value_norminf_error": 0.20915209397271362
+  },
+  "greedy": {
+    "exact_evaluation": {
+      "advantage": [
+        [
+          0.03215998548009503,
+          0.040498967755008164,
+          0.029577538862748914,
+          1.3322676295501878e-15,
+          -0.047674388277704455,
+          -2.449373992604378,
+          -2.5353612181017464,
+          -1.7782576317620526,
+          -2.797328919844613,
+          -3.2038565946362434
+        ],
+        [
+          -1.1588901747789933,
+          -2.1135717508626852,
+          -3.057298678279384,
+          -3.9917186878899846,
+          -4.918685602732843,
+          1.724822867845831,
+          -0.515841281736036,
+          -0.7095623534376301,
+          0.0,
+          -0.9326396060065523
+        ],
+        [
+          -0.9690084953157099,
+          -1.932432979294326,
+          -2.8860011616209107,
+          -3.8316251234917367,
+          -4.7708233043127155,
+          0.14524878214493908,
+          1.4706728956415878,
+          -0.013680062842886365,
+          -0.4465110187402308,
+          4.440892098500626e-16
+        ],
+        [
+          -0.8562038781057861,
+          -1.7236882179325645,
+          -2.6007665721745266,
+          -3.4854939092249513,
+          -4.376310908757416,
+          0.0,
+          0.44663872107062375,
+          0.9709666427089663,
+          -0.05439185040665029,
+          -0.31799689815882726
+        ]
+      ],
+      "chain": {
+        "communicating_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "graph_convention": "strictly positive represented floating probabilities; no threshold",
+        "irreducible": true,
+        "recurrent_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "transient_states": [],
+        "unichain": true
+      },
+      "checks": {
+        "conditional_advantage_mean_abs": 1.3322676295501878e-15,
+        "independent_stationary_difference_abs": 3.400058012914542e-16,
+        "minimum_stationary_mass": 0.005101803382693341,
+        "reference_normalization_abs": 0.0,
+        "stationary_equation_abs": 1.1188966420050406e-16,
+        "stationary_sum_abs": 0.0,
+        "value_equation_abs": 1.3322676295501878e-15
+      },
+      "conditional_advantage_means": [
+        1.3322676295501878e-15,
+        0.0,
+        4.440892098500626e-16,
+        0.0
+      ],
+      "differential_value": [
+        0.0,
+        -1.7656318374904496,
+        -2.0937112414469823,
+        -2.8569462380900816
+      ],
+      "probabilities": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "statewise_maximum_advantage": [
+        0.040498967755008164,
+        1.724822867845831,
+        1.4706728956415878,
+        0.9709666427089663
+      ],
+      "stationary": [
+        0.8692962976947927,
+        0.05508948369605348,
+        0.07051241522646043,
+        0.005101803382693341
+      ],
+      "weighted_centering_allowance": 1.189449120669134e-15
+    },
+    "metrics": {
+      "budget": 0.3,
+      "mean_duration": 4.055207005078381,
+      "mean_expenditure": 1.0,
+      "mean_reward": 3.7815915547606664,
+      "multiplier": 0.0,
+      "penalized_rate_eta_lambda": 0.932527377770096,
+      "rate_lagrangian": 0.932527377770096,
+      "reward_rate": 0.932527377770096,
+      "update_rate": 0.24659653594691688
+    },
+    "residuals": {
+      "R_act": null,
+      "R_act_duration_scaled": null,
+      "R_adv": 0.23887958276869806,
+      "R_comp": 0.0,
+      "R_pri": 0.0,
+      "numerator_excess": -0.21656210152351418,
+      "signed_excess": -0.053403464053083105,
+      "unprojected_rate_gradient_norm": null
+    },
+    "scope": {
+      "actor_coordinate_independent_R_adv": true,
+      "all_states_positive_represented_stationary_mass": true,
+      "compact_logit_KKT_residual_R_adv": false,
+      "complete_kkt_certificate": false,
+      "exact_zero_certified": false,
+      "full_action_support": false,
+      "global_optimality_certificate": false,
+      "minimum_stationary_mass": 0.005101803382693341,
+      "numerical_not_interval_certified": true,
+      "optional_performance_bound_computed": false,
+      "reward_scale_invariant_R_adv": false,
+      "stochastic_convergence_certificate": false,
+      "zero_mass_states": []
+    },
+    "status": "available",
+    "unavailable_reason": null
+  },
+  "stochastic": {
+    "exact_evaluation": {
+      "advantage": [
+        [
+          0.14579387955569223,
+          0.6535487102431958,
+          1.1417982011969094,
+          1.6112211709872764,
+          2.0624169595686155,
+          -2.385267761474444,
+          -2.1431288168578826,
+          -0.7523392344301689,
+          -1.2592371295749027,
+          -1.244922255999663
+        ],
+        [
+          -0.7081594604266503,
+          -1.1756716164286303,
+          -1.6287481836422817,
+          -2.0706842743032485,
+          -2.5036909704811396,
+          2.1938357211832016,
+          0.41656315177309855,
+          0.5577315206883267,
+          1.886040042440416,
+          1.4709024681405227
+        ],
+        [
+          -0.8718139660123714,
+          -1.344662701956942,
+          -1.8058298424449744,
+          -2.257553077027996,
+          -2.7016460180477555,
+          0.0020073583839321785,
+          2.0449353552855856,
+          1.072091129418367,
+          1.0154494036473554,
+          2.0300637475568886
+        ],
+        [
+          -0.7216581963246602,
+          -1.0792919516866335,
+          -1.448447205106866,
+          -1.8268036472338784,
+          -2.2124967686064934,
+          0.17533824358012007,
+          1.0120843809749833,
+          2.1703540786636064,
+          1.633423764108461,
+          1.8057432289636566
+        ]
+      ],
+      "chain": {
+        "communicating_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "graph_convention": "strictly positive represented floating probabilities; no threshold",
+        "irreducible": true,
+        "recurrent_classes": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "transient_states": [],
+        "unichain": true
+      },
+      "checks": {
+        "conditional_advantage_mean_abs": 9.575673587391975e-16,
+        "independent_stationary_difference_abs": 2.220446049250313e-16,
+        "minimum_stationary_mass": 0.07615615404143426,
+        "reference_normalization_abs": 0.0,
+        "stationary_equation_abs": 1.1102230246251565e-16,
+        "stationary_sum_abs": 0.0,
+        "value_equation_abs": 8.881784197001252e-16
+      },
+      "conditional_advantage_means": [
+        9.575673587391975e-16,
+        2.498001805406602e-16,
+        4.440892098500626e-16,
+        -5.551115123125783e-16
+      ],
+      "differential_value": [
+        0.0,
+        -2.1320018985850613,
+        -2.1206686521911084,
+        -3.019747513670572
+      ],
+      "probabilities": [
+        [
+          0.09667074122508901,
+          0.1027129717168628,
+          0.11256983351346389,
+          0.13016481187817625,
+          0.1199773944186203,
+          0.08122010670554736,
+          0.08290322373289628,
+          0.09457197536915826,
+          0.08845921758520577,
+          0.09074972385498002
+        ],
+        [
+          0.09401498088233319,
+          0.09236166690363808,
+          0.09100086764868036,
+          0.0891293117708411,
+          0.0874794197524269,
+          0.1049409386844078,
+          0.09957874542680593,
+          0.1091488153383284,
+          0.12676575052309727,
+          0.10557950306944096
+        ],
+        [
+          0.09197379946258874,
+          0.08763857061903062,
+          0.08504938990451495,
+          0.08105384667311269,
+          0.07642790041756277,
+          0.10293834057830097,
+          0.12069380287917578,
+          0.11326907536722822,
+          0.1148509450646208,
+          0.12610432903386443
+        ],
+        [
+          0.0981100214811779,
+          0.09724725613621825,
+          0.09645346672142581,
+          0.09460714035768554,
+          0.0944627266703936,
+          0.11046742953646904,
+          0.10092389345062203,
+          0.10332366437153599,
+          0.10195295343923381,
+          0.1024514478352379
+        ]
+      ],
+      "statewise_maximum_advantage": [
+        2.0624169595686155,
+        2.1938357211832016,
+        2.0449353552855856,
+        2.1703540786636064
+      ],
+      "stationary": [
+        0.3841861091200663,
+        0.17642951995127815,
+        0.3632282168872213,
+        0.07615615404143426
+      ],
+      "weighted_centering_allowance": 6.155370933854658e-16
+    },
+    "metrics": {
+      "budget": 0.3,
+      "mean_duration": 3.0391795902231706,
+      "mean_expenditure": 1.0,
+      "mean_reward": 1.6935644055244659,
+      "multiplier": 0.3790400179314584,
+      "penalized_rate_eta_lambda": 0.43252606454114817,
+      "rate_lagrangian": 0.5462380699205858,
+      "reward_rate": 0.5572439387828692,
+      "update_rate": 0.32903616594982754
+    },
+    "residuals": {
+      "R_act": 0.09249346511558094,
+      "R_act_duration_scaled": 0.2811042514082924,
+      "R_adv": 2.087473372509402,
+      "R_comp": 0.011005868862283438,
+      "R_pri": 0.029036165949827553,
+      "numerator_excess": 0.0882461229330489,
+      "signed_excess": 0.029036165949827553,
+      "unprojected_rate_gradient_norm": 0.09249346511558097
+    },
+    "scope": {
+      "actor_coordinate_independent_R_adv": true,
+      "all_states_positive_represented_stationary_mass": true,
+      "compact_logit_KKT_residual_R_adv": false,
+      "complete_kkt_certificate": false,
+      "exact_zero_certified": false,
+      "full_action_support": true,
+      "global_optimality_certificate": false,
+      "minimum_stationary_mass": 0.07615615404143426,
+      "numerical_not_interval_certified": true,
+      "optional_performance_bound_computed": false,
+      "reward_scale_invariant_R_adv": false,
+      "stochastic_convergence_certificate": false,
+      "zero_mass_states": []
+    },
+    "status": "available",
+    "unavailable_reason": null
+  },
+  "stochastic_auxiliary_metrics": {
+    "input_exposure_rate": 0.5165985429507874,
+    "occupancy": 0.567575909641885
+  },
+  "training_rng_consumption": 0
+}

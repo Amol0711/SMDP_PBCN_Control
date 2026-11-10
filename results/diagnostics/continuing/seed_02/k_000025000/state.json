@@ -1,0 +1,98 @@
+{
+  "decision": 25000,
+  "mode": "production",
+  "parameter_scalars": {
+    "eta": 0.4486355095513405,
+    "multiplier": 0.19173235383030857
+  },
+  "protocol_sha256": "b5bd560861962dc9dc3568534854d30d30171420b50cb0dcae5e9cbb745859db",
+  "seed_label": 2,
+  "source_checkpoint_sha256": "ff403a965160cbfd0e0051f5ba68fffdd68ee44ad59fb9026ebf103ecc548873",
+  "state": {
+    "current_state": 3,
+    "initial_state": 3,
+    "initial_uniform": 0.922081975047097,
+    "input_exposure": 39124,
+    "k": 25000,
+    "mode": "production",
+    "offsets": {
+      "actor": 25000,
+      "initial_state": 1,
+      "plant": 75738
+    },
+    "plant_time": 75738,
+    "reward_total": 39225.52,
+    "rng_states": {
+      "actor": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 50302003870537967707249804832664958397,
+          "state": 71405321492113589558803922476346985547
+        },
+        "uinteger": 0
+      },
+      "initial_state": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 179363935414007425367580193686525218471,
+          "state": 75228381687163373230085564515126542279
+        },
+        "uinteger": 0
+      },
+      "plant": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 202201844247411597285257658117084169347,
+          "state": 81273908750152335597401869337261381395
+        },
+        "uinteger": 0
+      }
+    },
+    "seed_keys": {
+      "actor": [
+        20260919,
+        212,
+        21,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ],
+      "initial_state": [
+        20260919,
+        212,
+        23,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ],
+      "plant": [
+        20260919,
+        212,
+        22,
+        3,
+        2,
+        300,
+        0,
+        0,
+        0
+      ]
+    },
+    "seed_label": 2,
+    "tail_counts": {
+      "actor": 0,
+      "initial_state": 0,
+      "plant": 0
+    },
+    "target_count": 40008
+  },
+  "state_sha256": "74085d1b5fdcdc89a6eb4160063efd55f0c03a887244d15852ea97d2cdc248aa"
+}

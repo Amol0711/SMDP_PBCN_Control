@@ -1,0 +1,13 @@
+context_id,metric,value,display9,sample_sd,population_sd,ci95_lower,ci95_upper,n,uncertainty_unit,source_record_id,numerical_zero_not_certified,sample_sd_display,population_sd_display,ci95_lower_display,ci95_upper_display,n_display
+gap_bounds/occupancy,witness_lower,0.9726609874463615,0.972660987,,,,,,none,gap_bounds/occupancy/witness_lower,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/occupancy,witness_upper,0.9726609874463615,0.972660988,,,,,,none,gap_bounds/occupancy/witness_upper,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/occupancy,unrestricted_optimum,0.9726619892338253,0.972661989,,,,,,none,gap_bounds/occupancy/unrestricted_optimum,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/occupancy,representation_loss_upper,1.0017874637322323e-06,0.000001002,,,,,,none,gap_bounds/occupancy/representation_loss_upper,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/occupancy,cold_training_shortfall_lower,0.011569274904816757,0.011569274,,,,,,none,gap_bounds/occupancy/cold_training_shortfall_lower,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/occupancy,cold_training_shortfall_upper,0.011570276692280489,0.011570277,,,,,,none,gap_bounds/occupancy/cold_training_shortfall_upper,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,witness_lower,0.9719263559448446,0.971926355,,,,,,none,gap_bounds/reward/witness_lower,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,witness_upper,0.9719263559448446,0.971926356,,,,,,none,gap_bounds/reward/witness_upper,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,unrestricted_optimum,0.9719273857465286,0.971927386,,,,,,none,gap_bounds/reward/unrestricted_optimum,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,representation_loss_upper,1.0298016840077332e-06,0.000001030,,,,,,none,gap_bounds/reward/representation_loss_upper,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,cold_training_shortfall_lower,0.011876450252729685,0.011876450,,,,,,none,gap_bounds/reward/cold_training_shortfall_lower,False,not_available,not_available,not_available,not_available,not_available
+gap_bounds/reward,cold_training_shortfall_upper,0.011877480054413692,0.011877481,,,,,,none,gap_bounds/reward/cold_training_shortfall_upper,False,not_available,not_available,not_available,not_available,not_available

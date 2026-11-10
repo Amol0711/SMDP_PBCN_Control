@@ -1,0 +1,26 @@
+{
+  "decisions": 100,
+  "end_k": 100,
+  "files": {
+    "decision_floats.npy": {
+      "bytes": 8928,
+      "sha256": "8d19066794966a346306ab22a12aa1dbab838d3a939fcdac1f59df5299953915"
+    },
+    "decision_ints.npy": {
+      "bytes": 6528,
+      "sha256": "fab8b8d4939cb7f25df54aed467cf7a5288c8dbacbf66150e6a14d001567863a"
+    },
+    "plant_states.npy": {
+      "bytes": 448,
+      "sha256": "4f8ea937a3d37f7506e55f907ff8fe02cb7e9146fab8d6c3cf654c7de6d7351e"
+    },
+    "plant_uniforms.npy": {
+      "bytes": 2688,
+      "sha256": "41e8064c9db33dc713ceadb872fe46eacd56bfcfba84ed1226d7f1b257cf8b23"
+    }
+  },
+  "plant_end": 320,
+  "plant_start": 0,
+  "start_k": 0,
+  "version": "1.0.0"
+}
